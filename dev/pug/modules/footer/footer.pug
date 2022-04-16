@@ -1,0 +1,31 @@
+-var listF = [{name:'Главная', link:'index.html'}, {name:'О нас', link:'about.html'}, {name:'Блог', link:'blog.html'}, {name:'Карьера', link:'careers.html'}, {name:'Стать агентом', link:'join.html'}]
+-var listS = [{name:'Факторинг Плюс', link:'factoring.html'}, {name:'Гарантии', link:'warranty.html'}, {name:'Кредит на госконтракты', link:'credits.html'}, {name:'Для селлеров', link:'sellers.html'}]
+
+footer.footer
+    .footer__upper
+        
+        .footer__block
+            a(href="index.html" target="_self").footer__logo
+                img(src="static/images/content/rowi-white.svg" width="81" height="32" alt="ROWI logo").footer__logo-img
+            ul.footer__social
+                li.footer__social-item
+                    a(href="#" target="_blank" title="VK").footer__social-link
+                li.footer__social-item
+                    a(href="#" target="_blank" title="Youtube").footer__social-link
+                li.footer__social-item
+                    a(href="#" target="_blank" title="Telegram").footer__social-link
+                    
+        .footer__block
+            ul.footer__list
+                for i in listF
+                    li.footer__item
+                        a(href="" +i.link target="_self").footer__link=i.name
+        .footer__block
+            ul.footer__list
+                for i in listS
+                    li.footer__item
+                        a(href="" +i.link target="_self").footer__link=i.name
+    .footer__bottom
+        span.footer__copyright © 2022, ООО «РОВИ Факторинг ПЛЮС»
+        a(href="#" target="_self").footer__policy Политика обработки персональных данных
+        span.footer__info ROWI кредиты и гарантии выдает КИВИ Банк (АО)

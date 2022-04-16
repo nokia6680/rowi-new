@@ -1,0 +1,460 @@
+.footer {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    position: relative;
+
+    padding: toRem(32) toRem(16) toRem(40) toRem(16);
+
+    background: linear-gradient(53.94deg, rgba(246, 180, 198, 0.8) -10.9%, rgba(205, 164, 207, 0.8) 12.13%, rgba(96, 121, 234, 0.8) 38.27%, rgba(70, 136, 219, 0.8) 61.04%, rgba(31, 180, 180, 0.8) 86.67%, rgba(164, 213, 213, 0.8) 121.69%, rgba(0, 170, 170, 0) 135.74%);
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__logo {
+        width: toRem(98);
+        height: toRem(24);
+        margin-bottom: toRem(40);
+
+        &-link {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__contacts {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: toRem(40);
+    }
+
+    //book
+    &__title {
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
+        margin-bottom: toRem(16);
+        text-align: left;
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: toRem(16);
+
+        &:first-of-type {
+            max-width: toRem(190);
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(14), toRem(22), 500, $white);
+        margin-bottom: toRem(4);
+        text-align: left;
+    }
+    //book
+    &__description {
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    &__join {
+        width: 100%;
+        margin-bottom: toRem(40);
+
+        .footer__title {
+            margin-bottom: 0;
+        }
+
+        &-link {
+            @include font-setting($primary-font, toRem(12), toRem(19), 500, $white);
+            text-decoration: underline;
+        }
+    }
+
+    &__rules {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+    //book
+    &__link {
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
+        text-decoration: none;
+        transition: 0.35s $cubic;
+
+        margin-bottom: toRem(16);
+
+        &:active {
+            color: $white;
+            transition: 0.35s $cubic;
+        }
+    }
+
+    &__copyright {
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
+    }
+
+    &__top {
+        position: absolute;
+        width: toRem(138);
+        height: toRem(96);
+
+        top: toRem(24);
+        right: toRem(16);
+
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(12), toRem(19), 500, $white);
+        text-decoration: none;
+        padding-top: toRem(32);
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(138);
+            height: toRem(96);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='138' height='96' viewBox='0 0 138 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M85.0152 2.43336C66.9775 1.03877 48.2498 -0.265017 31.3478 6.57174C14.4459 13.4085 -0.0990645 30.8701 1.77554 49.9663C2.83191 60.7728 8.9381 70.522 16.9677 77.2615C24.9974 84.0009 34.7246 88.0096 44.6166 90.7339C61.0362 95.2744 78.6098 96.4226 94.8889 91.3826C111.168 86.3426 125.994 74.5177 132.937 58.0485C136.478 49.655 137.822 39.7371 134.427 31.2788C130.195 20.7771 119.381 14.6344 108.707 13.3242C98.0336 12.0139 87.3355 14.7058 76.8695 17.3653' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: 0.35s $cubic;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: toRem(24);
+            height: toRem(24);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.52938 0.467717C6.23648 0.174824 5.76161 0.174824 5.46872 0.467717L0.467717 5.46872C0.174824 5.76161 0.174824 6.23648 0.467717 6.52938C0.76061 6.82227 1.23548 6.82227 1.52838 6.52938L5.25 2.80775V14.999C5.25 15.4132 5.58579 15.749 6 15.749C6.41421 15.749 6.75 15.4132 6.75 14.999V2.80966L10.4697 6.52938C10.7626 6.82227 11.2375 6.82227 11.5304 6.52938C11.8233 6.23648 11.8233 5.76161 11.5304 5.46872L6.52938 0.467717Z' fill='white'/%3E%3C/svg%3E");
+
+            top: toRem(24);
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 0.35s $cubic;
+        }
+
+        &:active {
+            &::before {
+                transform: translate(-50%, -50%) scale(1.16);
+                transition: 0.35s $cubic;
+            }
+            &::after {
+                top: toRem(12);
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .footer {
+        padding: toRem(72) toRem(40) toRem(40) toRem(40);
+        background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%);
+
+        &__wrapper {
+            display: grid;
+            grid-template-areas:
+                'logo join ...'
+                'list list list'
+                'legal legal legal'
+            ;
+
+            grid-template-columns: 1fr 28.34302325581395% 1fr;
+            grid-row-gap: toRem(61);
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &__logo {
+            grid-area: logo;
+            width: toRem(172);
+            height: toRem(42);
+            margin-bottom: 0;
+        }
+
+        &__contacts {
+            grid-area: list;
+            margin-bottom: 0;
+        }
+
+        &__title {
+            font-size: toRem(16);
+            line-height: toRem(23);
+            margin-bottom: toRem(24);
+        }
+
+        &__list {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__item {
+            width: fit-content;
+
+            margin-bottom: 0;
+
+            &:first-of-type {
+                max-width: toRem(252);
+            }
+        }
+
+        &__name {
+            font-size: toRem(20);
+            line-height: toRem(34);
+            margin-bottom: toRem(8);
+        }
+
+        &__description {
+            font-size: toRem(16);
+            line-height: toRem(23);
+            margin-bottom: toRem(2);
+        }
+
+        &__join {
+            grid-area: join;
+            margin-bottom: toRem(0);
+
+            .footer__title {
+                margin-bottom: 0;
+                text-align: center;
+                font-weight: 350;
+                opacity: 1;
+            }
+
+            &-link {
+                font-size: toRem(16);
+                line-height: toRem(23);
+            }
+        }
+
+        &__rules {
+            grid-area: legal;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__link {
+            margin-bottom: 0;
+        }
+
+        &__top {
+            align-items: center;
+            justify-content: flex-end;
+
+            width: toRem(160);
+            height: toRem(106);
+
+            top: toRem(42);
+            right: toRem(42);
+
+            font-size: toRem(18);
+            line-height: toRem(28);
+
+            padding-bottom: toRem(22);
+
+            &::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='163' height='108' viewBox='0 0 163 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100.204 2.73706C80.5786 1.29972 48.3099 -1.88881 25.3915 12.9248C5.4566 25.8099 -1.80023 44.8147 1.95375 61.2372C4.96325 74.4029 17.3558 90.6001 40.4538 98.4872C66.0788 107.237 97.1029 111.227 124.454 97.8622C147.61 86.5474 163.891 63.5497 160.704 41.7372C158.782 28.5826 146.128 17.2149 129.391 15.1122C116.954 13.5497 107.766 15.4872 90.3601 19.5497' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                width: toRem(160);
+                height: toRem(106)
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .footer {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        &__wrapper {
+            grid-template-columns: 1fr 35.76388888888889% 1fr;
+            align-items: center;
+        }
+
+        &__list {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &__item {
+            &:first-of-type {
+                margin-right: toRem(105)
+            }
+        }
+
+        &__join {
+            @include flex-setting(column, center, center);
+        }
+
+        &__link {
+            font-size: toRem(16);
+            line-height: toRem(23);
+        }
+
+        &__copyright {
+            font-size: toRem(16);
+            line-height: toRem(23);
+        }
+
+        &__top {
+            right: toRem(80);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .footer {
+        --wrapWidth: calc(100% - 1220px);
+        padding-top: toRem(40);
+        padding-left: calc((var(--wrapWidth) / 2));
+        padding-right: calc((var(--wrapWidth) / 2));
+
+        &__wrapper {
+            grid-template-areas:
+                'logo join'
+                'list ...'
+                'legal legal'
+            ;
+            grid-template-columns: 62.29508196721311% 1fr;
+            grid-column-gap: toRem(124);
+            grid-row-gap: toRem(40);
+        }
+
+        &__contacts {
+            margin-bottom: toRem(64);
+        }
+
+        &__title {
+            font-size: toRem(18);
+            line-height: toRem(28);
+            opacity: 1;
+            white-space: nowrap;
+        }
+
+        &__item {
+            &:first-of-type {
+                max-width: toRem(280);
+                margin-right: toRem(134)
+            }
+        }
+
+        &__join {
+            &__title,
+            &-link {
+                font-size: toRem(18);
+                line-height: toRem(28);
+            }
+
+            &-link {
+                font-weight: 500;
+            }
+        }
+
+        &__link {
+            font-size: toRem(14);
+            line-height: toRem(22);
+
+            &:hover {
+                color: $white;
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &__copyright {
+            font-size: toRem(14);
+            line-height: toRem(22);
+        }
+
+        &__top {
+            top: 50%;
+            transform: translateY(-50%);
+            right: calc((var(--wrapWidth) / 2));
+
+            &:hover {
+                &::before {
+                    transform: translate(-50%, -50%) scale(1.16);
+                    transition: 0.35s $cubic;
+                }
+
+                &::after {
+                    top: toRem(16);
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .footer {
+        --wrapWidth: calc(100% - 1704px);
+
+        &__wrapper {
+            grid-template-areas:
+                'logo ... join'
+                '... list ...'
+                'legal legal legal'
+            ;
+            grid-template-columns: 14.67136150234742% 1fr 19.71830985915493%;
+            grid-column-gap: toRem(40);
+        }
+
+        &__contacts {
+            margin-bottom: toRem(24);
+        }
+
+        &__title {
+            font-size: toRem(18);
+            line-height: toRem(28);
+            opacity: 1;
+            white-space: nowrap;
+        }
+
+        &__item {
+            &:first-of-type {
+                max-width: toRem(320);
+                margin-right: toRem(112)
+            }
+        }
+    }
+}

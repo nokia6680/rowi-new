@@ -1,0 +1,10 @@
+-var featList = [{type:'', title: 'Легко начать', text: 'Быстрая заявка через личный кабинет'}, {type:'', title: 'Личный менеджер', text: 'Контакт с живым человеком. Без ботов и скриптов'}, {type:'', title: 'Быстрое получение денег ', text: 'Факторинг, кредит или гарантия от 5 минут до суток'}, {type:'', title: 'Технологичная платформа', text: 'Умный скоринг, автоматическое решение'}]
+
+section.features
+    h2.features__title
+    ul.features__list
+        for i in featList
+            li.features__item
+                span(class="features__icon " +i.type)
+                h3.features__name=i.title
+                p.features__description=i.text

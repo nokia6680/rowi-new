@@ -1,0 +1,278 @@
+.nav {
+    position: absolute;
+
+    top: toRem(58);
+    left: 0;
+    right: 0;
+
+    @include flex-setting(column, space-between, flex-start);
+
+    width: 100%;
+    height: calc(100vh - 58px);
+    overflow: hidden;
+
+    padding: 0 toRem(48) 0 toRem(16);
+
+    background-color: $white;
+
+    z-index: 2;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2222s $cubic 0.5555s;
+
+    &.hidden {
+        overflow: hidden;
+    }
+
+    &.opened {
+        height: calc(100vh - 58px);
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: transform 0.2222s $cubic;
+        padding-bottom: toRem(26);
+
+        .nav__item {
+            pointer-events: auto;
+            will-change: transform;
+            opacity: 1;
+
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.06 * $i+0.2}s;
+                }
+            }
+        }
+
+        .nav__jobs {
+            pointer-events: auto;
+            opacity: 1;
+            transition-delay: 0.55s;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        padding: toRem(40) 0 0 0;
+        margin-bottom: auto;
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+
+        padding: toRem(12) 0;
+        margin-bottom: toRem(32);
+
+        opacity: 0;
+        transition: opacity 0.222s $cubic;
+
+        @for $i from 1 through $menuItems {
+            &:nth-child(#{$i}) {
+                transition-delay: #{0.56 - ($i * 0.07)}s;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
+        text-align: left;
+        text-decoration: none;
+        letter-spacing: -0.015em;
+    }
+
+    &__jobs {
+        @include flex-setting(column, flex-start, center);
+        text-decoration: none;
+        align-self: center;
+        margin-top: auto;
+        margin-bottom: toRem(26);
+
+        opacity: 0;
+        transition: opacity 0.6s $cubic;
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 350, $blue);
+            padding: toRem(12) 0;
+            letter-spacing: -0.015em;
+        }
+
+        &-underline-tb,
+        &-underline-1440 {
+            display: none;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .nav {
+        top: toRem(98);
+        padding: 0;
+
+        &.opened {
+            height: calc(100vh - 98px);
+        }
+
+        &__list {
+            align-items: center;
+            padding-top: toRem(80);
+            margin-bottom: toRem(102);
+        }
+
+        &__item {
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: toRem(64);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            font-size: toRem(32);
+            line-height: toRem(58);
+            text-align: center;
+        }
+
+        &__jobs {
+            margin-bottom: toRem(74);
+            margin-top: 0;
+
+            span {
+                font-size: toRem(32);
+                line-height: toRem(58);
+            }
+
+            &-underline-mobile {
+                display: none;
+            }
+
+            &-underline-tb {
+                display: block;
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .nav {
+        padding: 0 toRem(80);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__list {
+            align-items: flex-start;
+            padding-top: toRem(40);
+            margin-bottom: toRem(0);
+        }
+
+        &__item {
+            align-items: flex-start;
+            margin-bottom: toRem(40);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            text-align: left;
+        }
+
+        &__jobs {
+            margin-top: auto;
+            margin-bottom: toRem(158);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .nav {
+        width: auto;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        max-height: 100%;
+        height: auto;
+        overflow: visible;
+        background-color: transparent;
+        padding: 0;
+        transform: none;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        transition: none;
+
+        &__list {
+            width: auto;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: toRem(0);
+            gap: toRem(24);
+        }
+
+        &__item {
+            width: auto;
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1) translateY(0px);
+            will-change: transform;
+            align-items: flex-start;
+            margin-bottom: 0;
+
+            padding: toRem(20) toRem(40);
+
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.06 * $i+0.2}s;
+                }
+            }
+
+            &:first-of-type {
+                display: none;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            @include gapFallback(toRem(24));
+        }
+
+        &__link {
+            text-align: center;
+            font-size: toRem(14);
+            line-height: toRem(22);
+            font-family: $primary-font;
+            letter-spacing: -0.02em;
+            transition: 0.35s $cubic;
+
+            &:hover,
+            &:active {
+                color: $blue;
+                transition: 0.35s $cubic;
+            }
+
+            &:disabled {
+                opacity: 0.24;
+                pointer-events: none;
+            }
+        }
+
+        &__jobs {
+            display: none;
+        }
+    }
+}

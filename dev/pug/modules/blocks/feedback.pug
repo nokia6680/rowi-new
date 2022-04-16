@@ -1,0 +1,24 @@
+section.callback
+    h2.callback__title Оставьте заявку на любой продукт и получите решение
+        span сегодня
+    p.callback__description Укажите телефон и продукт для заявки или консультации
+    
+    form(method="post" action="#" name="callback-form").callback__form
+        ul.callback__list
+            li.callback__item
+                input(type="checkbox" name="factoring" value="factoring" id="factoring").callback__checkbox
+                label(for="factoring").callback__label Факторинг
+            li.callback__item
+                input(type="checkbox" name="warranty" value="warranty" id="warranty").callback__checkbox
+                label(for="warranty").callback__label Гарантии
+            li.callback__item
+                input(type="checkbox" name="credit" value="credit" id="credit").callback__checkbox
+                label(for="credit").callback__label Кредит на госконтракты
+            li.callback__item
+                input(type="checkbox" name="sellers" value="sellers" id="sellers").callback__checkbox
+                label(for="sellers").callback__label Финансирование селлеров 
+        .callback__nr
+            input(type="text" name="tel" id="tel" placeholder="+7 (___) ___-__-__" onkeydown="validationTel()" required).callback__input
+            span.callback__error
+            
+        button(type="submit").callback__submit Отправить заявку

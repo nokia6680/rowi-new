@@ -1,0 +1,119 @@
+@mixin box($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin gapFallbackTwo($gap) {
+    @supports not (aspect-ratio: 1 / 1) {
+        margin-right: $gap;
+        margin-bottom: $gap;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+$units: 1px !default;
+@mixin screen($res-first, $res-last: $res-first) {
+  @if $res-first == $res-last {
+    @media screen and (max-width: if(unitless($res-first), ($res-first - 1) *$units, $res-first)) {
+      @content;
+    }
+  }
+  @else if $res-first < $res-last {
+    @media screen and (min-width: if(unitless($res-first), $res-first*$units, $res-first)) and (max-width: if(unitless($res-last), $res-last*$units, $res-last)) {
+      @content;
+    }
+  }
+}
+@mixin min-screen($res) {
+  @media screen and (min-width: if(unitless($res), $res*$units, $res)) {
+    @content;
+  }
+}
+
+@mixin pseudo($pos: absolute, $content: '') {
+  @include flex-setting(column, center, center);
+
+  content: $content;
+  position: $pos;
+}
+
+@mixin flex-setting($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font-setting($family, $size, $line-height, $font-width, $color) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $font-width;
+  color: $color;
+}
+
+@mixin ul-nostyle {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin checkbox-default {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  position: relative;
+
+  padding-left: 1.25rem;
+}
+
+@mixin custom-checkbox {
+  position: absolute;
+  content: "";
+  display: block;
+
+  width: 10px;
+  height: 10px;
+  background-color: $white;
+  border: 1px solid $lightgray;
+
+  top: 0.25rem;
+  left: 0;
+}
+
+@mixin checkbox-checked {
+  position: absolute;
+  content: "";
+  display: block;
+
+  width: 10px;
+  height: 10px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%2392C64E'/%3E%3C/svg%3E");
+  background-size: 6px 6px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  top: 0.25rem;
+  left: 0;
+}
+
+@mixin gapFallback($gap) {
+    @supports not (aspect-ratio: 1 / 1) {
+        margin-right: $gap;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+    body.body
+        include ../modules/header/header
+        main.main
+            include ../modules/blocks/intro
+            include ../modules/blocks/features
+            include ../modules/blocks/clients
+            include ../modules/blocks/tool
+            include ../modules/blocks/chat
+            include ../modules/blocks/about
+            include ../modules/blocks/feedback
+            include ../modules/blocks/faq
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        //script(src="static/js/vendor/bouncer.js")
+        //script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js")
+        //script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        //script(src="static/js/header.js")
+        script(src="static/js/main.js")
+        //script(src="static/js/filter.js")
+        //script(src="static/js/slider.js")
+        //script(src="static/js/shuffle.js")
+        //script(src="static/js/form.js")
+        //script(src="static/js/svg.js")
+        //script(src="static/js/move.js")
+        //script(src="static/js/scroll.js")
+        //script(src="static/js/video.js")
+        //script(src="static/js/benefits.js")
+        //script(src="static/js/validate.js")
+        block script
