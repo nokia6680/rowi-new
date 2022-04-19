@@ -1,0 +1,187 @@
+.about {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(48) toRem(16);
+    margin-bottom: toRem(48);
+
+    &__title {
+        margin-bottom: toRem(40);
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 47.8134110787172% 47.8134110787172%;
+        grid-template-rows: repeat(3, toRem(145));
+        grid-column-gap: toRem(15);
+        grid-row-gap: toRem(16);
+
+        margin-bottom: toRem(40);
+        z-index: auto;
+    }
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        position: relative;
+
+        z-index: auto;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: toRem(15);
+
+            background: rgba(20, 0, 75, 0.12);
+            filter: blur(13.4063px);
+
+            bottom: toRem(-6);
+            left: 0;
+            z-index: -1;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: 90%;
+            height: toRem(15);
+
+            bottom: toRem(-6);
+            right: 0;
+            background: rgba(5, 23, 92, 0.2);
+            filter: blur(6.70313px);
+            transform: matrix(1, -0.08, 0.04, 1, 0, 0);
+
+            z-index: -10;
+        }
+
+        &:first-of-type {
+            grid-column: 1 / 3;
+            background-color: $blue;
+            padding: toRem(24) toRem(24) toRem(24) toRem(154);
+
+            .about__nr {
+                font-size: toRem(90);
+                line-height: toRem(104);
+
+                position: absolute;
+
+                left: toRem(24);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .about__subtitle {
+                margin-bottom: toRem(4);
+                text-align: left;
+            }
+        }
+
+        &:nth-of-type(2) {
+            background-color: $green;
+
+            padding: toRem(24) toRem(12);
+
+            .about__nr {
+                margin-bottom: toRem(18);
+            }
+        }
+
+        &:nth-of-type(3) {
+            background-color: $pink;
+
+            padding: toRem(24) toRem(12);
+
+            .about__nr {
+                margin-bottom: toRem(18);
+                color: $dark;
+            }
+
+            .about__text {
+                color: $dark;
+            }
+        }
+
+        &:last-of-type {
+            grid-column: 1 / 2;
+            background-color: $dark;
+
+            padding: toRem(16);
+
+            .about__subtitle {
+                font-size: toRem(32);
+                line-height: toRem(37);
+                text-align: left;
+            }
+        }
+    }
+
+    &__nr {
+        @include font-setting($primary-font, toRem(32), toRem(37), 500, $white);
+    }
+
+    &__subtitle {
+        @include font-setting($primary-font, toRem(22), toRem(26), 400, $white);
+    }
+
+    &__text {
+        @include font-setting($primary-font, toRem(14), toRem(20), 350, $white);
+        letter-spacing: 0.01em;
+    }
+
+    &__info {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(16), toRem(22), 400, $dark);
+        text-align: left;
+        margin-bottom: toRem(51);
+
+        b {
+            font-size: toRem(18);
+            line-height: toRem(22);
+            color: $blue;
+        }
+    }
+
+    &__link {
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $blue);
+        text-decoration: none;
+
+        padding: toRem(11) toRem(48) toRem(11) 0;
+
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: toRem(32);
+            height: toRem(32);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='31' height='12' viewBox='0 0 31 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6L28 6' stroke='%234164EB' stroke-width='2'/%3E%3Cpath d='M31 6L24.8125 11.1962L24.8125 0.803847L31 6Z' fill='%234164EB'/%3E%3C/svg%3E");
+
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

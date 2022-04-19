@@ -3,458 +3,239 @@
 
     @include flex-setting(column, flex-start, center);
 
-    position: relative;
+    padding: toRem(24) toRem(16);
+    background-color: $dark;
 
-    padding: toRem(32) toRem(16) toRem(40) toRem(16);
-
-    background: linear-gradient(53.94deg, rgba(246, 180, 198, 0.8) -10.9%, rgba(205, 164, 207, 0.8) 12.13%, rgba(96, 121, 234, 0.8) 38.27%, rgba(70, 136, 219, 0.8) 61.04%, rgba(31, 180, 180, 0.8) 86.67%, rgba(164, 213, 213, 0.8) 121.69%, rgba(0, 170, 170, 0) 135.74%);
-
-    &__wrapper {
+    &__upper {
         width: 100%;
 
+        @include flex-setting(column, flex-start, flex-start);
+
+        gap: toRem(40);
+        margin-bottom: toRem(48);
+    }
+
+    &__block {
+        width: 100%;
         @include flex-setting(column, flex-start, flex-start);
     }
 
     &__logo {
-        width: toRem(98);
-        height: toRem(24);
-        margin-bottom: toRem(40);
+        display: block;
+        margin-bottom: toRem(32);
+    }
+
+    &__social {
+        width: auto;
+        @include flex-setting(row, flex-start, center);
+
+        &-item {
+            width: toRem(30);
+            height: toRem(30);
+
+            border-radius: toRem(15);
+            border: none;
+
+            margin-right: toRem(10);
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
 
         &-link {
+            @include flex-setting(column, center, center);
             width: 100%;
             height: 100%;
+            border-radius: inherit;
+            background-color: $white;
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+            &[title="VK"] {
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.14952 1.14952C0.03125 2.26779 0.03125 4.06762 0.03125 7.66728V8.33128C0.03125 11.9309 0.03125 13.7308 1.14952 14.849C2.26779 15.9673 4.06762 15.9673 7.66728 15.9673H8.33128C11.9309 15.9673 13.7308 15.9673 14.849 14.849C15.9673 13.7308 15.9673 11.9309 15.9673 8.33128V7.66728C15.9673 4.06762 15.9673 2.26779 14.849 1.14952C13.7308 0.03125 11.9309 0.03125 8.33128 0.03125H7.66728C4.06762 0.03125 2.26779 0.03125 1.14952 1.14952ZM3.1846 5.01125H4.34687C4.64392 5.01125 4.75567 5.14122 4.86705 5.463C5.43551 7.11849 6.39396 8.56529 6.78798 8.56529C6.93572 8.56529 7.00351 8.49726 7.00351 8.1221V6.4109C6.97683 5.92381 6.80663 5.71316 6.68057 5.55714C6.60272 5.46079 6.5417 5.38527 6.5417 5.27834C6.5417 5.14836 6.65279 5.01125 6.83745 5.01125H8.66389C8.9102 5.01125 8.99595 5.14292 8.99595 5.4384V7.74046C8.99595 7.98664 9.10289 8.07283 9.17676 8.07283C9.32454 8.07283 9.44767 7.98664 9.71859 7.71583C10.5559 6.78022 11.1469 5.33986 11.1469 5.33986C11.2208 5.16755 11.3571 5.01125 11.6526 5.01125H12.8149C13.1664 5.01125 13.2402 5.19215 13.1664 5.4384C13.0186 6.11545 11.6025 8.10978 11.6025 8.10978C11.4794 8.30672 11.4302 8.40523 11.6025 8.62681C11.6632 8.71179 11.7928 8.83864 11.941 8.98378C12.0934 9.13305 12.2656 9.30166 12.4029 9.46395C12.9022 10.0255 13.2784 10.4992 13.3833 10.8257C13.479 11.1533 13.313 11.3193 12.9809 11.3193H11.8186C11.5073 11.3193 11.3506 11.1449 11.0119 10.7682C10.8683 10.6086 10.692 10.4125 10.4574 10.1779C9.76782 9.51318 9.47231 9.427 9.2999 9.427C9.06597 9.427 8.99599 9.49326 8.99599 9.82526V10.8674C8.99599 11.1533 8.90459 11.3193 8.16578 11.3193C6.93442 11.3193 5.58125 10.5719 4.62081 9.1931C3.18014 7.17417 2.7861 5.64766 2.7861 5.33986C2.7861 5.16755 2.85252 5.01125 3.1846 5.01125Z' fill='%2314004B'/%3E%3C/svg%3E");
+                background-size: toRem(16) toRem(16);
+            }
+
+            &[title="Youtube"] {
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.7809 1.05748C14.425 1.23086 14.9271 1.74135 15.0976 2.38669C15.4102 3.56178 15.4197 5.99866 15.4197 5.99866C15.4197 5.99866 15.4197 8.44517 15.1071 9.61064C14.9366 10.256 14.3398 10.7857 13.6956 10.9591C12.5304 11.2673 7.95495 11.2481 7.95495 11.2481C7.95495 11.2481 3.37949 11.277 2.21431 10.9591C1.57962 10.7857 0.954401 10.256 0.783886 9.61064C0.471277 8.43554 0.499696 5.99866 0.499696 5.99866C0.499696 5.99866 0.471277 3.56178 0.783886 2.38669C0.954401 1.74135 1.57015 1.21159 2.21431 1.03822C3.37949 0.729997 7.95495 0.749261 7.95495 0.749261C7.95495 0.749261 12.6157 0.749261 13.7809 1.05748ZM10.4435 5.72243L6.5752 7.9329V3.51196L10.4435 5.72243Z' fill='%2314004B'/%3E%3C/svg%3E");
+                background-size: toRem(16) toRem(12);
+            }
+
+            &[title="Telegram"] {
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.50826 5.16568C5.4453 3.4722 8.07061 2.35576 9.3842 1.81635C13.1347 0.276221 13.9141 0.00868426 14.422 -0.000149948C14.5337 -0.00209294 14.7835 0.0252423 14.9454 0.154868C15.082 0.264321 15.1196 0.412177 15.1376 0.515951C15.1556 0.619725 15.178 0.856125 15.1601 1.04084C14.9569 3.14916 14.0775 8.26548 13.6301 10.6268C13.4408 11.626 13.068 11.961 12.7071 11.9938C11.9228 12.0651 11.3273 11.4821 10.5677 10.9905C9.37906 10.2213 8.70755 9.7424 7.55378 8.99176C6.22039 8.12426 7.08477 7.64746 7.84466 6.86825C8.04353 6.66433 11.4991 3.56126 11.5659 3.27977C11.5743 3.24456 11.5821 3.11333 11.5031 3.04403C11.4241 2.97474 11.3076 2.99844 11.2235 3.01728C11.1043 3.04399 9.2054 4.2831 5.5269 6.73459C4.98792 7.09999 4.49972 7.27802 4.06231 7.26869C3.58011 7.25841 2.65254 6.99951 1.96298 6.77822C1.11722 6.50679 0.44502 6.36329 0.503553 5.90232C0.534041 5.66222 0.868942 5.41668 1.50826 5.16568Z' fill='%2314004B'/%3E%3C/svg%3E");
+                background-size: toRem(16) toRem(12);
+            }
         }
-
-        &-frame {
-            width: 100%;
-            height: 100%;
-        }
-
-        &-image {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    &__contacts {
-        width: 100%;
-        @include flex-setting(column, flex-start, flex-start);
-
-        margin-bottom: toRem(40);
-    }
-
-    //book
-    &__title {
-        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
-        margin-bottom: toRem(16);
-        text-align: left;
     }
 
     &__list {
         width: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
+        gap: toRem(8);
     }
 
     &__item {
         width: 100%;
+        @include flex-setting(column, center, flex-start);
+    }
 
-        @include flex-setting(column, flex-start, flex-start);
+    &__link {
+        display: block;
+        padding: toRem(3) 0;
 
-        margin-bottom: toRem(16);
+        @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+        letter-spacing: 0.01em;
 
-        &:first-of-type {
-            max-width: toRem(190);
+        text-decoration: none;
+        opacity: 0.6;
+
+        &[data-active="active"] {
+            opacity: 1;
         }
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
     }
 
-    &__name {
-        @include font-setting($primary-font, toRem(14), toRem(22), 500, $white);
-        margin-bottom: toRem(4);
-        text-align: left;
-    }
-    //book
-    &__description {
-        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
-        margin-bottom: 0;
-        text-align: left;
-    }
-
-    &__join {
+    &__callback {
         width: 100%;
-        margin-bottom: toRem(40);
-
-        .footer__title {
-            margin-bottom: 0;
-        }
+        @include flex-setting(row, flex-start, center);
+        margin-bottom: toRem(8);
 
         &-link {
-            @include font-setting($primary-font, toRem(12), toRem(19), 500, $white);
-            text-decoration: underline;
+            display: block;
+            padding: toRem(3) 0;
+            margin-right: toRem(14);
+
+            @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+            letter-spacing: 0.01em;
+
+            text-decoration: none;
+            opacity: 0.6;
+
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: toRem(2);
+                height: toRem(10);
+                background-color: rgba(255, 255, 255, 0.6);
+
+                top: 50%;
+                right: toRem(-8);
+                transform: translateY(-50%);
+            }
+        }
+
+        &-btn {
+            display: block;
+            padding: toRem(3) 0;
+            background-color: transparent;
+            border: none;
+            @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+            letter-spacing: 0.01em;
+
+            text-decoration: none;
+            opacity: 0.6;
         }
     }
 
-    &__rules {
+    &__wrap {
         width: 100%;
-
         @include flex-setting(column, flex-start, flex-start);
-    }
-    //book
-    &__link {
-        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
-        text-decoration: none;
-        transition: 0.35s $cubic;
+        gap: toRem(8);
 
-        margin-bottom: toRem(16);
+        &-item {
+            &[open] {
+                .footer__wrap-name {
+                    margin-bottom: toRem(16);
+                    opacity: 1;
+                    transition: 0.35s $cubic;
+                }
 
-        &:active {
-            color: $white;
-            transition: 0.35s $cubic;
-        }
-    }
-
-    &__copyright {
-        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
-    }
-
-    &__top {
-        position: absolute;
-        width: toRem(138);
-        height: toRem(96);
-
-        top: toRem(24);
-        right: toRem(16);
-
-        @include flex-setting(column, center, center);
-        @include font-setting($primary-font, toRem(12), toRem(19), 500, $white);
-        text-decoration: none;
-        padding-top: toRem(32);
-
-        &::before {
-            position: absolute;
-            content: '';
-
-            width: toRem(138);
-            height: toRem(96);
-
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-image: url("data:image/svg+xml,%3Csvg width='138' height='96' viewBox='0 0 138 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M85.0152 2.43336C66.9775 1.03877 48.2498 -0.265017 31.3478 6.57174C14.4459 13.4085 -0.0990645 30.8701 1.77554 49.9663C2.83191 60.7728 8.9381 70.522 16.9677 77.2615C24.9974 84.0009 34.7246 88.0096 44.6166 90.7339C61.0362 95.2744 78.6098 96.4226 94.8889 91.3826C111.168 86.3426 125.994 74.5177 132.937 58.0485C136.478 49.655 137.822 39.7371 134.427 31.2788C130.195 20.7771 119.381 14.6344 108.707 13.3242C98.0336 12.0139 87.3355 14.7058 76.8695 17.3653' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            transition: 0.35s $cubic;
+                .footer__wrap-arr {
+                    transform: rotate(180deg);
+                    transition: 0.35s $cubic;
+                }
+            }
         }
 
-        &::after {
-            position: absolute;
-            content: '';
+        &-name {
+            width: auto;
+            @include flex-setting(row, flex-start, center);
+            @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+            letter-spacing: 0.01em;
+            padding: 0;
 
+            text-decoration: none;
+            opacity: 0.6;
+            transition: 0.35s $cubic;
+
+            span:first-of-type {
+                padding: toRem(3) 0;
+            }
+
+            &::-webkit-details-marker,
+            &::marker {
+                display: none;
+            }
+        }
+
+        &-arr {
+            display: block;
             width: toRem(24);
             height: toRem(24);
-
+            transition: 0.35s $cubic;
             background-position: 50% 50%;
             background-repeat: no-repeat;
-            background-size: contain;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.52938 0.467717C6.23648 0.174824 5.76161 0.174824 5.46872 0.467717L0.467717 5.46872C0.174824 5.76161 0.174824 6.23648 0.467717 6.52938C0.76061 6.82227 1.23548 6.82227 1.52838 6.52938L5.25 2.80775V14.999C5.25 15.4132 5.58579 15.749 6 15.749C6.41421 15.749 6.75 15.4132 6.75 14.999V2.80966L10.4697 6.52938C10.7626 6.82227 11.2375 6.82227 11.5304 6.52938C11.8233 6.23648 11.8233 5.76161 11.5304 5.46872L6.52938 0.467717Z' fill='white'/%3E%3C/svg%3E");
-
-            top: toRem(24);
-            left: 50%;
-            transform: translateX(-50%);
-            transition: 0.35s $cubic;
+            background-size: toRem(10) toRem(6);
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.46967 0.46967C0.762563 0.176777 1.23744 0.176777 1.53033 0.46967L5 3.93934L8.46967 0.46967C8.76256 0.176777 9.23744 0.176777 9.53033 0.46967C9.82322 0.762563 9.82322 1.23744 9.53033 1.53033L5.53033 5.53033C5.23744 5.82322 4.76256 5.82322 4.46967 5.53033L0.46967 1.53033C0.176777 1.23744 0.176777 0.762563 0.46967 0.46967Z' fill='white'/%3E%3C/svg%3E");
         }
 
-        &:active {
-            &::before {
-                transform: translate(-50%, -50%) scale(1.16);
-                transition: 0.35s $cubic;
-            }
-            &::after {
-                top: toRem(12);
-                transition: 0.35s $cubic;
-            }
-        }
-    }
-}
-
-@include min-screen(768px) {
-    .footer {
-        padding: toRem(72) toRem(40) toRem(40) toRem(40);
-        background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%);
-
-        &__wrapper {
-            display: grid;
-            grid-template-areas:
-                'logo join ...'
-                'list list list'
-                'legal legal legal'
-            ;
-
-            grid-template-columns: 1fr 28.34302325581395% 1fr;
-            grid-row-gap: toRem(61);
-            justify-content: space-between;
-            align-items: start;
+        &-inner {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
         }
 
-        &__logo {
-            grid-area: logo;
-            width: toRem(172);
-            height: toRem(42);
-            margin-bottom: 0;
+        &-info,
+        &-nr {
+            @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+            letter-spacing: 0.01em;
+            text-align: left;
         }
 
-        &__contacts {
-            grid-area: list;
-            margin-bottom: 0;
-        }
-
-        &__title {
-            font-size: toRem(16);
-            line-height: toRem(23);
-            margin-bottom: toRem(24);
-        }
-
-        &__list {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        &__item {
-            width: fit-content;
-
-            margin-bottom: 0;
-
-            &:first-of-type {
-                max-width: toRem(252);
-            }
-        }
-
-        &__name {
-            font-size: toRem(20);
-            line-height: toRem(34);
+        &-info {
             margin-bottom: toRem(8);
         }
 
-        &__description {
-            font-size: toRem(16);
-            line-height: toRem(23);
-            margin-bottom: toRem(2);
-        }
+        &-list {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
 
-        &__join {
-            grid-area: join;
-            margin-bottom: toRem(0);
-
-            .footer__title {
+            .footer__wrap-info {
                 margin-bottom: 0;
-                text-align: center;
-                font-weight: 350;
-                opacity: 1;
+                min-width: toRem(48);
             }
 
-            &-link {
-                font-size: toRem(16);
-                line-height: toRem(23);
-            }
-        }
-
-        &__rules {
-            grid-area: legal;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &__link {
-            margin-bottom: 0;
-        }
-
-        &__top {
-            align-items: center;
-            justify-content: flex-end;
-
-            width: toRem(160);
-            height: toRem(106);
-
-            top: toRem(42);
-            right: toRem(42);
-
-            font-size: toRem(18);
-            line-height: toRem(28);
-
-            padding-bottom: toRem(22);
-
-            &::before {
-                background-image: url("data:image/svg+xml,%3Csvg width='163' height='108' viewBox='0 0 163 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100.204 2.73706C80.5786 1.29972 48.3099 -1.88881 25.3915 12.9248C5.4566 25.8099 -1.80023 44.8147 1.95375 61.2372C4.96325 74.4029 17.3558 90.6001 40.4538 98.4872C66.0788 107.237 97.1029 111.227 124.454 97.8622C147.61 86.5474 163.891 63.5497 160.704 41.7372C158.782 28.5826 146.128 17.2149 129.391 15.1122C116.954 13.5497 107.766 15.4872 90.3601 19.5497' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-                width: toRem(160);
-                height: toRem(106)
+            li {
+                width: 100%;
+                @include flex-setting(row, flex-start, center);
             }
         }
     }
-}
 
-@include min-screen(1024px) {
-    .footer {
-        padding-left: toRem(80);
-        padding-right: toRem(80);
-
-        &__wrapper {
-            grid-template-columns: 1fr 35.76388888888889% 1fr;
-            align-items: center;
-        }
-
-        &__list {
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
-
-        &__item {
-            &:first-of-type {
-                margin-right: toRem(105)
-            }
-        }
-
-        &__join {
-            @include flex-setting(column, center, center);
-        }
-
-        &__link {
-            font-size: toRem(16);
-            line-height: toRem(23);
-        }
-
-        &__copyright {
-            font-size: toRem(16);
-            line-height: toRem(23);
-        }
-
-        &__top {
-            right: toRem(80);
-        }
+    &__bottom {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        gap: toRem(12);
     }
-}
 
-@include min-screen(1440px) {
-    .footer {
-        --wrapWidth: calc(100% - 1220px);
-        padding-top: toRem(40);
-        padding-left: calc((var(--wrapWidth) / 2));
-        padding-right: calc((var(--wrapWidth) / 2));
-
-        &__wrapper {
-            grid-template-areas:
-                'logo join'
-                'list ...'
-                'legal legal'
-            ;
-            grid-template-columns: 62.29508196721311% 1fr;
-            grid-column-gap: toRem(124);
-            grid-row-gap: toRem(40);
-        }
-
-        &__contacts {
-            margin-bottom: toRem(64);
-        }
-
-        &__title {
-            font-size: toRem(18);
-            line-height: toRem(28);
-            opacity: 1;
-            white-space: nowrap;
-        }
-
-        &__item {
-            &:first-of-type {
-                max-width: toRem(280);
-                margin-right: toRem(134)
-            }
-        }
-
-        &__join {
-            &__title,
-            &-link {
-                font-size: toRem(18);
-                line-height: toRem(28);
-            }
-
-            &-link {
-                font-weight: 500;
-            }
-        }
-
-        &__link {
-            font-size: toRem(14);
-            line-height: toRem(22);
-
-            &:hover {
-                color: $white;
-                transition: 0.35s $cubic;
-            }
-        }
-
-        &__copyright {
-            font-size: toRem(14);
-            line-height: toRem(22);
-        }
-
-        &__top {
-            top: 50%;
-            transform: translateY(-50%);
-            right: calc((var(--wrapWidth) / 2));
-
-            &:hover {
-                &::before {
-                    transform: translate(-50%, -50%) scale(1.16);
-                    transition: 0.35s $cubic;
-                }
-
-                &::after {
-                    top: toRem(16);
-                    transition: 0.35s $cubic;
-                }
-            }
-        }
-    }
-}
-
-@include min-screen(1920px) {
-    .footer {
-        --wrapWidth: calc(100% - 1704px);
-
-        &__wrapper {
-            grid-template-areas:
-                'logo ... join'
-                '... list ...'
-                'legal legal legal'
-            ;
-            grid-template-columns: 14.67136150234742% 1fr 19.71830985915493%;
-            grid-column-gap: toRem(40);
-        }
-
-        &__contacts {
-            margin-bottom: toRem(24);
-        }
-
-        &__title {
-            font-size: toRem(18);
-            line-height: toRem(28);
-            opacity: 1;
-            white-space: nowrap;
-        }
-
-        &__item {
-            &:first-of-type {
-                max-width: toRem(320);
-                margin-right: toRem(112)
-            }
-        }
+    &__copyright,
+    &__policy,
+    &__info {
+        @include font-setting($primary-font, toRem(10), toRem(15), 350, rgba(255, 255, 255, 0.35));
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        cursor: pointer;
     }
 }

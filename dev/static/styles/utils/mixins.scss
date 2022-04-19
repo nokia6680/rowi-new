@@ -74,7 +74,7 @@ $units: 1px !default;
 
   position: relative;
 
-  padding-left: 1.25rem;
+  padding-left: toRem(34);
 }
 
 @mixin custom-checkbox {
@@ -82,12 +82,12 @@ $units: 1px !default;
   content: "";
   display: block;
 
-  width: 10px;
-  height: 10px;
+  width: toRem(22);
+  height: toRem(22);
   background-color: $white;
-  border: 1px solid $lightgray;
-
-  top: 0.25rem;
+  border: toRem(2) solid $dark;
+  border-radius: toRem(5);
+  top: 0;
   left: 0;
 }
 
@@ -96,15 +96,17 @@ $units: 1px !default;
   content: "";
   display: block;
 
-  width: 10px;
-  height: 10px;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%2392C64E'/%3E%3C/svg%3E");
-  background-size: 6px 6px;
+  width: toRem(22);
+  height: toRem(22);
+  background-color: $dark;
+  border: toRem(2) solid $dark;;
+  border-radius: toRem(5);
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='11' viewBox='0 0 13 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7464 0.627939C11.0788 0.266157 11.6248 0.199467 12.0346 0.470599L12.1239 0.529727C12.6006 0.84517 12.7164 1.49532 12.3779 1.95591L6.03022 10.5922C5.84179 10.8486 5.54261 11 5.22445 11H4.55129C4.238 11 3.94282 10.8532 3.7538 10.6033L0.560302 6.38223C0.244377 5.96464 0.304077 5.37406 0.697181 5.02815L1.01565 4.74792C1.3935 4.41543 1.95959 4.41558 2.33726 4.74828L4.15741 6.35165C4.5657 6.71131 5.18661 6.67853 5.55476 6.27788L10.7464 0.627939Z' fill='white'/%3E%3C/svg%3E");
+  background-size: toRem(13) toRem(11);
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
-  top: 0.25rem;
+  top: 0;
   left: 0;
 }
 

@@ -1,7 +1,7 @@
 section.callback
-    h2.callback__title Оставьте заявку на любой продукт и получите решение
+    h2.callback__title.section-title Оставьте заявку на&nbsp;любой продукт и&nbsp;получите решение 
         span сегодня
-    p.callback__description Укажите телефон и продукт для заявки или консультации
+    p.callback__description Укажите телефон и продукт для&nbsp;заявки или консультации
     
     form(method="post" action="#" name="callback-form").callback__form
         ul.callback__list
@@ -18,7 +18,7 @@ section.callback
                 input(type="checkbox" name="sellers" value="sellers" id="sellers").callback__checkbox
                 label(for="sellers").callback__label Финансирование селлеров 
         .callback__nr
-            input(type="text" name="tel" id="tel" placeholder="+7 (___) ___-__-__" onkeydown="validationTel()" required).callback__input
+            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input
             span.callback__error
             
         button(type="submit").callback__submit Отправить заявку

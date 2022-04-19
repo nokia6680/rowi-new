@@ -1,12 +1,12 @@
--var listF = [{name:'Главная', link:'index.html'}, {name:'О нас', link:'about.html'}, {name:'Блог', link:'blog.html'}, {name:'Карьера', link:'careers.html'}, {name:'Стать агентом', link:'join.html'}]
--var listS = [{name:'Факторинг Плюс', link:'factoring.html'}, {name:'Гарантии', link:'warranty.html'}, {name:'Кредит на госконтракты', link:'credits.html'}, {name:'Для селлеров', link:'sellers.html'}]
+-var listF = [{name:'Главная', link:'index.html', type: 'active'}, {name:'О нас', link:'about.html', type: ''}, {name:'Блог', link:'blog.html', type: ''}, {name:'Карьера', link:'careers.html', type: ''}, {name:'Стать агентом', link:'join.html', type: ''}]
+-var listS = [{name:'Факторинг Плюс', link:'factoring.html', type: ''}, {name:'Гарантии', link:'warranty.html', type: ''}, {name:'Кредит на госконтракты', link:'credits.html', type: ''}, {name:'Для селлеров', link:'sellers.html', type: ''}]
 
 footer.footer
     .footer__upper
         
         .footer__block
             a(href="index.html" target="_self").footer__logo
-                img(src="static/images/content/rowi-white.svg" width="81" height="32" alt="ROWI logo").footer__logo-img
+                img(src="static/images/content/logo-footer.svg" width="81" height="32" alt="ROWI logo").footer__logo-img
             ul.footer__social
                 li.footer__social-item
                     a(href="#" target="_blank" title="VK").footer__social-link
@@ -19,12 +19,67 @@ footer.footer
             ul.footer__list
                 for i in listF
                     li.footer__item
-                        a(href="" +i.link target="_self").footer__link=i.name
+                        a(href="" +i.link target="_self" data-active="" +i.type).footer__link=i.name
         .footer__block
             ul.footer__list
                 for i in listS
                     li.footer__item
-                        a(href="" +i.link target="_self").footer__link=i.name
+                        a(href="" +i.link target="_self" data-active="" +i.type).footer__link=i.name
+                        
+        .footer__block
+            .footer__callback
+                a(href="+78005514616" target="_self").footer__callback-link +7 (800) 551 46 16
+                button(type="button").footer__callback-btn Заказать звонок
+                
+            .footer__wrap
+                details.footer__wrap-item
+                    summary.footer__wrap-name 
+                        span ООО «РОВИ Факторинг Плюс»
+                        span.footer__wrap-arr
+                    .footer__wrap-inner
+                        span.footer__wrap-info 109028, г. Москва, Серебряническая набережная, д.29, 4 эт, пом. III, ком. № 51
+                        span.footer__wrap-info 410012, г. Саратов, ул. Вавилова, д.28/34 БЦ «Атлант»; ул. Вавилова, д.38/114 БЦ «Ковчег»
+                        
+                        ul.footer__wrap-list
+                            li
+                                span.footer__wrap-info ИНН:
+                                span.footer__wrap-nr 5010053018
+                            li
+                                span.footer__wrap-info КПП:
+                                span.footer__wrap-nr 770901001
+                            li
+                                span.footer__wrap-info ОГРН:
+                                span.footer__wrap-nr 1175007004150
+                            li
+                                span.footer__wrap-info Р/С:
+                                span.footer__wrap-nr 40702810900000005083
+                            li
+                                span.footer__wrap-info К/С:
+                                span.footer__wrap-nr 30101810645250000416
+                details.footer__wrap-item
+                    summary.footer__wrap-name 
+                        span КИВИ Банк (АО)
+                        span.footer__wrap-arr
+                    .footer__wrap-inner
+                        span.footer__wrap-info Лицензия ЦБ РФ № 2241
+                        span.footer__wrap-info 117648, г. Москва, мкр. Чертаново Северное, д. 1А, корп. 1
+                                        
+                        ul.footer__wrap-list
+                            li
+                                span.footer__wrap-info БИК:
+                                span.footer__wrap-nr 044525416
+                            li
+                                span.footer__wrap-info ИНН:
+                                span.footer__wrap-nr 3123011520
+                            li
+                                span.footer__wrap-info КПП:
+                                span.footer__wrap-nr 772601001
+                            li
+                                span.footer__wrap-info ОГРН:
+                                span.footer__wrap-nr 1027739328440
+                            li
+                                span.footer__wrap-info К/С:
+                                span.footer__wrap-nr 30101810645250000416
     .footer__bottom
         span.footer__copyright © 2022, ООО «РОВИ Факторинг ПЛЮС»
         a(href="#" target="_self").footer__policy Политика обработки персональных данных

@@ -1,0 +1,88 @@
+.faq {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(48) toRem(16) toRem(56) toRem(16);
+    margin-bottom: 0;
+
+    background-color: $lightblue;
+
+    &__title {
+        margin-bottom: toRem(16);
+        align-self: flex-start;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        gap: toRem(6);
+    }
+
+    &__wrap {
+        width: 100%;
+        padding: toRem(12) 0;
+        border-bottom: toRem(1) solid $dark;
+    }
+
+    &__item {
+        width: 100%;
+        transition: 0.35s $cubic;
+        
+        &[open] {
+            transition: 0.35s $cubic;
+
+            .faq__name {
+                margin-bottom: toRem(8);
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='1' viewBox='0 0 12 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='1' rx='0.5' fill='%2314004B'/%3E%3C/svg%3E");
+                    background-size: toRem(12) toRem(1);
+                }
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+        @include font-setting($primary-font, toRem(18), toRem(22), 500, $dark);
+        text-align: left;
+        padding-right: toRem(40);
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            top: 0;
+            right: 0;
+
+            width: toRem(24);
+            height: toRem(24);
+
+            border: toRem(1.5) solid $dark;
+            border-radius: toRem(30);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: toRem(13) toRem(13);
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.00586 0C6.31652 0 6.56836 0.27296 6.56836 0.609673V5.89347L11.4375 5.8935C11.7482 5.8935 12 6.16647 12 6.50318C12 6.83989 11.7482 7.11285 11.4375 7.11285L6.56836 7.11282V12.3903C6.56836 12.727 6.31652 13 6.00586 13C5.6952 13 5.44336 12.727 5.44336 12.3903V7.11281L0.562497 7.11279C0.251837 7.11278 -1.65402e-06 6.83982 0 6.50311C1.65404e-06 6.1664 0.251843 5.89344 0.562503 5.89344L5.44336 5.89347V0.609673C5.44336 0.27296 5.6952 0 6.00586 0Z' fill='%2314004B'/%3E%3C/svg%3E%0A");
+        }
+
+        &::-webkit-details-marker,
+        &::marker {
+            display: none;
+        }
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(20), 350, $dark);
+        text-align: left;
+        max-width: 88.33819241982507%;
+    }
+}

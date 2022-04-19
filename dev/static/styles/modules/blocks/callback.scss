@@ -1,0 +1,109 @@
+.callback {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(48) toRem(16);
+    margin-bottom: toRem(48);
+
+    &__title {
+        margin-bottom: toRem(24);
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(16), toRem(22), 400, $dark);
+        text-align: left;
+        margin-bottom: toRem(40);
+    }
+
+    &__form {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__list {
+        width: 100%;
+        gap: toRem(24);
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: toRem(48);
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__label {
+        @include font-setting($primary-font, toRem(16), toRem(21), 400, $dark);
+        letter-spacing: 0.01em;
+    }
+
+    &__checkbox + label {
+        @include checkbox-default;
+    }
+
+    &__checkbox + label::before {
+        @include custom-checkbox;
+    }
+
+    &__checkbox:checked + label::after {
+        @include checkbox-checked;
+    }
+
+    &__nr {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        margin-bottom: toRem(48);
+    }
+
+    &__input {
+        width: 100%;
+        background-color: transparent;
+        padding-bottom: toRem(18);
+        border: none;
+        border-bottom: toRem(1) solid $dark;
+
+        @include font-setting($primary-font, toRem(16), toRem(22), 400, $dark);
+
+        cursor: text;
+
+        &::-webkit-input-placeholder {
+          color: $dark;
+        }
+        &::-moz-placeholder {
+          color: $dark;
+        }
+        &:-ms-input-placeholder {
+          color: $dark;
+        }
+        &:-moz-placeholder {
+          color: $dark;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(18), toRem(22), 500, $white);
+        letter-spacing: 0.02em;
+        background-color: $blue;
+        border: none;
+        border-radius: toRem(6);
+
+        padding: toRem(17) 0;
+
+        cursor: pointer;
+        outline: none;
+    }
+}
