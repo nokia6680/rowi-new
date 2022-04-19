@@ -1,0 +1,78 @@
+$colors: $fea1, $fea2, $fea3;
+$repeats1: 9;
+$repeats2: 12;
+$repeats3: 6;
+
+.clients {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding-top: toRem(48);
+    padding-bottom: toRem(48);
+
+    &__title {
+        margin-bottom: toRem(40);
+        padding-left: toRem(16);
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        display: none;
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        gap: toRem(20);
+    }
+
+    &__line {
+        width: 100%;
+
+        &--one {
+            @for $i from 1 through $repeats1 {
+                li:nth-child(#{length($colors)}n+#{$i}) {
+                    background-color: nth($colors, random(length($colors)));
+                }
+            }
+        }
+
+        &--two {
+            @for $i from 1 through $repeats2 {
+                li:nth-child(#{length($colors)}n+#{$i}) {
+                    background-color: nth($colors, random(length($colors)));
+                }
+            }
+        }
+
+        &--three {
+            @for $i from 1 through $repeats3 {
+                li:nth-child(#{length($colors)}n+#{$i}) {
+                    background-color: nth($colors, random(length($colors)));
+                }
+            }
+        }
+
+        &-wrap {
+            width: auto;
+            @include flex-setting(row, flex-start, center);
+            gap: toRem(16);
+        }
+
+        &-item {
+            width: auto;
+            @include flex-setting(column, center, center);
+            padding: toRem(11) toRem(16);
+            border-radius: toRem(40);
+        }
+
+        &-text {
+            white-space: nowrap;
+        }
+    }
+}

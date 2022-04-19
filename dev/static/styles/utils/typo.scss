@@ -1,0 +1,14 @@
+.title {
+    @include font-setting($primary-font, toRem(28), toRem(32), 500, $dark);
+    text-align: left;
+}
+
+.section-title {
+    @include font-setting($primary-font, toRem(26), toRem(32), 500, $dark);
+    text-align: left;
+}
+
+.small-title {
+    @include font-setting($primary-font, toRem(14), toRem(17), 500, $dark);
+    text-align: left;
+}

@@ -5,6 +5,7 @@
 @import "utils/sprite";
 @import "utils/animations";
 @import "utils/fluid-font";
+@import "utils/typo";
 //@include sprites($spritesheet-sprites);
 :root {
     --vh: 1vh;
@@ -102,7 +103,7 @@ select {
 
 .body {
     width: 100%;
-    
+
     &.no-scroll {
         overflow: hidden;
     }
