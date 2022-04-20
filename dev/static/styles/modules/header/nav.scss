@@ -1,53 +1,43 @@
 .nav {
-    position: absolute;
+    &--mobile {
+        width: 100%;
 
-    top: toRem(58);
-    left: 0;
-    right: 0;
+        position: absolute;
 
-    @include flex-setting(column, space-between, flex-start);
-
-    width: 100%;
-    height: calc(100vh - 58px);
-    overflow: hidden;
-
-    padding: 0 toRem(48) 0 toRem(16);
-
-    background-color: $white;
-
-    z-index: 2;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.2222s $cubic 0.5555s;
-
-    &.hidden {
+        width: 100%;
+        height: calc((var(--vh, 1vh) * 100) - 56px);
         overflow: hidden;
-    }
 
-    &.opened {
-        height: calc(100vh - 58px);
-        transform: scaleY(1);
+        top: toRem(58);
+        left: 0;
+        @include flex-setting(column, flex-start, center);
+
+        background-color: $white;
+
+        z-index: 10;
+
+        transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.2222s $cubic;
-        padding-bottom: toRem(26);
+        transition: transform 0.35s $cubic 0.8s;
 
-        .nav__item {
-            pointer-events: auto;
-            will-change: transform;
-            opacity: 1;
+        &.opened {
+            height: calc((var(--vh, 1vh) * 100) - 56px);
+            transform: scaleY(1);
+            transform-origin: top;
+            transition: transform 0.2222s $cubic;
 
-            @for $i from 1 through $menuItems {
-                &:nth-child(#{$i}) {
-                    transition-delay: #{0.06 * $i+0.2}s;
-                }
+            .nav__list {
+                animation: fadeInLeft 0.35s $cubic forwards 0.35s;
+            }
+
+            .nav__contacts {
+                animation: fadeInRight 0.35s $cubic forwards 0.55s;
             }
         }
+    }
 
-        .nav__jobs {
-            pointer-events: auto;
-            opacity: 1;
-            transition-delay: 0.55s;
-        }
+    &--desktop {
+        display: none;
     }
 
     &__list {
@@ -55,224 +45,186 @@
 
         @include flex-setting(column, flex-start, flex-start);
 
-        padding: toRem(40) 0 0 0;
-        margin-bottom: auto;
-    }
-
-    &__item {
-        width: 100%;
-        @include flex-setting(row, flex-start, center);
-
-        padding: toRem(12) 0;
-        margin-bottom: toRem(32);
-
+        padding: 0 toRem(16);
+        margin-bottom: toRem(48);
         opacity: 0;
-        transition: opacity 0.222s $cubic;
+        animation: fadeOutRight 0.35s $cubic backwards 0.55s;
 
-        @for $i from 1 through $menuItems {
-            &:nth-child(#{$i}) {
-                transition-delay: #{0.56 - ($i * 0.07)}s;
-            }
-        }
+        &-item {
+            width: 100%;
 
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
+            &[open] {
+                .nav__list-name {
+                    margin-bottom: toRem(16);
+                }
 
-    &__link {
-        @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
-        text-align: left;
-        text-decoration: none;
-        letter-spacing: -0.015em;
-    }
-
-    &__jobs {
-        @include flex-setting(column, flex-start, center);
-        text-decoration: none;
-        align-self: center;
-        margin-top: auto;
-        margin-bottom: toRem(26);
-
-        opacity: 0;
-        transition: opacity 0.6s $cubic;
-
-        span {
-            @include font-setting($primary-font, toRem(28), toRem(39), 350, $blue);
-            padding: toRem(12) 0;
-            letter-spacing: -0.015em;
-        }
-
-        &-underline-tb,
-        &-underline-1440 {
-            display: none;
-        }
-    }
-}
-
-@include min-screen(768px) {
-    .nav {
-        top: toRem(98);
-        padding: 0;
-
-        &.opened {
-            height: calc(100vh - 98px);
-        }
-
-        &__list {
-            align-items: center;
-            padding-top: toRem(80);
-            margin-bottom: toRem(102);
-        }
-
-        &__item {
-            flex-direction: column;
-            justify-content: center;
-            margin-bottom: toRem(64);
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-
-        &__link {
-            font-size: toRem(32);
-            line-height: toRem(58);
-            text-align: center;
-        }
-
-        &__jobs {
-            margin-bottom: toRem(74);
-            margin-top: 0;
-
-            span {
-                font-size: toRem(32);
-                line-height: toRem(58);
-            }
-
-            &-underline-mobile {
-                display: none;
-            }
-
-            &-underline-tb {
-                display: block;
-            }
-        }
-    }
-}
-
-@include min-screen(1024px) {
-    .nav {
-        padding: 0 toRem(80);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        &__list {
-            align-items: flex-start;
-            padding-top: toRem(40);
-            margin-bottom: toRem(0);
-        }
-
-        &__item {
-            align-items: flex-start;
-            margin-bottom: toRem(40);
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-
-        &__link {
-            text-align: left;
-        }
-
-        &__jobs {
-            margin-top: auto;
-            margin-bottom: toRem(158);
-        }
-    }
-}
-
-@include min-screen(1440px) {
-    .nav {
-        width: auto;
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        max-height: 100%;
-        height: auto;
-        overflow: visible;
-        background-color: transparent;
-        padding: 0;
-        transform: none;
-
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        transition: none;
-
-        &__list {
-            width: auto;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: toRem(0);
-            gap: toRem(24);
-        }
-
-        &__item {
-            width: auto;
-            opacity: 1;
-            pointer-events: auto;
-            transform: scale(1) translateY(0px);
-            will-change: transform;
-            align-items: flex-start;
-            margin-bottom: 0;
-
-            padding: toRem(20) toRem(40);
-
-            @for $i from 1 through $menuItems {
-                &:nth-child(#{$i}) {
-                    transition-delay: #{0.06 * $i+0.2}s;
+                .nav__list-arr {
+                    transform: rotate(180deg);
+                    transition: 0.35s $cubic;
                 }
             }
-
-            &:first-of-type {
-                display: none;
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-
-            @include gapFallback(toRem(24));
         }
 
-        &__link {
-            text-align: center;
-            font-size: toRem(14);
-            line-height: toRem(22);
-            font-family: $primary-font;
-            letter-spacing: -0.02em;
+        &-name {
+            width: 100%;
+            @include flex-setting(row, flex-start, center);
+            @include font-setting($primary-font, toRem(18), toRem(22), 500, $dark);
+            padding: toRem(16) 0;
+            border-bottom: toRem(1) solid #e3e3e3;
+            text-decoration: none;
+
+            &::-webkit-details-marker,
+            &::marker {
+                display: none;
+            }
+        }
+
+        &-arr {
+            display: block;
+            width: toRem(24);
+            height: toRem(24);
+            transition: 0.35s $cubic;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: toRem(10) toRem(6);
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.46967 0.46967C0.762563 0.176777 1.23744 0.176777 1.53033 0.46967L5 3.93934L8.46967 0.46967C8.76256 0.176777 9.23744 0.176777 9.53033 0.46967C9.82322 0.762563 9.82322 1.23744 9.53033 1.53033L5.53033 5.53033C5.23744 5.82322 4.76256 5.82322 4.46967 5.53033L0.46967 1.53033C0.176777 1.23744 0.176777 0.762563 0.46967 0.46967Z' fill='%2314004B'/%3E%3C/svg%3E");
+        }
+
+        &-inner {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
+            gap: toRem(16);
+            padding-bottom: toRem(16);
+            border-bottom: toRem(1) solid #e3e3e3;
+        }
+
+        &-link {
+            @include font-setting($primary-font, toRem(16), toRem(22), 400, $dark);
+            text-decoration: none;
             transition: 0.35s $cubic;
 
-            &:hover,
             &:active {
                 color: $blue;
                 transition: 0.35s $cubic;
             }
+        }
+    }
 
-            &:disabled {
-                opacity: 0.24;
-                pointer-events: none;
+    &__contacts {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        padding: 0 toRem(16);
+        opacity: 0;
+        animation: fadeOutLeft 0.35s $cubic backwards 0.35s;
+
+        &-link {
+            @include font-setting($primary-font, toRem(14), toRem(17), 500, $dark);
+            text-decoration: none;
+            outline: none;
+            background-color: transparent;
+            border: none;
+
+            padding: 0;
+
+            &:first-of-type {
+                margin-bottom: toRem(4);
+            }
+
+            &:last-of-type {
+                margin-bottom: toRem(24);
             }
         }
 
-        &__jobs {
+        &-btn {
+            width: auto;
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, toRem(15), toRem(18), 500, $dark);
+            text-decoration: none;
+            background-color: white;
+            border: toRem(2) solid $dark;
+            border-radius: toRem(6);
+
+            padding: toRem(13) toRem(30);
+
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .nav {
+        &--mobile {
             display: none;
+        }
+        &--desktop {
+            width: 100%;
+            @include flex-setting(row, flex-start, center);
+        }
+
+        &__list {
+            width: auto;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: toRem(40);
+
+            padding: 0;
+            margin-bottom: 0;
+            opacity: 1;
+            animation: none;
+
+            &-item {
+                width: 100%;
+            }
+
+            &-link {
+                white-space: nowrap;
+                font-size: toRem(15);
+                line-height: toRem(18);
+                letter-spacing: 0.02em;
+
+                &:hover,
+                &:focus {
+                    color: $blue;
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+
+        &__contacts {
+            width: auto;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            padding: 0;
+            opacity: 1;
+            animation: none;
+
+            margin-right: 0;
+            margin-left: auto;
+
+            &-wrap {
+                @include flex-setting(column, center, center);
+                margin-right: toRem(48);
+            }
+
+            &-link {
+                font-size: toRem(15);
+                line-height: toRem(18);
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-btn {
+                font-size: toRem(18);
+                line-height: toRem(22);
+                padding: toRem(15) toRem(22);
+            }
         }
     }
 }

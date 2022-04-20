@@ -1,3 +1,56 @@
 -var navLinks = [{link: '#jobs', name: 'Что там по вакансиям?'}, {link: '#stack', name: 'Стек'}, {link: '#how', name: 'Как мы работаем'}, {link: '#about', name: 'О нас'}]
 
 header.header
+    .header__upper
+        .header__logo
+            a(href="index.html" target="_self").header__logo-link
+                img(src="static/images/content/logo-header.svg" width="81" height="32" alt="ROWI").header__logo-img
+        nav.header__nav.nav.nav--mobile
+            .nav__list
+                details.nav__list-item
+                    summary.nav__list-name 
+                        span Продукты
+                        span.nav__list-arr
+                    .nav__list-inner
+                        a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
+                        a(href="warranty.html" target="_self").nav__list-link Гарантии
+                        a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
+                        a(href="sellers.html" target="_self").nav__list-link Для селлеров
+                details.nav__list-item
+                    summary.nav__list-name 
+                        span О нас
+                        span.nav__list-arr
+                    .nav__list-inner
+                        a(href="about.html" target="_self").nav__list-link О компании
+                        a(href="careers.html" target="_self").nav__list-link Карьера
+                        a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
+                .nav__list-item
+                    a(href="blog.html" target="_self").nav__list-name Блог
+            .nav__contacts
+                a(href="tel:78005514323" target="_blank").nav__contacts-link +7 (800) 551 43 23
+                button(type="button").nav__contacts-link.js-callback-btn Заказать звонок
+                a(href="cabinet.html" target="_self").nav__contacts-btn Личный кабинет
+        nav.header__nav.nav.nav--desktop
+            ul.nav__list
+                li.nav__list-item
+                    a(href="#" target="_self").nav__list-link О нас
+                li.nav__list-item
+                    a(href="#" target="_self").nav__list-link Блог
+                li.nav__list-item
+                    a(href="#" target="_self").nav__list-link Карьера
+            .nav__contacts
+                .nav__contacts-wrap
+                    a(href="tel:+78005514323" target="_blank").nav__contacts-link +7 (800) 551 43 23
+                    button(type="button").nav__contacts-link.js-callback-btn Заказать звонок
+                a(href="cabinet.html" target="_self").nav__contacts-btn Личный кабинет
+        button(type="button").header__toggle
+    .header__bottom
+        ul.header__menu
+            li.header__menu-item
+                a(href="" target="_self").header__menu-link Факторинг Плюс
+            li.header__menu-item
+                a(href="" target="_self").header__menu-link Гарантии
+            li.header__menu-item
+                a(href="" target="_self").header__menu-link Кредит на госконтракты
+            li.header__menu-item
+                a(href="" target="_self").header__menu-link Для селлеров

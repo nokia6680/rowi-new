@@ -10,101 +10,26 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-var body = document.querySelector('.body');
-var header = document.querySelector('.header');
-var menuOpener = document.querySelector('.header__toggle');
-var menuList = document.querySelector('.nav');
-var controls = document.querySelector('.header__controls');
-
-if (menuOpener) {
-     menuOpener.addEventListener('click', function() {
-        event.preventDefault();
-        menuOpener.classList.toggle('opened');
-        menuList.classList.toggle('opened');
-        controls.classList.toggle('opened');
-        header.classList.toggle('opened');
-     });
-};
-
-
-var upperItem = document.getElementsByClassName('nav__link');
-var elNodes = document.querySelectorAll(".nav__link");
-
-for (var i = 0; i < upperItem.length; i++) {
-    var elem = upperItem[i];
-    elem.addEventListener("click", function() {
-        menuList.classList.remove('opened');
-        menuOpener.classList.remove('opened');
-        controls.classList.remove('opened');
-        header.classList.remove('opened');
+const sandwichToggle = function() {
+    // Выбираем элементы, которые нам нужны. В примере мы ищем элементы с классом "sandwich"
+    let sandwichElements = document.querySelectorAll('.header__toggle');
+    // Проходим циклом по всем эдементам и на каждый элемент вешаем слушателя, который по клику будет переключать класс
+    sandwichElements.forEach((item) => {
+        item.addEventListener('click', showSandwichTarget);
     });
-}
 
-function changeText() {
-    var x = document.getElementById("toggleText");
-    if (x.innerHTML === "Навигация") {
-        x.innerHTML = "Закрыть";
-    } else {
-        x.innerHTML = "Навигация";
-    }
-};
+    function showSandwichTarget() {
+        let navMenu = document.querySelector('.nav');
+        let navOverlay = document.querySelector('.header');
+        let targetId = this.getAttribute('data-target-id'),
+            targetClassToggle = this.getAttribute('data-target-class-toggle');
+        this.classList.toggle('is-active');
+        navMenu.classList.toggle('opened');
+        navOverlay.classList.toggle('opened');
 
-var jobItem = document.querySelector('.job');
-var jobs = document.getElementsByClassName('job__name');
-var elNodes = document.querySelectorAll(".job__name");
-
-for (var i = 0; i < jobs.length; i++) {
-  var elem = jobs[i];
-  elem.addEventListener("click", changeActiveClass);
-}
-
-function changeActiveClass(e) {
-  event.preventDefault();
-
-  for (var i = 0; i < jobs.length; i++) {
-    var elem = jobs[i];
-    elem.classList.remove('active');
-  }
-
-  e.target.classList.add('active');
-}
-
-var shares = document.getElementsByClassName('job__share');
-var elNodes = document.querySelectorAll(".job__share");
-var shareWrap = document.querySelector('.job__dropdown--mobile');
-var breakpoint = window.matchMedia('(max-width: 767px)');
-
-var breakpointChecker = function breakpointChecker() {
-  if (breakpoint.matches === true) {
-    for (var i = 0; i < shares.length; i++) {
-      var elem = shares[i];
-      elem.addEventListener("click", function () {
-        event.preventDefault();
-        shareWrap.classList.add("mobileActive");
-        var shareData = elem.getAttribute("data-value");
-        shareWrap.setAttribute("data-value", shareData);
-        body.classList.add("no-scroll");
-      });
-      $('.job__dropdown--mobile').on('click', function (event) {
-        if (!$(event.target).closest('.job__dropdown-wrap').length) {
-          $(this).removeClass('mobileActive');
-          $('.body').removeClass('no-scroll');
+        if (targetId && targetClassToggle) {
+            document.getElementById(targetId).classList.toggle(targetClassToggle);
         }
-      });
     }
-  } else {
-    for (var i = 0; i < shares.length; i++) {
-      var elem = shares[i];
-      body.classList.remove("no-scroll");
-      shareWrap.classList.remove("mobileActive");
-      elem.addEventListener("click", function () {
-        event.preventDefault();
-        this.classList.toggle("active");
-        body.classList.remove("no-scroll");
-      });
-    }
-  }
 };
-
-breakpoint.addListener(breakpointChecker);
-breakpointChecker();
+sandwichToggle();
