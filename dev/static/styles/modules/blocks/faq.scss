@@ -1,12 +1,15 @@
 .faq {
     width: 100%;
-
+    --width: calc(100% - 343px);
     @include flex-setting(column, flex-start, center);
 
-    padding: toRem(48) toRem(16) toRem(56) toRem(16);
-    margin-bottom: 0;
-
+    padding: toRem(48) calc(var(--width) / 2) toRem(56) calc(var(--width) / 2);
+    margin-bottom: toRem(48);
     background-color: $lightblue;
+
+    &--main {
+        margin-bottom: 0;
+    }
 
     &__title {
         margin-bottom: toRem(16);
@@ -27,13 +30,18 @@
     &__wrap {
         width: 100%;
         padding: toRem(12) 0;
-        border-bottom: toRem(1) solid $dark;
+        border-bottom: toRem(2) solid $dark;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
     }
 
     &__item {
         width: 100%;
         transition: 0.35s $cubic;
-        
+        outline: none;
+
         &[open] {
             transition: 0.35s $cubic;
 
@@ -41,8 +49,8 @@
                 margin-bottom: toRem(8);
 
                 &::after {
-                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='1' viewBox='0 0 12 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='1' rx='0.5' fill='%2314004B'/%3E%3C/svg%3E");
-                    background-size: toRem(12) toRem(1);
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='2' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='12' height='2' rx='1' fill='%2314004B'/%3E%3C/svg%3E");
+                    background-size: toRem(12) toRem(2);
                 }
             }
         }
@@ -54,6 +62,7 @@
         text-align: left;
         padding-right: toRem(40);
         position: relative;
+        outline: none;
 
         &::after {
             position: absolute;
@@ -65,13 +74,13 @@
             width: toRem(24);
             height: toRem(24);
 
-            border: toRem(1.5) solid $dark;
+            border: toRem(2) solid $dark;
             border-radius: toRem(30);
 
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: toRem(13) toRem(13);
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.00586 0C6.31652 0 6.56836 0.27296 6.56836 0.609673V5.89347L11.4375 5.8935C11.7482 5.8935 12 6.16647 12 6.50318C12 6.83989 11.7482 7.11285 11.4375 7.11285L6.56836 7.11282V12.3903C6.56836 12.727 6.31652 13 6.00586 13C5.6952 13 5.44336 12.727 5.44336 12.3903V7.11281L0.562497 7.11279C0.251837 7.11278 -1.65402e-06 6.83982 0 6.50311C1.65404e-06 6.1664 0.251843 5.89344 0.562503 5.89344L5.44336 5.89347V0.609673C5.44336 0.27296 5.6952 0 6.00586 0Z' fill='%2314004B'/%3E%3C/svg%3E%0A");
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.01172 0C7.45943 0 7.01172 0.447715 7.01172 1V7H1C0.447715 7 0 7.44772 0 8C0 8.55229 0.447715 9 1 9H7.01172V15C7.01172 15.5523 7.45943 16 8.01172 16C8.564 16 9.01172 15.5523 9.01172 15V9H15C15.5523 9 16 8.55228 16 8C16 7.44771 15.5523 7 15 7H9.01172V1C9.01172 0.447715 8.564 0 8.01172 0Z' fill='%2314004B'/%3E%3C/svg%3E%0A");
         }
 
         &::-webkit-details-marker,
@@ -81,8 +90,91 @@
     }
 
     &__description {
-        @include font-setting($primary-font, toRem(14), toRem(20), 350, $dark);
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
         text-align: left;
+        letter-spacing: 0.01em;
         max-width: 88.33819241982507%;
+
+        a {
+            text-decoration: none;
+            color: $blue;
+        }
+    }
+
+    &--warranty {
+        .faq__name {
+            padding-right: toRem(48);
+        }
+    }
+
+    &--credit {
+        .faq__name {
+            padding-right: toRem(42);
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .faq {
+        --width: calc(100% - 1032px);
+        margin-bottom: toRem(112);
+
+        &--main {
+            margin-bottom: 0;
+        }
+
+        &__list {
+            gap: toRem(8);
+        }
+
+        &__wrap {
+            padding: 0;
+            border-width: toRem(2);
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        &__item {
+            &[open] {
+                .faq__name {
+                    padding-bottom: toRem(16);
+                    margin-bottom: 0;
+
+                    &::after {
+                        background-size: toRem(16) toRem(2);
+                    }
+                }
+
+                .faq__description {
+                    padding-bottom: toRem(16);
+                }
+            }
+        }
+
+        &__name {
+            font-size: toRem(22);
+            line-height: toRem(29);
+            padding-right: toRem(64);
+            padding-top: toRem(32);
+            padding-bottom: toRem(35);
+            cursor: pointer;
+
+            &::after {
+                top: toRem(28);
+                width: toRem(32);
+                height: toRem(32);
+                background-size: toRem(16) toRem(16);
+            }
+        }
+
+        &__description {
+            font-size: toRem(18);
+            line-height: toRem(26);
+            max-width: 93.7984496124031%;
+            letter-spacing: 0.01em;
+            cursor: url('../images/content/pointer.svg'), auto;
+        }
     }
 }

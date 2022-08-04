@@ -1,56 +1,58 @@
--var navLinks = [{link: '#jobs', name: 'Что там по вакансиям?'}, {link: '#stack', name: 'Стек'}, {link: '#how', name: 'Как мы работаем'}, {link: '#about', name: 'О нас'}]
-
 header.header
-    .header__upper
-        .header__logo
-            a(href="index.html" target="_self").header__logo-link
-                img(src="static/images/content/logo-header.svg" width="81" height="32" alt="ROWI").header__logo-img
-        nav.header__nav.nav.nav--mobile
-            .nav__list
-                details.nav__list-item
-                    summary.nav__list-name 
-                        span Продукты
-                        span.nav__list-arr
-                    .nav__list-inner
-                        a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
-                        a(href="warranty.html" target="_self").nav__list-link Гарантии
-                        a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
-                        a(href="sellers.html" target="_self").nav__list-link Для селлеров
-                details.nav__list-item
-                    summary.nav__list-name 
-                        span О нас
-                        span.nav__list-arr
-                    .nav__list-inner
-                        a(href="about.html" target="_self").nav__list-link О компании
-                        a(href="careers.html" target="_self").nav__list-link Карьера
-                        a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
-                .nav__list-item
-                    a(href="blog.html" target="_self").nav__list-name Блог
-            .nav__contacts
-                a(href="tel:78005514323" target="_blank").nav__contacts-link +7 (800) 551 43 23
-                button(type="button").nav__contacts-link.js-callback-btn Заказать звонок
-                a(href="cabinet.html" target="_self").nav__contacts-btn Личный кабинет
-        nav.header__nav.nav.nav--desktop
-            ul.nav__list
-                li.nav__list-item
-                    a(href="#" target="_self").nav__list-link О нас
-                li.nav__list-item
-                    a(href="#" target="_self").nav__list-link Блог
-                li.nav__list-item
-                    a(href="#" target="_self").nav__list-link Карьера
-            .nav__contacts
-                .nav__contacts-wrap
-                    a(href="tel:+78005514323" target="_blank").nav__contacts-link +7 (800) 551 43 23
-                    button(type="button").nav__contacts-link.js-callback-btn Заказать звонок
-                a(href="cabinet.html" target="_self").nav__contacts-btn Личный кабинет
-        button(type="button").header__toggle
-    .header__bottom
-        ul.header__menu
-            li.header__menu-item
-                a(href="" target="_self").header__menu-link Факторинг Плюс
-            li.header__menu-item
-                a(href="" target="_self").header__menu-link Гарантии
-            li.header__menu-item
-                a(href="" target="_self").header__menu-link Кредит на госконтракты
-            li.header__menu-item
-                a(href="" target="_self").header__menu-link Для селлеров
+    .header__logo
+        a(href="index.html" target="_self").header__logo-link
+            img(src="static/images/content/logo-header.svg" width="" height="" alt="ROWI").header__logo-img
+                
+    nav.header__nav.nav
+        .nav__list.nav__list--mobile
+            .nav__list-item
+                .nav__list-name Продукты
+                .nav__list-inner
+                    a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
+                    a(href="warranty.html" target="_self").nav__list-link Гарантии
+                    a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
+                    a(href="sellers.html" target="_self").nav__list-link Для селлеров
+            .nav__list-item
+                .nav__list-name О нас
+                .nav__list-inner
+                    a(href="about.html" target="_self").nav__list-link О компании
+                    a(href="career.html" target="_self").nav__list-link Карьера
+                    a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
+                    a(href="blog.html" target="_self").nav__list-link Блог
+                    
+                    
+        .nav__list.nav__list--desktop
+            details.nav__list-item.details.detHead
+                summary.nav__list-name 
+                    span Продукты
+                    span.nav__list-arr
+                .nav__list-inner
+                    a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
+                    a(href="warranty.html" target="_self").nav__list-link Гарантии
+                    a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
+                    a(href="sellers.html" target="_self").nav__list-link Для селлеров
+            details.nav__list-item.details.detHead
+                summary.nav__list-name 
+                    span О нас
+                    span.nav__list-arr
+                .nav__list-inner
+                    a(href="about.html" target="_self").nav__list-link О компании
+                    a(href="career.html" target="_self").nav__list-link Карьера
+                    a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
+            .nav__list-item.nav__list-item--desktop
+                a(href="blog.html" target="_self").nav__list-name Блог
+        .nav__contacts
+            .nav__contacts-wrap
+                a(href="tel:74953748477" target="_blank").nav__contacts-link +7 (495) 374 84 77
+                button(type="button" data-modal="#js-popup-callback").nav__contacts-link.js-popup-opener Заказать звонок
+                
+            details.nav__contacts-btn 
+                summary.nav__contacts-name 
+                    span Личный кабинет
+                    span.nav__contacts-arr
+                ul.nav__contacts-inner
+                    li
+                        a(href="https://login.factoringplus.ru/Account/LoginFactoring?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DMy%2520Factoring%26redirect_uri%3Dhttps%253A%252F%252Fmy.factoringplus.ru%252Fcallback%252F%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520email%2520roles%26nonce%3D637345591262459094.OGM1NDY5MmYtkODJk" target="_blank") Факторинг
+                    li
+                        a(href="https://login.factoringplus.ru/Account/LoginGarant?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DGarantiiProd%26redirect_uri%3Dhttps%253A%252F%252Fmy.qiwigarant.com%252F%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520email%2520roles%26state%3DOpenIdConnect.AuthenticationProperties%253DH7-xu-yGmkF_zgRVBoFhGy-YRKuGMN6exttFCc_Trd1Bgmt9cXKvA0ag8nzKodN9Pd36hazgZID87TnIW-fdqjfzJ7csdM71RzAlYMap78G8zo0eV6-EkQzmWTtc90G2RgOF7IvoaHpD7gAK01k3Qlp-NMpsGAxPej1bZY8IoBaFBXNpxiHKy30mtkT_IV3lfM4jOA8H3sCF9T0KemPEzjobQ-4hCkwEObyydgHwwa4%26response_mode%3Dform_post%26nonce%3D637894187748483801.Y2NjMzAyNTQtNDRmZS00MjcyLTg5NTAtYzZmMWE4MmE5NmE4YmQ1OTBkMmItNGIxNy00YzgxLWE1OTEtZWFkZjdjYTJjM2Vm%26x-client-SKU%3DID_NET461%26x-client-ver%3D6.7.1.0" target="_blank") Банковские гарантии
+    button(type="button").header__toggle

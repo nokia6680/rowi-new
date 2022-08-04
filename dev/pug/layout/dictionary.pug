@@ -1,0 +1,51 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.3.8/dist/simplebar.css")
+        script(src="https://cdn.jsdelivr.net/npm/simplebar@5.3.8/dist/simplebar.min.js")
+    body.body
+        include ../modules/header/header
+        main.main
+            section.guide
+                include ../modules/blocks/filter
+
+                ul.guide__breadcrumbs.breadcrumbs
+                    +breadcrumbs-item('Гайд по факторингу','#')
+                    +breadcrumbs-item('Словарь')
+                .guide__body.guide__body--dictionary
+                    // Заголовок h1
+                    h1.guide__name Словарь терминов
+                    
+                    include ../modules/blocks/dictionary
+                .guide__nav
+                    a(href="guide-11.html" target="_self").guide__nav-link.guide__nav-link--prev 
+                        span.guide__nav-text.guide__nav-text--desktop Предыдущий раздел
+                        span.guide__nav-text.guide__nav-text--mobile Назад
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/guide.js")
+        block script

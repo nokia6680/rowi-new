@@ -1,0 +1,8 @@
+.popup-video
+    .popup-video__wrapper
+        button(type="button").popup-video__closer Закрыть видео
+        
+        .popup-video__player
+            video(playsinline).popup-video__content#introVideo
+                source(src="static/videos/about-video.mp4" type="video/mp4")
+                source(src="static/videos/about-video.webm" type="video/webm")

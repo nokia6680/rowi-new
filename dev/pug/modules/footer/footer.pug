@@ -1,4 +1,4 @@
--var listF = [{name:'Главная', link:'index.html', type: 'active'}, {name:'О нас', link:'about.html', type: ''}, {name:'Блог', link:'blog.html', type: ''}, {name:'Карьера', link:'careers.html', type: ''}, {name:'Стать агентом', link:'join.html', type: ''}]
+-var listF = [{name:'Главная', link:'index.html', type: 'active', modal:''}, {name:'О нас', link:'about.html', type: '', modal:''}, {name:'Блог', link:'blog.html', type: '', modal:''}, {name:'Гайд по факторингу', link:'guide.html', type: '', modal:''}, {name:'Карьера', link:'careers.html', type: '', modal:''}, {name:'Стать агентом', link:'', type: 'js-popup-opener', modal:'#js-popup-order'}]
 -var listS = [{name:'Факторинг Плюс', link:'factoring.html', type: ''}, {name:'Гарантии', link:'warranty.html', type: ''}, {name:'Кредит на госконтракты', link:'credits.html', type: ''}, {name:'Для селлеров', link:'sellers.html', type: ''}]
 
 footer.footer
@@ -9,17 +9,17 @@ footer.footer
                 img(src="static/images/content/logo-footer.svg" width="81" height="32" alt="ROWI logo").footer__logo-img
             ul.footer__social
                 li.footer__social-item
-                    a(href="#" target="_blank" title="VK").footer__social-link
+                    a(href="https://vk.com/rowi_com" target="_blank" title="VK").footer__social-link
                 li.footer__social-item
-                    a(href="#" target="_blank" title="Youtube").footer__social-link
+                    a(href="https://www.youtube.com/channel/UCiVr_W3t8tYOL_odJG8aJ-Q " target="_blank" title="Youtube").footer__social-link
                 li.footer__social-item
-                    a(href="#" target="_blank" title="Telegram").footer__social-link
+                    a(href="https://t.me/factoringplus" target="_blank" title="Telegram").footer__social-link
                     
         .footer__block
             ul.footer__list
                 for i in listF
                     li.footer__item
-                        a(href="" +i.link target="_self" data-active="" +i.type).footer__link=i.name
+                        a(href="" +i.link target="_self" data-active="" +i.type data-modal="" +i.modal class="footer__link " +i.type)=i.name
         .footer__block
             ul.footer__list
                 for i in listS
@@ -28,14 +28,14 @@ footer.footer
                         
         .footer__block
             .footer__callback
-                a(href="tel:78005514616" target="_self").footer__callback-link +7 (800) 551 46 16
-                button(type="button").footer__callback-btn Заказать звонок
-                
+                a(href="tel:74953748477" target="_self").footer__callback-link +7 (495) 374 84 77
+                button(type="button" data-modal="#js-popup-callback").footer__callback-btn.js-popup-opener Заказать звонок
+
             .footer__wrap
-                details.footer__wrap-item
+                details.footer__wrap-item.details
                     summary.footer__wrap-name 
                         span ООО «РОВИ Факторинг Плюс»
-                        span.footer__wrap-arr
+                            span.footer__wrap-arr
                     .footer__wrap-inner
                         span.footer__wrap-info 109028, г. Москва, Серебряническая набережная, д.29, 4 эт, пом. III, ком. № 51
                         span.footer__wrap-info 410012, г. Саратов, ул. Вавилова, д.28/34 БЦ «Атлант»; ул. Вавилова, д.38/114 БЦ «Ковчег»
@@ -56,10 +56,10 @@ footer.footer
                             li
                                 span.footer__wrap-info К/С:
                                 span.footer__wrap-nr 30101810645250000416
-                details.footer__wrap-item
+                details.footer__wrap-item.details
                     summary.footer__wrap-name 
                         span КИВИ Банк (АО)
-                        span.footer__wrap-arr
+                            span.footer__wrap-arr
                     .footer__wrap-inner
                         span.footer__wrap-info Лицензия ЦБ РФ № 2241
                         span.footer__wrap-info 117648, г. Москва, мкр. Чертаново Северное, д. 1А, корп. 1
@@ -80,6 +80,18 @@ footer.footer
                             li
                                 span.footer__wrap-info К/С:
                                 span.footer__wrap-nr 30101810645250000416
+                details.footer__wrap-item.details
+                    summary.footer__wrap-name
+                        span Документы
+                            span.footer__wrap-arr
+                    .footer__wrap-inner.footer__wrap-inner--docs
+                        ul.footer__wrap-list
+                            li
+                                a(href="https://rowi.com/documents/rowi-dkbo.pdf" target="_blank").footer__wrap-info Договор комплексного банковского обслуживания
+                            li
+                                a(href="https://rowi.com/documents/rowi-tarifs-org.pdf" target="_blank").footer__wrap-info Тарифы за расчетное обслуживание и другие услуги
+                            li
+                                a(href="https://rowi.com/documents/rowi-reserve.pdf" target="_blank").footer__wrap-info Условия резервирования счета в КИВИ Банк (АО)
     .footer__bottom
         span.footer__copyright © 2022, ООО «РОВИ Факторинг ПЛЮС»
         a(href="#" target="_self").footer__policy Политика обработки персональных данных

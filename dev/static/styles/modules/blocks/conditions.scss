@@ -1,0 +1,374 @@
+.conditions {
+    width: 100%;
+
+    --width: calc(100% - 343px);
+    padding: toRem(48) calc(var(--width) / 2) toRem(56) calc(var(--width) / 2);
+    margin-bottom: toRem(48);
+
+    background-color: #F0F3FE;
+    z-index: 0;
+
+    &.loaded {
+        .conditions__title {
+            animation: fadeInBottom 0.3s $cubic forwards 0s;
+        }
+
+        .conditions__description {
+            animation: fadeInBottom 0.3s $cubic forwards 0s;
+        }
+
+        .conditions__frame {
+            animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+        }
+
+        .conditions__block  {
+            animation: fadeInBottom 0.3s $cubic forwards 0.2s;
+        }
+
+        .conditions__details {
+            animation: fadeInBottom 0.3s $cubic forwards 0.3s;
+        }
+    }
+
+    &__title {
+        opacity: 0;
+        margin-bottom: toRem(40);
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        opacity: 0;
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+        text-align: left;
+        letter-spacing: 0.01em;
+
+        margin-bottom: toRem(56);
+    }
+
+    &__info {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__visual {
+        width: 100%;
+
+        position: relative;
+
+        margin-bottom: toRem(90);
+    }
+
+    &__frame {
+        opacity: 0;
+        width: toRem(268);
+        height: toRem(297);
+
+        @include flex-setting(column, center, center);
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: toRem(10);
+        }
+    }
+
+    &__block {
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        width: auto;
+        max-width: toRem(164);
+        bottom: toRem(-50);
+        right: 0;
+        box-shadow: 0 6px 15px 0 rgba(20, 0, 75, 0.12);
+        //
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //
+        //     width: 90%;
+        //     height: toRem(15);
+        //
+        //     bottom: toRem(-6);
+        //     left: toRem(12);
+        //     background: rgba(5, 23, 92, 0.2);
+        //     filter: blur(6.70313px);
+        //     transform: matrix(1, -0.1, 0.02, 1, 0, 0);
+        //
+        //     z-index: -10;
+        // }
+    }
+    &__shadow {
+        position: absolute;
+        width: 90%;
+        height: toRem(14);
+        bottom: toRem(-5);
+        left: toRem(12);
+        background-color: rgba(5, 23, 92, 0.2);
+        filter: blur(6px);
+        transform: matrix(1, -0.08, 0.02, 0.99, 0, 0);
+        z-index: -1;
+    }
+
+    &__name {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(22), toRem(26), 400, $dark);
+        text-align: left;
+        padding: toRem(46.5) toRem(12);
+        background-color: $pink;
+        z-index: 2;
+    }
+
+    &__details {
+        opacity: 0;
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__subtitle {
+        @include font-setting($primary-font, toRem(18), toRem(22), 500, $dark);
+        margin-bottom: toRem(24);
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        gap: toRem(8);
+        margin-bottom: toRem(56);
+
+        &--warranty {
+            .conditions__item {
+                padding-top: toRem(2);
+                padding-bottom: toRem(2);
+
+                &:last-of-type {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-left: toRem(32);
+
+        span {
+            @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+            letter-spacing: 0.01em;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(24);
+            height: toRem(24);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.2176 1.12573C23.5106 1.41852 23.5108 1.89339 23.218 2.18639L8.54094 16.8739C8.24823 17.1668 7.77353 17.1671 7.4805 16.8745L0.782583 10.187C0.489462 9.89433 0.489092 9.41945 0.781757 9.12633C1.07442 8.83321 1.5493 8.83284 1.84242 9.12551L8.00982 15.2833L22.157 1.12611C22.4498 0.833111 22.9246 0.832943 23.2176 1.12573Z' fill='%2314004B'/%3E%3C/svg%3E");
+            background-size: toRem(18) toRem(13);
+
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__link {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $white);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        background-color: $blue;
+        border: none;
+        border-radius: toRem(6);
+
+        padding: toRem(15) 0;
+
+        cursor: pointer;
+        outline: none;
+
+        transition: 0.35s $cubic;
+
+        &:active {
+            opacity: 0.8;
+            transition: 0.35s $cubic;
+        }
+    }
+
+    &--credit {
+        .conditions__title {
+            margin-bottom: toRem(56);
+        }
+    }
+
+    &--warranty {
+        .conditions__name {
+            background-color: $green;
+            color: $white;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .conditions {
+        --width: calc(100% - 1032px);
+        margin-bottom: toRem(112);
+        padding-bottom: toRem(103);
+
+        &.loaded {
+            .conditions__title {
+                animation: fadeInBottom 0.3s $cubic forwards 0s;
+            }
+
+            .conditions__description {
+                animation: fadeInBottom 0.3s $cubic forwards 0s;
+            }
+
+            .conditions__frame {
+                animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+            }
+
+            .conditions__block  {
+                animation: fadeInBottom 0.3s $cubic forwards 0.3s;
+            }
+
+            .conditions__details {
+                animation: fadeInBottom 0.3s $cubic forwards 0.2s;
+            }
+        }
+
+        &__description {
+            font-family: $primary-font;
+            font-size: toRem(18);
+            font-weight: 400;
+            line-height: toRem(23);
+            max-width: toRem(704);
+        }
+
+        &__info {
+            display: grid;
+            grid-template-columns: toRem(373) 1fr;
+            grid-column-gap: toRem(67);
+            justify-content: start;
+            align-items: start;
+        }
+
+        &__visual {
+            padding-left: toRem(64);
+            margin-bottom: 0;
+        }
+
+        &__frame {
+            width: toRem(309);
+            height: toRem(343);
+        }
+
+        &__block {
+            max-width: toRem(240);
+            bottom: toRem(-47);
+            right: auto;
+            left: 0;
+        }
+
+        &__name {
+            font-size: toRem(34);
+            line-height: toRem(41);
+            max-width: toRem(240);
+            padding: toRem(61) toRem(16);
+            background-color: $pink;
+        }
+
+        &__subtitle {
+            font-size: toRem(22);
+            line-height: toRem(29);
+            margin-bottom: toRem(40);
+        }
+
+        &__list {
+            gap: toRem(8);
+        }
+
+        &__item {
+            padding-top: toRem(3);
+            padding-bottom: toRem(3);
+            padding-left: toRem(48);
+
+            span {
+                font-size: toRem(18);
+                line-height: toRem(26);
+            }
+
+            &::before {
+                width: toRem(32);
+                height: toRem(32);
+                background-size: toRem(23) toRem(17);
+            }
+        }
+
+        &__link {
+            width: auto;
+            font-size: toRem(18);
+            line-height: toRem(22);
+            padding: toRem(17) toRem(24);
+            margin-left: toRem(48);
+
+            &:hover,
+            &:focus {
+                opacity: 0.8;
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &--warranty {
+            padding-bottom: toRem(58);
+
+            .conditions__description {
+                max-width: 100%;
+            }
+
+            .conditions__block {
+                bottom: toRem(-83);
+            }
+
+            .conditions__item {
+                padding-top: toRem(3);
+                padding-bottom: toRem(3);
+
+                span {
+                    max-width: toRem(392);
+                }
+            }
+
+            .conditions__name {
+                background-color: $green;
+            }
+        }
+
+        &--credit {
+            padding-bottom: toRem(103);
+
+            .conditions__item {
+                padding-top: toRem(3);
+                padding-bottom: toRem(3);
+
+                span {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
-section.callback
+section.callback#order
     h2.callback__title.section-title Оставьте заявку на&nbsp;любой продукт и&nbsp;получите решение 
         span сегодня
-    p.callback__description Укажите телефон и продукт для&nbsp;заявки или консультации
+    p.callback__description.callback__description--main Укажите телефон и продукт для&nbsp;заявки или консультации
     
     form(method="post" action="#" name="callback-form").callback__form
         ul.callback__list
@@ -18,7 +18,10 @@ section.callback
                 input(type="checkbox" name="sellers" value="sellers" id="sellers").callback__checkbox
                 label(for="sellers").callback__label Финансирование селлеров 
         .callback__nr
-            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input
-            span.callback__error
+            .callback__nr-field
+                input(type="tel" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                span.callback__error
             
-        button(type="submit").callback__submit Отправить заявку
+            button(type="submit").callback__submit Отправить заявку
+        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+            a(href="" target="_blank") обработку персональных данных

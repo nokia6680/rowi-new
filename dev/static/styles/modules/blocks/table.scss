@@ -1,0 +1,111 @@
+.table {
+    width: 100%;
+
+    thead {
+        @include flex-setting(column, center, center);
+        padding: toRem(8) toRem(8);
+        width: 100%;
+        border-bottom: toRem(1) solid $blue;
+
+        tr {
+            @include flex-setting(row, flex-start, flex-start);
+            gap: toRem(24);
+            width: 100%;
+            border-bottom: none;
+            padding: 0;
+        }
+    }
+
+    tbody {
+        width: 100%;
+    }
+
+    .table__row {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    tr {
+        @include flex-setting(row, flex-start, flex-start);
+        gap: toRem(24);
+        width: 100%;
+
+        padding: toRem(12.25) toRem(8);
+        border-bottom: toRem(1) solid $blue;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    &__head {
+        @include flex-setting(row, flex-start, flex-start);
+        @include font-setting($primary-font, toRem(14), toRem(32), 400, $dark);
+        min-width: toRem(130);
+        width: 100%;
+
+        &--first {
+            display: none;
+        }
+    }
+
+    &__cell {
+        width: 100%;
+        min-width: toRem(130);
+        @include font-setting($book-font, toRem(12), toRem(16), 400, $dark);
+
+        &--title {
+            width: 100%;
+            font-family: $primary-font;
+            font-size: toRem(12);
+            line-height: toRem(16);
+            font-weight: 500;
+        }
+
+        &--first {
+            display: none;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .table {
+        thead {
+            padding: toRem(12) toRem(8);
+
+            tr {
+                gap: toRem(24.5);
+            }
+        }
+
+        tr {
+            padding: toRem(12) toRem(8);
+        }
+
+        &__head {
+            line-height: toRem(20);
+            min-width: toRem(114);
+
+            &--first {
+                display: flex;
+            }
+        }
+
+        &__cell {
+            min-width: toRem(114);
+
+            &--title {
+                display: none;
+            }
+
+            &--first {
+                display: flex;
+            }
+        }
+
+        .table__row {
+            display: none;
+            padding: 0;
+        }
+    }
+}

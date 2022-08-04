@@ -1,0 +1,60 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            include ../modules/blocks/article
+            
+            section.callback.callback--blog
+                h2.callback__title.section-title Получайте письма с актуальными материалами. Быстро и по делу 
+                p.callback__description Укажите ваш email
+                
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="email" name="email" id="email" placeholder="Email" onkeydown="validationSubscribeMail()" required).callback__input
+                            span.callback__error.callback__error--subscribe
+                        
+                        button(type="submit").callback__submit Подписаться
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+                        
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/swiper.js")
+        script(src="static/js/share.js")
+        //script(src="static/js/tags-opener.js")
+        //script(src="static/js/svg.js")
+        script(src="static/js/article.js")
+        script(src="static/js/validate.js")
+        block script

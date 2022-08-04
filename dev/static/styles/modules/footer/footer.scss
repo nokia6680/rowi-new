@@ -2,9 +2,11 @@
     width: 100%;
 
     @include flex-setting(column, flex-start, center);
-
-    padding: toRem(24) toRem(16);
+    --width: calc(100% - 343px);
+    padding: toRem(24) calc(var(--width) / 2);;
     background-color: $dark;
+
+    overflow: hidden;
 
     &__upper {
         width: 100%;
@@ -52,6 +54,7 @@
 
             background-position: 50% 50%;
             background-repeat: no-repeat;
+            transition: 0.35s $cubic;
 
             &[title="VK"] {
                 background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.14952 1.14952C0.03125 2.26779 0.03125 4.06762 0.03125 7.66728V8.33128C0.03125 11.9309 0.03125 13.7308 1.14952 14.849C2.26779 15.9673 4.06762 15.9673 7.66728 15.9673H8.33128C11.9309 15.9673 13.7308 15.9673 14.849 14.849C15.9673 13.7308 15.9673 11.9309 15.9673 8.33128V7.66728C15.9673 4.06762 15.9673 2.26779 14.849 1.14952C13.7308 0.03125 11.9309 0.03125 8.33128 0.03125H7.66728C4.06762 0.03125 2.26779 0.03125 1.14952 1.14952ZM3.1846 5.01125H4.34687C4.64392 5.01125 4.75567 5.14122 4.86705 5.463C5.43551 7.11849 6.39396 8.56529 6.78798 8.56529C6.93572 8.56529 7.00351 8.49726 7.00351 8.1221V6.4109C6.97683 5.92381 6.80663 5.71316 6.68057 5.55714C6.60272 5.46079 6.5417 5.38527 6.5417 5.27834C6.5417 5.14836 6.65279 5.01125 6.83745 5.01125H8.66389C8.9102 5.01125 8.99595 5.14292 8.99595 5.4384V7.74046C8.99595 7.98664 9.10289 8.07283 9.17676 8.07283C9.32454 8.07283 9.44767 7.98664 9.71859 7.71583C10.5559 6.78022 11.1469 5.33986 11.1469 5.33986C11.2208 5.16755 11.3571 5.01125 11.6526 5.01125H12.8149C13.1664 5.01125 13.2402 5.19215 13.1664 5.4384C13.0186 6.11545 11.6025 8.10978 11.6025 8.10978C11.4794 8.30672 11.4302 8.40523 11.6025 8.62681C11.6632 8.71179 11.7928 8.83864 11.941 8.98378C12.0934 9.13305 12.2656 9.30166 12.4029 9.46395C12.9022 10.0255 13.2784 10.4992 13.3833 10.8257C13.479 11.1533 13.313 11.3193 12.9809 11.3193H11.8186C11.5073 11.3193 11.3506 11.1449 11.0119 10.7682C10.8683 10.6086 10.692 10.4125 10.4574 10.1779C9.76782 9.51318 9.47231 9.427 9.2999 9.427C9.06597 9.427 8.99599 9.49326 8.99599 9.82526V10.8674C8.99599 11.1533 8.90459 11.3193 8.16578 11.3193C6.93442 11.3193 5.58125 10.5719 4.62081 9.1931C3.18014 7.17417 2.7861 5.64766 2.7861 5.33986C2.7861 5.16755 2.85252 5.01125 3.1846 5.01125Z' fill='%2314004B'/%3E%3C/svg%3E");
@@ -66,6 +69,11 @@
             &[title="Telegram"] {
                 background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.50826 5.16568C5.4453 3.4722 8.07061 2.35576 9.3842 1.81635C13.1347 0.276221 13.9141 0.00868426 14.422 -0.000149948C14.5337 -0.00209294 14.7835 0.0252423 14.9454 0.154868C15.082 0.264321 15.1196 0.412177 15.1376 0.515951C15.1556 0.619725 15.178 0.856125 15.1601 1.04084C14.9569 3.14916 14.0775 8.26548 13.6301 10.6268C13.4408 11.626 13.068 11.961 12.7071 11.9938C11.9228 12.0651 11.3273 11.4821 10.5677 10.9905C9.37906 10.2213 8.70755 9.7424 7.55378 8.99176C6.22039 8.12426 7.08477 7.64746 7.84466 6.86825C8.04353 6.66433 11.4991 3.56126 11.5659 3.27977C11.5743 3.24456 11.5821 3.11333 11.5031 3.04403C11.4241 2.97474 11.3076 2.99844 11.2235 3.01728C11.1043 3.04399 9.2054 4.2831 5.5269 6.73459C4.98792 7.09999 4.49972 7.27802 4.06231 7.26869C3.58011 7.25841 2.65254 6.99951 1.96298 6.77822C1.11722 6.50679 0.44502 6.36329 0.503553 5.90232C0.534041 5.66222 0.868942 5.41668 1.50826 5.16568Z' fill='%2314004B'/%3E%3C/svg%3E");
                 background-size: toRem(16) toRem(12);
+            }
+
+            &:active {
+                background-color: rgba(255, 255, 255, 0.9);
+                transition: 0.35s $cubic;
             }
         }
     }
@@ -87,12 +95,22 @@
 
         @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
         letter-spacing: 0.01em;
-
+        white-space: nowrap;
         text-decoration: none;
         opacity: 0.6;
+        transition: 0.35s $cubic;
 
         &[data-active="active"] {
             opacity: 1;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 0.86;
+            transition: 0.35s $cubic;
         }
     }
 
@@ -106,24 +124,32 @@
             padding: toRem(3) 0;
             margin-right: toRem(14);
 
-            @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+            @include font-setting($primary-font, toRem(14), toRem(18), 400, rgba(255, 255, 255, 0.6));
             letter-spacing: 0.01em;
 
             text-decoration: none;
-            opacity: 0.6;
 
             position: relative;
+            white-space: nowrap;
+
+            transition: 0.35s $cubic;
+
+            &:active {
+                color: rgba(255, 255, 255, 0.86);
+                transition: 0.35s $cubic;
+            }
 
             &::after {
                 position: absolute;
                 content: '';
                 width: toRem(2);
-                height: toRem(10);
+                height: toRem(12);
                 background-color: rgba(255, 255, 255, 0.6);
 
                 top: 50%;
                 right: toRem(-8);
                 transform: translateY(-50%);
+                pointer-events: none;
             }
         }
 
@@ -134,9 +160,18 @@
             border: none;
             @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
             letter-spacing: 0.01em;
+            white-space: nowrap;
 
+            cursor: pointer;
+            outline: none;
             text-decoration: none;
             opacity: 0.6;
+            transition: 0.35s $cubic;
+
+            &:active {
+                opacity: 0.86;
+                transition: 0.35s $cubic;
+            }
         }
     }
 
@@ -146,6 +181,8 @@
         gap: toRem(8);
 
         &-item {
+            outline: none;
+
             &[open] {
                 .footer__wrap-name {
                     margin-bottom: toRem(16);
@@ -154,13 +191,14 @@
                 }
 
                 .footer__wrap-arr {
-                    transform: rotate(180deg);
+                    transform: translateY(-50%) rotate(180deg);
                     transition: 0.35s $cubic;
                 }
             }
         }
 
         &-name {
+            outline: none;
             width: auto;
             @include flex-setting(row, flex-start, center);
             @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
@@ -171,17 +209,36 @@
             opacity: 0.6;
             transition: 0.35s $cubic;
 
+            &:active {
+                opacity: 0.86;
+                transition: 0.35s $cubic;
+            }
+
             span:first-of-type {
-                padding: toRem(3) 0;
+                padding: toRem(3) toRem(28) toRem(3) 0;
             }
 
             &::-webkit-details-marker,
             &::marker {
                 display: none;
             }
+
+            span {
+                position: relative;
+                cursor: pointer;
+
+                .footer__wrap-arr {
+                    position: absolute;
+                }
+            }
         }
 
         &-arr {
+            position: absolute;
+            transform: translateY(-50%) rotate(0);
+            top: 50%;
+            right: 0;
+            padding-right: 0;
             display: block;
             width: toRem(24);
             height: toRem(24);
@@ -195,6 +252,20 @@
         &-inner {
             width: 100%;
             @include flex-setting(column, flex-start, flex-start);
+
+            &--docs {
+                li {
+                    margin-bottom: toRem(18);
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+            }
         }
 
         &-info,
@@ -205,7 +276,10 @@
         }
 
         &-info {
-            margin-bottom: toRem(8);
+            margin-bottom: toRem(0);
+            text-decoration: none;
+            cursor: pointer;
+            outline: none;
         }
 
         &-list {
@@ -213,8 +287,8 @@
             @include flex-setting(column, flex-start, flex-start);
 
             .footer__wrap-info {
-                margin-bottom: 0;
-                min-width: toRem(48);
+                margin-bottom: toRem(0);
+                min-width: toRem(50);
             }
 
             li {
@@ -236,6 +310,192 @@
         @include font-setting($primary-font, toRem(10), toRem(15), 350, rgba(255, 255, 255, 0.35));
         letter-spacing: 0.01em;
         text-decoration: none;
+    }
+
+    &__policy {
         cursor: pointer;
+
+        transition: 0.35s $cubic;
+    }
+}
+
+@include min-screen(1200px) {
+    .footer {
+        --width: calc(100% - 1032px);
+        padding-top: toRem(48);
+        padding-bottom: toRem(32);
+
+        &__upper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;;
+            align-items: flex-start;
+            gap: 0;
+            margin-bottom: toRem(72);
+        }
+
+        &__block:first-of-type {
+            max-width: toRem(112);
+            margin-right: toRem(64);
+        }
+
+        &__block:nth-of-type(2) {
+            max-width: toRem(120);
+            margin-right: toRem(120);
+        }
+
+        &__block:nth-of-type(3) {
+            max-width: toRem(205);
+            margin-right: toRem(89);
+        }
+
+        &__block:last-of-type {
+            max-width: toRem(294);
+        }
+
+        &__logo {
+            margin-bottom: toRem(24);
+        }
+
+        &__social {
+            &-item {
+                width: toRem(32);
+                height: toRem(32);
+
+                border-radius: toRem(16);
+                margin-right: toRem(8);
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            &-link {
+                &:hover,
+                &:focus {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+
+        &__list {
+            gap: toRem(16);
+        }
+
+        &__link {
+            font-size: toRem(15);
+            letter-spacing: 0.02em;
+
+            &:hover,
+            &:focus {
+                opacity: 0.8;
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &__callback {
+            margin-bottom: toRem(16);
+
+            &-link {
+                font-size: toRem(15);
+                letter-spacing: 0.02em;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.8);
+                    transition: 0.35s $cubic;
+
+                    &::after {
+                        background-color: rgba(255, 255, 255, 0.6);
+                        transition: 0s linear;
+                    }
+                }
+            }
+
+            &-btn {
+                display: block;
+                padding: toRem(3) 0;
+                background-color: transparent;
+                border: none;
+                font-size: toRem(15);
+                line-height: toRem(18);
+                letter-spacing: 0.02em;
+
+                text-decoration: none;
+                opacity: 0.6;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.8;
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+
+        &__wrap {
+            gap: toRem(16);
+
+            &-name {
+                cursor: pointer;
+                font-size: toRem(15);
+                letter-spacing: 0.02em;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.8;
+                    transition: 0.35s $cubic;
+                }
+            }
+
+            &-arr {
+                margin-left: toRem(8);
+            }
+
+            &-info,
+            &-nr {
+                font-size: toRem(15);
+                letter-spacing: 0.02em;
+            }
+
+            &-info {
+                margin-bottom: toRem(16);
+            }
+
+            &-list {
+                .footer__wrap-info {
+                    margin-bottom: toRem(0);
+                }
+            }
+        }
+
+        &__bottom {
+            display: grid;
+            grid-template-areas:
+                'policy ...'
+                'info copyright'
+            ;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        &__copyright {
+            grid-area: copyright;
+        }
+
+        &__policy {
+            grid-area: policy;
+        }
+
+        &__info {
+            grid-area: info;
+        }
+
+        &__copyright,
+        &__policy,
+        &__info {
+            font-size: toRem(15);
+            line-height: toRem(18);
+            letter-spacing: 0.02em;
+        }
     }
 }

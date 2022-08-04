@@ -1,0 +1,57 @@
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    padding: 0;
+
+    width: 100%;
+    max-width: toRem(343);
+
+    @include flex-setting(row, flex-start, center);
+    flex-wrap: wrap;
+    margin-bottom: toRem(24);
+    z-index: -1;
+
+    & > * {
+        &:not(:last-child) {
+            margin-right:  toRem(13);
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '/';
+
+                @include font-setting($primary-font, toRem(14), toRem(20), 400, #505051);
+                letter-spacing: -0.15px;
+
+                width: toRem(5);
+                right: toRem(-9);
+            }
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        height: auto;
+        white-space: nowrap;
+    }
+
+    &__link {
+        @include font-setting($primary-font, toRem(12), toRem(19), 400, $blue);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+    }
+
+    &__text {
+        @include font-setting($primary-font, toRem(12), toRem(19), 400, #B5B5B5);
+        letter-spacing: 0.01em;
+    }
+}
+
+@include min-screen(1200px) {
+    .breadcrumbs {
+        grid-area: breadcrumbs;
+        padding-top: toRem(32);
+        z-index: 10;
+        max-width: 100%;
+    }
+}

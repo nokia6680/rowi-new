@@ -1,0 +1,135 @@
+.mission {
+    width: 100%;
+
+    --width: calc(100% - 343px);
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(48) calc(var(--width) / 2) toRem(56) calc(var(--width) / 2);
+    margin-bottom: toRem(48);
+    opacity: 0;
+
+    &.loaded {
+        animation: fadeInBottom 0.3s $cubic forwards 0s;
+
+        .mission__svg {
+            animation: fadeInStatic 0s linear forwards 0.3s;
+        }
+
+        .mission__line-mask {
+            animation: undashReverse 0.3s ease-out forwards 0.3s;
+        }
+
+        .mission__top {
+            animation: fadeInStatic 0s ease-out forwards 0.6s;
+        }
+    }
+
+    &__wrap {
+        @include flex-setting(column, flex-start, center);
+        width: 100%;
+        padding: toRem(56) toRem(16) toRem(80) toRem(16);
+        background-color: $blue;
+        border-radius: toRem(12);
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__title {
+        @include font-setting($primary-font, toRem(14), toRem(18), 400, $white);
+        letter-spacing: 0.01em;
+        margin-bottom: toRem(24);
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(22), toRem(26), 400, $white);
+        text-align: center;
+    }
+
+    &__svg {
+        opacity: 0;
+        width: toRem(84);
+        height: toRem(60);
+        position: absolute;
+        left: -4px;
+        top: 24px;
+        transform: rotate(7deg) scaleX(-1);
+    }
+
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__line-dash {
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke: $pink;
+        stroke-dasharray: 9.01 !important;
+        stroke-dashoffset: 4.01 !important;
+        z-index: 1;
+    }
+
+    &__line-mask {
+        fill: none;
+        stroke: $blue;
+        stroke-linecap: round;
+        stroke-width: 4px;
+        animation: dashReverse 0s $cubic forwards;
+        z-index: 2;
+    }
+
+    &__top {
+        position: absolute;
+        bottom: -1px;
+        left: 5px;
+        width: toRem(10);
+        height: toRem(9);
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.77424 5.73678L7.93238 5.73816L4.91212 0.326723L4.79321 3.91741L1.77424 5.73678Z' fill='%23F5AABE'/%3E%3Cpath d='M0.877548 3.43274L3.91366 3.43055L2.42712 0.761109L2.36682 2.53337L0.877548 3.43274Z' fill='%23F5AABE'/%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        opacity: 0;
+        transform: rotate(122deg);
+    }
+}
+
+@include min-screen(1200px) {
+    .mission {
+        --width: calc(100% - 1032px);
+        margin-bottom: toRem(112);
+
+        &__wrap {
+            padding: toRem(72) toRem(88) toRem(96) toRem(88);
+            border-radius: toRem(22);
+        }
+
+        &__title {
+            font-size: toRem(20);
+            line-height: toRem(26);
+            letter-spacing: 0;
+            margin-bottom: toRem(40);
+        }
+
+        &__description {
+            font-size: toRem(34);
+            line-height: toRem(41);
+        }
+
+        &__svg {
+            width: toRem(120);
+            height: toRem(84);
+            left: -6px;
+            top: 30px;
+            transform: rotate(-13deg) scaleX(-1);
+        }
+
+        &__top {
+            bottom: -1px;
+            left: 8px;
+            transform: rotate(130deg);
+        }
+    }
+}

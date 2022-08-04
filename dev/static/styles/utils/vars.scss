@@ -5,20 +5,23 @@ $blue: #4164EE;
 $pink: #F5AABE;
 $green: #00AAAA;
 $red: #ED3636;
+$gray: #505051;
 $yellow: #FFE100;
 $fea1: rgba(245, 170, 190, 0.2);
 $fea2: #D1DAFA;
 $fea3: #E8ECFD;
-$lightblue: #E8ECFD;
+$lightblue: #F0F3FE;
+$titles: #19191A;
 // Sizes
 $base-font-size: 16px;
 // Fonts
 $primary-font: 'Stolzl', sans-serif;
 $book-font: 'Stolzl Book', sans-serif;
+$obj-font: 'Object Sans', sans-serif;
 $text-black: $dark;
 $text-white: $white;
 
-$cubic: cubic-bezier(.33,0,.25,1 );
+$cubic: cubic-bezier(.64, .47, .44, .76);
 $menuItems: 4;
 $filterItems: 5;
 $jobItems: 5;

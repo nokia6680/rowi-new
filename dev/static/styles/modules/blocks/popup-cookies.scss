@@ -1,0 +1,84 @@
+.popup-policy {
+    width: 100%;
+    max-width: toRem(343);
+
+    position: fixed;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: toRem(16);
+
+    background-color: $white;
+
+    @include flex-setting(column, flex-start, center);
+
+    box-shadow: 0px 16px 40px rgba(114, 128, 182, 0.4);
+    border-radius: toRem(10);
+
+    padding: toRem(24) toRem(16) toRem(32) toRem(16);
+
+    z-index: 10;
+    display: none;
+    &__description {
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+        text-align: left;
+        margin-bottom: toRem(24);
+    }
+
+    &__closer {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $dark);
+
+        background-color: $white;
+        border: toRem(2) solid $dark;
+        border-radius: toRem(6);
+
+        padding: toRem(13) 0;
+
+        transition: 0.35s $cubic;
+        cursor: pointer;
+        outline: none;
+
+        &:active {
+            background-color: #F0F3FE;
+            transition: 0.35s $cubic;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .popup-policy {
+        --width: calc(100% - 1032px);
+        max-width: toRem(634);
+
+        left: calc(var(--width) / 2);
+        transform: none;
+
+        bottom: toRem(16);
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: toRem(22);
+
+        padding: toRem(24) toRem(32);
+
+        &__description {
+            margin-bottom: 0;
+            padding-right: 0;
+        }
+
+        &__closer {
+            width: auto;
+            padding: toRem(7) toRem(22);
+
+            &:hover,
+            &:focus {
+                background-color: #F0F3FE;
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+}

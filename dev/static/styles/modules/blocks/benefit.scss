@@ -1,0 +1,180 @@
+.benefit {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+    --width: calc(100% - 343px);
+    padding: toRem(48) calc(var(--width) / 2) 0 calc(var(--width) / 2);
+    margin-bottom: toRem(48);
+
+    &.loaded {
+        .benefit__title,
+        .benefit__description,
+        .benefit__link {
+            animation: fadeInBottom 0.3s $cubic forwards 0s;
+        }
+
+        .benefit__visual {
+            animation: fadeInBottomV 0.3s $cubic forwards 0.1s;
+        }
+    }
+
+    &__title {
+        line-height: toRem(32.5);
+        margin-bottom: toRem(24);
+        opacity: 0;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        opacity: 0;
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+        text-align: left;
+        letter-spacing: 0.01em;
+        margin-bottom: toRem(32);
+    }
+
+    &__link {
+        opacity: 0;
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $blue);
+        text-decoration: none;
+        align-self: flex-start;
+        letter-spacing: 0.02em;
+        padding: toRem(11) toRem(48) toRem(11) 0;
+
+        position: relative;
+        transition: 0.35s $cubic;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: toRem(32);
+            height: toRem(32);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='31' height='12' viewBox='0 0 31 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6L28 6' stroke='%234164EB' stroke-width='2'/%3E%3Cpath d='M31 6L24.8125 11.1962L24.8125 0.803847L31 6Z' fill='%234164EB'/%3E%3C/svg%3E");
+
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        &:active {
+            opacity: 0.8;
+            transition: 0.35s $cubic;
+        }
+    }
+
+    &__visual {
+        opacity: 0;
+        height: toRem(450);
+        width: 100%;
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(294);
+            height: toRem(294);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+            filter: blur(54.692px);
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: toRem(141);
+            height: toRem(124);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../images/content/benefit-logo.svg');
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .benefit {
+        align-items: flex-start;
+        --width: calc(100% - 1032px);
+        padding: toRem(112) calc(var(--width) / 2);
+        margin-bottom: toRem(112);
+
+        &.loaded {    
+            .benefit__visual {
+                animation: fadeInBottomV 0.2s $cubic forwards 0.1s;
+            }
+        }
+
+        &__title {
+            line-height: toRem(44);
+            margin-bottom: toRem(40);
+            max-width: toRem(590);
+        }
+
+        &__description {
+            max-width: toRem(590);
+            font-weight: 400;
+            font-family: $primary-font;
+            font-size: toRem(18);
+            line-height: toRem(23);
+            margin-bottom: toRem(56);
+        }
+
+        &__link {
+            font-size: toRem(18);
+            line-height: toRem(22);
+
+            padding: toRem(5) toRem(48) toRem(5) 0;
+
+            margin-bottom: 0;
+
+            &:hover,
+            &:focus {
+                opacity: 0.86;
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &__visual {
+            height: toRem(426);
+            width: toRem(426);
+            --width: calc(100% - 1130px);
+            position: absolute;
+
+            top: 50%;
+            right: calc(var(--width) / 2);
+            transform: translateY(-50%);
+
+            &::before {
+                width: toRem(426);
+                height: toRem(426);
+            }
+
+            &::after {
+                width: toRem(204);
+                height: toRem(179);
+                top: 50%;
+            }
+        }
+    }
+}

@@ -5,14 +5,14 @@
 // pathStyles.setProperty('--pathLength', pathLength +'px');
 
 var nS = 'http://www.w3.org/2000/svg';
-var svgPaths = document.getElementsByTagNameNS(nS,'path');
+var svgPaths = document.getElementsByTagNameNS(nS, 'path');
 
 for (var x = 0; x < svgPaths.length; x++) {
-  var path = svgPaths[x];
-  var pathDimensions = path.getTotalLength();
-  path.style.strokeDasharray = pathDimensions;
-  path.style.strokeDashoffset = pathDimensions;
+    var path = svgPaths[x];
+    var pathDimensions = path.getTotalLength();
+    path.style.strokeDasharray = pathDimensions;
+    path.style.strokeDashoffset = pathDimensions;
 
-  var pathStyles = path.style;
-  pathStyles.setProperty('--pathLength', pathDimensions +'px');
+    var pathStyles = path.style;
+    pathStyles.setProperty('--pathLength', pathDimensions + 'px');
 };

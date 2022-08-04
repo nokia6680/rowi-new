@@ -20,12 +20,12 @@ const sandwichToggle = function() {
 
     function showSandwichTarget() {
         let navMenu = document.querySelector('.nav');
-        let navOverlay = document.querySelector('.header');
+        let body = document.querySelector('body');
         let targetId = this.getAttribute('data-target-id'),
             targetClassToggle = this.getAttribute('data-target-class-toggle');
         this.classList.toggle('is-active');
         navMenu.classList.toggle('opened');
-        navOverlay.classList.toggle('opened');
+        body.classList.toggle('no-scroll');
 
         if (targetId && targetClassToggle) {
             document.getElementById(targetId).classList.toggle(targetClassToggle);
@@ -33,3 +33,26 @@ const sandwichToggle = function() {
     }
 };
 sandwichToggle();
+
+$('.tagOpener').on('click', function() {
+    $(this).closest('.tagList').removeClass('closed');
+});
+
+$('.js-popup-opener').on('click', function(event) {
+    const popupId = $(this).attr('data-modal');
+    event.preventDefault();
+    $(popupId).addClass('active');
+    $('body').addClass('no-scroll');
+});
+
+$('.js-popup-closer').on('click', function() {
+    $(this).closest('.js-popup-wrap').removeClass('active');
+    $('body').removeClass('no-scroll');
+});
+
+$('.js-popup-wrap').on('click', function(event) {
+    if (!$(event.target).closest('.js-popup-inner').length) {
+        $(this).removeClass('active');
+        $('body').removeClass('no-scroll');
+    }
+});

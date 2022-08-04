@@ -1,0 +1,99 @@
+article.article
+    a(href="blog.html" target="_self").article__return Назад
+    
+    time(datetime="12-02-2022").article__date 18.10.2021
+    
+    h1.article__title Как сезонному бизнесу решить проблемы кассовых разрывов и чего-то там ещё
+    dfn.article__definition Ассоциация факторинговых компании сообщает о вступлении ООО «Факторинг ПЛЮС» в состав своих участников в качестве полноправного
+    h2.article__subtitle А я - заголовок второго уровня
+    h3 Подзаголовок 3го
+    h4 Еще меньше заголовок 4го уровня
+    
+    p.article__text 
+        a(href="#" target="_blank").article__link Проект «Факторинг ПЛЮС» 
+        |   основан Виктором Верновым и Евгением Родионовым и развивается как инновационная финтех-платформа, обеспечивающая поставщиков сегмента малого и среднего бизнеса факторинговым финансированием в режиме онлайн, а их покупателей — комфортными условиями оплаты поставок, работ, услуг. 
+    p.article__text «Факторинг ПЛЮС» воплощает выкристаллизованную командой основателей философию факторинга в сегменте МСБ: безбумажный документооборот, трехстороннее взаимодействие в режиме онлайн, максимальная автоматизация бэк-офиса и риск-менеджмента. 
+    p.article__text Динамику развития обеспечивают  
+        a(href="#" target="_blank").article__link «Факторинг ПЛЮС» 
+        | получают около двухсот поставщиков сегмента МСБ.
+            
+    span.article__thesis ООО «Факторинг ПЛЮС» создано в 2017 году в составе группы QIWI
+    
+    .article__video
+        video(poster="static/images/content/video-poster.png").article__video-player.artVideo
+            source(src="static/videos/benefits-video.mp4" type="video/mp4")
+            source(src="static/videos/benefits-video.webm" type="video/webm")
+        button(type="button").article__video-play.artPlay
+    p.article__text Я текст и ничего более
+    .article__quote
+        picture.article__quote-frame
+            source(srcset="static/images/content/quote-image.webp" type="image/webp")
+            img(src="static/images/content/quote-image.png" width="" height="" alt="").article__quote-image
+        p «В нашей ДНК заложено быстрое масштабирование бизнеса, основанное на прибыльной юнит-экономике, качественном управлении риском и высоком уровне клиентского сервиса. Объединение уже действующих и новых продуктов под единым брендом ROWI — естественный и ожидаемый шаг в развитии».
+        b.article__quote-name Виктор Вернов
+        span.article__quote-title Основатель компании
+    
+    .article__gallery
+        picture.article__gallery-frame
+            source(srcset="static/images/content/article-image.webp" type="image/webp")
+            img(src="static/images/content/article-image.png" width="" height="" alt="").article__gallery-image
+        span.article__gallery-caption Подпись к фото
+    
+    ul.article__list
+        li
+            p Для нас это возможность помогать предпринимателям развивать и растить свой бизнес
+        li
+            p Для нас это возможность помогать предпринимателям развивать и растить свой бизнес
+        li
+            p Для нас это возможность помогать предпринимателям развивать и растить свой бизнес
+        li
+            p Одна строка
+    h2.article__subtitle А я - заголовок второго уровня еще разок
+    .article__tablewrap
+        h3 Название таблицы
+        
+        .article__table
+            include ../blocks/table
+            
+    .article__slider
+        .article__slider-container
+            .swiper-wrapper
+                .article__slider-item.swiper-slide
+                    picture.article__slider-frame
+                        source(srcset="static/images/content/article-image.webp" type="image/webp")
+                        img(src="static/images/content/article-image.png" width="" height="" alt="").article__slider-image
+                .article__slider-item.swiper-slide
+                    picture.article__slider-frame
+                        source(srcset="static/images/content/article-image.webp" type="image/webp")
+                        img(src="static/images/content/article-image.png" width="" height="" alt="").article__slider-image
+                .article__slider-item.swiper-slide
+                    picture.article__slider-frame
+                        source(srcset="static/images/content/article-image.webp" type="image/webp")
+                        img(src="static/images/content/article-image.png" width="" height="" alt="").article__slider-image
+                .article__slider-item.swiper-slide
+                    picture.article__slider-frame
+                        source(srcset="static/images/content/article-image.webp" type="image/webp")
+                        img(src="static/images/content/article-image.png" width="" height="" alt="").article__slider-image
+            .article__pagination
+            button(type="button").article__prev
+            button(type="button").article__next
+            
+    .article__tags.tagList.closed
+        a(href="#" target="_self").article__tags-item #Факторинг
+        a(href="#" target="_self").article__tags-item #Финансы
+        button(type="button").article__tags-opener.tagOpener Ещё +3
+        a(href="#" target="_self").article__tags-item #Sellpul
+        a(href="#" target="_self").article__tags-item #РКО
+        a(href="#" target="_self").article__tags-item #Разное
+        
+    details.article__share
+        summary.article__share-name
+            span Поделиться
+            span.article__share-arr
+        ul.article__share-inner
+            li
+                button(type="button" data-share="tg").article__share-btn Telegram
+            li
+                button(type="button" data-share="vk").article__share-btn VK
+            li
+                button(type="button" data-share="copy").article__share-btn Скопировать

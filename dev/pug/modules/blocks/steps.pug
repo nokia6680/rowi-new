@@ -1,0 +1,10 @@
+section.steps
+    h2.steps__title.section-title #{stepsTitle1}
+        span #{stepsTitleBlue} 
+        | #{stepsTitle2}
+    ul(class="steps__list " +stepsClass)
+        for i in steps
+            li.steps__item
+                span(class="steps__icon " +i.img)
+                h3.steps__name=i.name
+                p.steps__description=i.description

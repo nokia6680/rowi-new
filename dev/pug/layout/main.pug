@@ -4,6 +4,9 @@ block variables
 doctype html
 html(lang="ru-RU")
     head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
         meta(charset="utf-8")
         title #{title}
         <!--[if IE]>
@@ -16,10 +19,14 @@ html(lang="ru-RU")
         link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
         link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
         link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
-        link(rel="manifest" href="/manifest.json")
+        //link(rel="manifest" href="/manifest.json")
         link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
         link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
         meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        link(rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css")
     body.body
         include ../modules/header/header
         main.main
@@ -30,24 +37,32 @@ html(lang="ru-RU")
             include ../modules/blocks/chat
             include ../modules/blocks/about
             include ../modules/blocks/feedback
-            include ../modules/blocks/faq
+            section.faq.faq--main
+                h2.faq__title.section-title Популярные 
+                    span вопросы
+                ul.faq__list
+                    for i in faqData    
+                        li.faq__wrap
+                            details.faq__item
+                                summary.faq__name=i.title
+                                p.faq__description=i.description
         include ../modules/footer/footer
-
+        include ../modules/blocks/popup-order
+        include ../modules/blocks/cookies
+        include ../modules/blocks/popup-callback
+        include ../modules/blocks/popup-video
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        //script(src="static/js/vendor/bouncer.js")
-        //script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js")
-        //script(src="https://unpkg.com/swiper/swiper-bundle.js")
-        //script(src="static/js/header.js")
+        script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.6.0/jquery.marquee.min.js")
+        script(src="https://cdn.plyr.io/3.7.2/plyr.js")
         script(src="static/js/main.js")
-        script(src="static/js/grouploop.min.js")
-        script(src="static/js/clients.js")
-        //script(src="static/js/slider.js")
-        //script(src="static/js/shuffle.js")
-        //script(src="static/js/form.js")
-        //script(src="static/js/svg.js")
-        //script(src="static/js/move.js")
-        //script(src="static/js/scroll.js")
+        script(src="static/js/player.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/slider.js")
+        script(src="static/js/anime.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        //script(src="static/js/fix.js")
         //script(src="static/js/video.js")
-        //script(src="static/js/benefits.js")
-        //script(src="static/js/validate.js")
+        script(src="static/js/validate.js")
         block script

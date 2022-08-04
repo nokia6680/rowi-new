@@ -1,0 +1,77 @@
+.develop {
+    width: 100%;
+    --width: calc(100% - 343px);
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(48) calc(var(--width) / 2) toRem(56) calc(var(--width) / 2);
+    margin-bottom: toRem(48);
+    opacity: 0;
+    
+    &.loaded {
+        animation: fadeInBottom 0.3s $cubic forwards 0s;
+    }
+    &__title {
+        margin-bottom: toRem(40);
+        text-align: center;
+    }
+
+    &__description {
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+        text-align: center;
+        margin-bottom: toRem(56);
+    }
+
+    &__logo {
+        width: 100%;
+        @include flex-setting(row, space-between, center);
+
+        padding: 0 toRem(30);
+
+        &-image {
+            object-fit: contain;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .develop {
+        --width: calc(100% - 1032px);
+        margin-bottom: toRem(112);
+
+        &__title {
+            font-size: toRem(34);
+            line-height: toRem(41);
+            font-weight: 400;
+            align-self: center;
+        }
+
+        &__description {
+            font-size: toRem(18);
+            line-height: toRem(26);
+            align-self: center;
+            text-align: center;
+            max-width: toRem(680);
+        }
+
+        &__logo {
+            width: auto;
+            justify-content: center;
+
+            padding: 0;
+
+            &-image {
+                &:first-of-type {
+                    margin-right: toRem(65);
+                    width: toRem(130);
+                    height: toRem(58);
+                }
+
+                &:last-of-type {
+                    margin-left: toRem(65);
+                    width: toRem(146);
+                    height: toRem(76);
+                }
+            }
+        }
+    }
+}

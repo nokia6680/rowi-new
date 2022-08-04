@@ -1,0 +1,107 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        link(rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            section.intro.intro--career
+                h1.intro__title.title
+                    | Важен личный вклад&nbsp;
+                    span каждого
+                .intro__info.intro__info--career
+                    <!--SVG zone-->
+                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
+                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+                .intro__details
+                    p.intro__description Мы заряжаем энергией,&nbsp;вдохновляем и&nbsp;добиваемся лучших результатов, работая вместе
+                    
+                    .intro__controls
+                        a(href="https://rowi.tech/" target="_blank").intro__link Смотреть вакансии
+                        
+            section(class="features " +feaClass)
+                h2.features__title.section-title #{featuresPlain1}
+                    span #{featuresBlue} 
+                    | #{featuresPlain2}
+                p.features__text Мы развиваем свой бизнес сами и заинтересованы в специалистах из разных сфер. Выбирайте&nbsp;направление, которое вам по душе
+                a(href='#' target="_self").features__link Смотреть вакансии
+                
+                ul.features__list
+                    for i in featList
+                        li.features__item
+                            span(class="features__icon " +i.type)
+                            h3.features__name=i.title
+                            p.features__description=i.text
+                            
+            include ../modules/blocks/benefit
+            
+            section(class="features " +feaClass2)
+                h2.features__title.section-title Почему 
+                    span с нами классно 
+                    | работать 
+                
+                ul.features__list
+                    li.features__item
+                        span.features__icon.fea-4
+                        h3.features__name Открытая среда
+                        p.features__description У нас горизонтальная структура, нет жёсткой иерархии, любой сотрудник может предлагать идеи и влиять на продукт
+                        
+                    li.features__item
+                        span.features__icon.fea-1
+                        h3.features__name Современный подход
+                        p.features__description Гибкие практики совместной работы. Продуктовые команды, scrum и актуальный стек
+                        
+                    li.features__item
+                        span.features__icon.fea-8
+                        h3.features__name Особая атмосфера
+                        p.features__description Дружелюбная атмосфера без&nbsp;бюрократии и сложных процессов. В командах развита взаимопомощь, можно задавать вопросы и не бояться ошибок
+                
+                .features__svg
+                    svg(class="features__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1042 640" fill="none")
+                        path(class="features__line-dash" d="M123,228C213.35,300.31-39.77,330,7.66,404.88c52.29,82.54,421-167.17,469.52-52.81,37,87.12-342.93,214.45-141.94,270.89,208.06,58.42,443.61-60.84,465.45-222.38,30.61-226.47,182.37-450.52,232.59-388,69.53,86.6-397.78,73.3-456.56,16.09")
+                        path(class="features__line-mask" d="M123,228C213.35,300.31-39.77,330,7.66,404.88c52.29,82.54,421-167.17,469.52-52.81,37,87.12-342.93,214.45-141.94,270.89,208.06,58.42,443.61-60.84,465.45-222.38,30.61-226.47,182.37-450.52,232.59-388,69.53,86.6-397.78,73.3-456.56,16.09")
+                        .features__top
+                            
+            include ../modules/blocks/comfort
+            include ../modules/blocks/values
+            include ../modules/blocks/join
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
+        script(src="static/js/main.js")
+        script(src="https://cdn.plyr.io/3.7.2/plyr.js")
+        script(src="static/js/player-career.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/slider.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        script(src="static/js/prevent.js")
+        block script

@@ -1,0 +1,38 @@
+.guide__filter.filter
+    button(type="button").filter__opener Разделы
+    .filter__wrap
+        .filter__head
+            h3.filter__title Разделы
+            button(type="button").filter__closer
+        .filter__body
+            .filter__chapter
+                .filter__name
+                    a(href="guide.htm").filter__name-text Гайд по факторингу
+                ul.filter__list
+                    for i in chapFirst
+                        li.filter__item
+                            a(href="" +i.link target="_self" class="filter__link " +i.type)=i.name
+            //- details.filter__chapter
+            //-     summary.filter__name
+            //-         span.filter__name-text Гарантии
+            //-         span.filter__name-arr
+            //-     ul.filter__list
+            //-         for i in chapSecond
+            //-             li.filter__item
+            //-                 a(href="" +i.link target="self").filter__link=i.name
+            //- details.filter__chapter
+            //-     summary.filter__name
+            //-         span.filter__name-text КИК
+            //-         span.filter__name-arr
+            //-     ul.filter__list
+            //-         for i in chapThird
+            //-             li.filter__item
+            //-                 a(href="" +i.link target="self").filter__link=i.name
+            //- details.filter__chapter
+            //-     summary.filter__name
+            //-         span.filter__name-text ДБО
+            //-         span.filter__name-arr
+            //-     ul.filter__list
+            //-         for i in chapFourth
+            //-             li.filter__item
+            //-                 a(href="" +i.link target="self").filter__link=i.name

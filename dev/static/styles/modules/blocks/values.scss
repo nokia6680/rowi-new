@@ -1,0 +1,359 @@
+.values {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+    --width: calc(100% - 343px);
+    padding: toRem(48) calc(var(--width) / 2) toRem(56) calc(var(--width) / 2);
+    margin-bottom: toRem(48);
+
+    &.loaded {
+        .values__title,
+        .values__info {
+            animation: fadeInBottom 0.3s $cubic forwards 0s;
+        }
+        .values__item {
+            &:first-of-type {
+                animation: fadeInBottom 0.2s $cubic forwards 0.1s;
+            }
+
+            &:nth-of-type(2) {
+                animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+            }
+
+            &:nth-of-type(3) {
+                animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+            }
+
+            &:last-of-type {
+                animation: fadeInBottom 0.2s $cubic forwards 0.4s;
+            }
+        }
+        .values__svg {
+            animation: fadeInStatic 0s $cubic forwards 0.2s;
+        }
+
+        .values__line-mask {
+            animation: dashReverse 0.5s $cubic forwards 0.2s;
+        }
+
+        .values__top {
+            animation: fadeInStatic 0s $cubic forwards 0.7s;
+        }
+
+        .values__gallery {
+            animation: fadeInBottom 0.3s $cubic forwards 0.5s;
+        }
+    }
+
+    &__title {
+        margin-bottom: toRem(40);
+        opacity: 0;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__info {
+        opacity: 0;
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        gap: toRem(20);
+        margin-bottom: toRem(9);
+    }
+
+    &__description {
+        @include font-setting($book-font, toRem(14), toRem(20), 350, $dark);
+        text-align: left;
+        letter-spacing: 0.01em;
+    }
+
+    &__names {
+        width: 100%;
+        @include flex-setting(column, center, center);
+
+        padding-top: toRem(103);
+        padding-bottom: toRem(112);
+
+        position: relative;
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        padding-left: toRem(70);
+        gap: toRem(40);
+        z-index: 2;
+    }
+
+    &__item {
+        width: auto;
+        opacity: 0;
+        @include flex-setting(row, flex-start, center);
+
+        &:first-of-type {
+            background-color: $white;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+
+                width: 20px;
+                height: 100%;
+                background-color: $white;
+                left: -10px;
+                top: 0;
+                z-index: -1;
+            }
+        }
+
+        span {
+            display: inline-flex;
+            @include font-setting($book-font, toRem(40), toRem(44), 350, $dark);
+        }
+    }
+
+    &__svg {
+        width: toRem(305);
+        height: toRem(407);
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__line {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__line-mask {
+        fill: none;
+        stroke: $blue;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        animation: fadeOutStatic 0s $cubic forwards;
+        z-index: -1;
+    }
+
+    &__top {
+        position: absolute;
+        bottom: 62px;
+        right: 59px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        width: toRem(30);
+        height: toRem(18);
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.908686 4.43768L15.9393 11.9143L13.7743 8.12127C13.6812 7.95807 13.8418 7.7601 14.0238 7.80713C14.3743 7.89774 14.748 7.96687 15.1377 8.00998C17.3488 8.2545 19.239 7.56869 19.3596 6.47818C19.4802 5.38766 17.7855 4.3054 15.5745 4.06088C15.1847 4.01777 14.8049 4.00358 14.4431 4.01541C14.2553 4.02155 14.1418 3.79326 14.2683 3.65436L17.2098 0.426031L0.908686 4.43768Z' fill='%234164EE'/%3E%3C/svg%3E");
+
+        opacity: 0;
+        transform: rotate(124deg);
+    }
+
+    &__gallery {
+        opacity: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: toRem(106);
+        grid-gap: toRem(16) toRem(16);
+    }
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+        border-radius: toRem(6);
+
+        &:nth-of-type(3) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 4;
+
+            .values__frame-image {
+                object-position: -63px top;
+            }
+        }
+
+        &:last-of-type {
+            display: none;
+        }
+    }
+
+    &__frame {
+        width: 100%;
+        height: 100%;
+        @include flex-setting(column, flex-start, center);
+        overflow: hidden;
+        border-radius: toRem(6);
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transform-origin: center;
+            transition: 0.3s $cubic;
+            border-radius: toRem(6);
+        }
+
+        &:hover {
+            border-radius: toRem(6);
+            .values__frame-image {
+                will-change: transform;
+                transform: scale(1.1);
+                transform-origin: center;
+                transition: 0.3s $cubic;
+                border-radius: toRem(6);
+            }
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .values {
+        --width: calc(100% - 1032px);
+        margin-bottom: toRem(112);
+        display: grid;
+        grid-template-columns: toRem(272) 1fr;
+        grid-column-gap: toRem(80);
+
+        grid-template-areas:
+            'title title'
+            'names info'
+            'gallery gallery'
+        ;
+
+        justify-content: start;
+        align-items: start;
+
+        &.loaded {
+            .values__info {
+                animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+            }
+            .values__item {
+                &:first-of-type {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.1s;
+                }
+
+                &:nth-of-type(2) {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+                }
+
+                &:nth-of-type(3) {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+                }
+
+                &:last-of-type {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.4s;
+                }
+            }
+            .values__svg {
+                animation: fadeInStatic 0s $cubic forwards 0.2s;
+            }
+
+            .values__line-mask {
+                animation: dashReverse 0.5s $cubic forwards 0.2s;
+            }
+
+            .values__top {
+                animation: fadeInStatic 0s $cubic forwards 0.7s;
+            }
+
+            .values__gallery {
+                animation: fadeInBottom 0.3s $cubic forwards 0.5s;
+            }
+        }
+
+        &__title {
+            grid-area: title;
+            align-self: center;
+            text-align: center;
+            margin-bottom: toRem(74);
+        }
+
+        &__info {
+            grid-area: info;
+            gap: toRem(26);
+            margin-bottom: 0;
+        }
+
+        &__list {
+            padding: 0;
+        }
+
+        &__description {
+            font-size: toRem(18);
+            line-height: toRem(26);
+            max-width: toRem(592);
+        }
+
+        &__names {
+            grid-area: names;
+            padding-left: toRem(51);
+            padding-top: toRem(30);
+            padding-bottom: 0;
+        }
+
+        &__svg {
+            width: toRem(305);
+            height: toRem(407);
+            position: absolute;
+            left: 0;
+        }
+
+        &__gallery {
+            grid-area: gallery;;
+            margin-top: toRem(89);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: toRem(10);
+        }
+
+        &__photo {
+            max-width: toRem(382);
+
+            &:first-of-type {
+                max-width: toRem(313);
+            }
+
+            &:nth-of-type(2) {
+                max-width: toRem(341);
+            }
+
+            &:nth-of-type(3) {
+                max-width: toRem(358);
+                .values__frame-image {
+                    object-position: center;
+                }
+            }
+
+            &:nth-of-type(4) {
+                max-width: toRem(340);
+            }
+
+            &:nth-of-type(5) {
+                max-width: toRem(382);
+            }
+
+            &:last-of-type {
+                display: flex;
+                max-width: toRem(290);
+            }
+        }
+
+        &__frame {
+            &-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+    }
+}

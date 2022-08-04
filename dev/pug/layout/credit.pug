@@ -1,0 +1,183 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            section.intro.intro--credit
+                h1.intro__title.title
+                    | Кредиты на&nbsp;исполнение 
+                    span государственных 
+                    | контрактов
+                .intro__info.intro__info--credit
+                    <!--SVG zone-->
+                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
+                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+                    ul.intro__info-list
+                        li.intro__info-item
+                            b.intro__info-title Госконтракты
+                            ul.intro__list
+                                li.intro__item
+                                    span 44–ФЗ
+                                li.intro__item
+                                    span 223–ФЗ
+                                li.intro__item
+                                    span 615–ПП
+                .intro__details
+                    p.intro__description Побеждайте в тендерах, а мы предоставим деньги на исполнение без залога и ежемесячных погашений
+
+                    .intro__controls
+                        a(href="#order" target="_self").intro__link Оставить&nbsp;заявку
+                    
+            section.conditions.conditions--credit
+                h2.conditions__title.section-title Прозрачные и&nbsp;
+                    span выгодные&nbsp;условия 
+                    | для&nbsp;вас
+                                
+                .conditions__info
+                    .conditions__visual
+                        picture.conditions__frame
+                            source(media="(min-screen: 1200px)" srcset="static/images/content/cond-3.jpg")
+                            source(media="(min-screen: 1200px)" srcset="static/images/content/cond-3.webp" type="image/webp")
+                            source(srcset="static/images/content/cond-3-mob.webp" type="image/webp")
+                            img(src="static/images/content/cond-3-mob.jpg" width="" height="" alt="КИК").conditions__frame-image
+                        .conditions__block
+                            .conditions__shadow
+                            span.conditions__name Кредит без&nbsp;залога
+                    .conditions__details
+                        ul.conditions__list.conditions__list--warranty
+                            li.conditions__item
+                                span Госзаказчиков по 44-ФЗ
+                            li.conditions__item
+                                span Объем до 70% от суммы контракта
+                            li.conditions__item
+                                span Срок до 15 месяцев
+                            li.conditions__item
+                                span Упрощенное рассмотрение до 10 млн рублей
+                            li.conditions__item
+                                span Погашение в конце срока из средств заказчика
+                        a(href="#form" target="_self").conditions__link Оставить заявку
+                        
+            include ../modules/blocks/steps
+            include ../modules/blocks/features
+            
+            section.chat.chat--credit
+                .chat__about
+                    h2.chat__title.section-title
+                        span Удобный контакт 
+                        | с&nbsp;личным&nbsp;менеджером
+                    p.chat__description Наши менеджеры отлично разбираются в&nbsp;продукте и подберут финансирование под&nbsp;вашу потребность
+                ul.chat__list
+                    li.chat__item.chat__item-master
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-master-4.webp" type="image/webp")
+                            img(src="static/images/content/chat-master-4.png" width="" height="" alt="Сотрудник чата").chat__frame-image
+                        p.chat__text Максим, поступили первые деньги от госзаказчика. Мы перевели их на ваш счет
+                    li.chat__item.chat__item-master
+                        p.chat__text Погашение основного долга происходит в конце срока
+                    li.chat__item.chat__item-client
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-client-4.webp" type="image/webp")
+                            img(src="static/images/content/chat-client-4.png" width="" height="" alt="Клиент чата").chat__frame-image
+                        p.chat__text Отлично, Глеб. Спасибо
+                <!--SVG zone-->
+                .chat__svg    
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 120 174")
+                        path(class="chat__line-dash" d="M79.31,1.92c33.25,45.67,12.58,109.41-11.92,106.74-45.39-5,20.94-136,46.85-54.23,20.07,63.32-50.78,124.77-111.95,117")
+                        path(class="chat__line-mask" d="M79.31,1.92c33.25,45.67,12.58,109.41-11.92,106.74-45.39-5,20.94-136,46.85-54.23,20.07,63.32-50.78,124.77-111.95,117")
+                                
+                        .chat__top
+                            
+                    svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
+                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        .chat__top
+            section.about.about--credit
+                h2.about__title.section-title ROWI — ваш 
+                    span надёжный 
+                    | финансовый партнер
+                p.about__description КИВИ банк (АО) входит в группу QIWI. QIWI PLC — одна из крупнейших компаний на российском платёжном рынке. КИВИ банк (АО) находится на первых позициях в текущем рейтинге эффективных банков по данным Коммерсант 
+                    sup
+                        a(href="https://www.kommersant.ru/doc/4997257" target="_blank") 1
+                        
+                ul.about__list.about__list--credit
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__nr 10
+                            p.about__subtitle миллионов рублей
+                            p.about__text Средняя сумма кредита
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle 50%
+                            p.about__text Повторных кредитов
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle быстро и по делу
+
+            section.callback.callback--credit
+                h2.callback__title.section-title Оставьте заявку на&nbsp;кредит и&nbsp;получите решение 
+                    span сегодня
+                p.callback__description Укажите телефон для&nbsp;заявки или&nbsp;консультации
+                
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                            span.callback__error
+                            
+                        button(type="submit").callback__submit Отправить заявку
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+                        
+            section(class="faq " +faqClass)
+                h2.faq__title.section-title Популярные 
+                    span вопросы
+                ul.faq__list
+                    for i in faqData 
+                        li.faq__wrap
+                            details.faq__item
+                                summary.faq__name=i.title
+                                p.faq__description=i.description
+            
+            include ../modules/blocks/materials
+        
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        script(src="static/js/validate.js")
+        block script

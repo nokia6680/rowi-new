@@ -1,79 +1,54 @@
+// var popupPlay = document.querySelector('.intro__btn');
+// var popupWrap = document.querySelector('.popup-video');
+// var popupVideo = document.getElementById('introVideo');
+// var popupVideoCloser = document.querySelector('.popup-video__closer');
+// var popupVideoReplay = document.querySelector('.popup-video__play');
+// var body = document.querySelector('.body');
+//
+// if (popupPlay) {
+//     popupPlay.addEventListener('click', function() {
+//         popupWrap.classList.add('active');
+//         popupVideo.play();
+//         popupVideo.setAttribute("controls", "controls");
+//         body.classList.add('no-scroll');
+//     });
+// };
+//
+// if (popupVideoCloser) {
+//     popupVideoCloser.addEventListener('click', function() {
+//         popupWrap.classList.remove('active');
+//         popupVideo.pause();
+//         popupVideo.load();
+//         popupVideo.currentTime = 0;
+//         body.classList.remove('no-scroll');
+//         popupVideo.removeAttribute("controls");
+//     });
+// };
+//
+// popupWrap.addEventListener("click", function(event) {
+//     // If user clicks inside the element, do nothing
+//     if (event.target.closest(".popup-video__player")) return;
+//
+//     // If user clicks outside the element, hide it!
+//     popupWrap.classList.remove('active');
+//     popupVideo.pause();
+//     popupVideo.load();
+//     popupVideo.currentTime = 0;
+//     body.classList.remove('no-scroll');
+//     popupVideo.removeAttribute("controls");
+// });
 
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player1;
-var player2;
-
-function onYouTubeIframeAPIReady() {
-    player1 = new YT.Player('aboutVideo', {
-        videoId: 'R5IjcsMNMNo',
-    });
-
-    player2 = new YT.Player('benVideo', {
-        videoId: 'uzWPDQOCV3o',
-    });
-}
-
-var body = document.querySelector('.body');
-
-var videoBtn = document.querySelector('.about__play');
-var videoFrame = document.getElementById('aboutVideo');
-var videoPoster = document.querySelector('.about__player-poster');
-
-if (videoBtn) {
-    videoBtn.addEventListener('click', function() {
-        videoBtn.classList.add('playState');
-        videoFrame.classList.add('active');
-        videoPoster.classList.add('hidden');
-        player1.playVideo();
-    });
-};
-
-$(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= 50) {
-            player1.pauseVideo();
-
-        } else {
-            player1.pauseVideo();
-
-        }
-    });
-});
-
-var benePlay = document.querySelector('.benefits__play');
-var beneWrap = document.querySelector('.popup-video');
-var beneVideo = document.getElementById('benVideo');
-var beneCloser = document.querySelector('.popup-video__closer');
-
-if (benePlay) {
-    benePlay.addEventListener('click', function() {
-        beneWrap.classList.add('active');
-        player2.playVideo();
-        swiper.autoplay.stop()
-        body.classList.add('no-scroll');
-    });
-};
-
-if (beneCloser) {
-    beneCloser.addEventListener('click', function() {
-        beneWrap.classList.remove('active');
-        player2.stopVideo();
-        swiper.autoplay.start()
-        body.classList.remove('no-scroll');
-    });
-};
-
-beneWrap.addEventListener("click", function(event) {
-    // If user clicks inside the element, do nothing
-    if (event.target.closest(".popup-video__player")) return;
-
-    // If user clicks outside the element, hide it!
-    beneWrap.classList.remove('active');
-    player2.stopVideo();
-    swiper.autoplay.start()
-    body.classList.remove('no-scroll');
-});
+// popupVideo.onended = function () {
+//     popupVideo.currentTime = 0;
+//     popupVideo.load();
+//     popupVideoReplay.classList.add('visibleState');
+//     popupVideoReplay.classList.remove('playState');
+//     popupVideo.removeAttribute("controls");
+// };
+//
+// popupVideoReplay.addEventListener('click', function() {
+//     popupVideo.play();
+//     popupVideo.setAttribute("controls", "controls");
+//     popupVideoReplay.classList.add('playState');
+//     popupVideoReplay.classList.remove('visibleState');
+// });

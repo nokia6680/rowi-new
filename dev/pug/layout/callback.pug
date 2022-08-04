@@ -1,0 +1,55 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        header.header.header--callback
+            .header__logo
+                a(href="index.html" target="_self").header__logo-link
+                    img(src="static/images/content/logo-header.svg" width="" height="" alt="ROWI").header__logo-img
+        main.main
+            section.callback.callback--page
+                h2.callback__title.section-title Оставьте заявку на&nbsp;кредит и&nbsp;получите решение 
+                    span сегодня
+                p.callback__description Укажите телефон для&nbsp;заявки или&nbsp;консультации
+                
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                            span.callback__error
+                            
+                        button(type="submit").callback__submit Отправить заявку
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        script(src="static/js/validate.js")
+        block script

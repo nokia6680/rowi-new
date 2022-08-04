@@ -75,6 +75,10 @@ $units: 1px !default;
   position: relative;
 
   padding-left: toRem(34);
+
+  @include min-screen(1200px) {
+      padding-left: toRem(36);
+  }
 }
 
 @mixin custom-checkbox {
@@ -89,6 +93,12 @@ $units: 1px !default;
   border-radius: toRem(5);
   top: 0;
   left: 0;
+
+  @include min-screen(1200px) {
+      border-color: #DADDE7;
+      width: toRem(24);
+      height: toRem(24);
+  }
 }
 
 @mixin checkbox-checked {
@@ -108,14 +118,24 @@ $units: 1px !default;
 
   top: 0;
   left: 0;
+
+  @include min-screen(1200px) {
+      width: toRem(24);
+      height: toRem(24);
+  }
 }
 
 @mixin gapFallback($gap) {
     @supports not (aspect-ratio: 1 / 1) {
-        margin-right: $gap;
 
-        &:last-child {
-            margin-right: 0;
+        & > * {
+            margin-bottom: $gap;
+        }
+
+        & > * {
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }

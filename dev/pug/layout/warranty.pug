@@ -1,0 +1,186 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            section.intro.intro--warranty
+                h1.intro__title.title
+                    | Получите&nbsp;банковскую гарантию за 
+                    span 1 день
+                .intro__info.intro__info--warranty
+                    <!--SVG zone-->
+                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
+                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+                    ul.intro__info-list
+                        li.intro__info-item
+                            span.intro__info-name Гарантия в реестре
+                            span.intro__info-round 100
+                                span %
+                        li.intro__info-item.intro__info-item--big
+                            b.intro__info-title Выгодные условия
+                            ul.intro__list
+                                li.intro__item
+                                    span Сумма до 300 млн рублей
+                                li.intro__item
+                                    span Без залога
+                                li.intro__item
+                                    span Срок до 2 000 дней
+                                li.intro__item
+                                    span Быстрое согласование текста гарантии
+                .intro__details
+                    p.intro__description Выдаём банковские гарантии на любые цели&nbsp;без посещения офиса
+
+                    .intro__controls
+                        a(href="#order" target="_self").intro__link Оставить&nbsp;заявку
+                    
+            section.conditions.conditions--warranty
+                h2.conditions__title.section-title Все виды гарантий  
+                    span в одном месте
+                p.conditions__description Обеспечение, исполнение, возврат аванса, гарантийные обязательства
+                            
+                .conditions__info
+                    .conditions__visual
+                        picture.conditions__frame
+                            source(srcset="static/images/content/cond-2.webp" type="image/webp")
+                            img(src="static/images/content/cond-2.png" width="" height="" alt="Все виды гарантий").conditions__frame-image
+                        .conditions__block
+                            .conditions__shadow
+                            span.conditions__name Гарантия за 1 день
+                    .conditions__details
+                        h3.conditions__subtitle Для кого
+                        ul.conditions__list.conditions__list--warranty
+                            li.conditions__item
+                                span Госзаказчиков по 44-ФЗ
+                            li.conditions__item
+                                span Заказчиков по 223-ФЗ
+                            li.conditions__item
+                                span Банка России: 86-ФЗ и 632-П ЦБ РФ
+                            li.conditions__item
+                                span Региональных фондов по кап.ремонту: 185-ФЗ&nbsp;и&nbsp;615-ПП&nbsp;РФ
+                            li.conditions__item
+                                span Региональных операторов по отходам: 89-ФЗ&nbsp;и&nbsp;1133-ПП&nbsp;РФ
+                        a(href="#form" target="_self").conditions__link Оставить заявку
+                        
+            include ../modules/blocks/steps
+            include ../modules/blocks/features
+            
+            section.chat.chat--warranty
+                .chat__about
+                    h2.chat__title.section-title
+                        span Удобный контакт 
+                        | с&nbsp;личным&nbsp;менеджером
+                    p.chat__description Наши менеджеры отлично разбираются в&nbsp;продукте и подберут финансирование под&nbsp;вашу потребность
+                ul.chat__list
+                    li.chat__item.chat__item-master
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-master-3.webp" type="image/webp")
+                            img(src="static/images/content/chat-master-3.png" width="" height="" alt="Сотрудник чата").chat__frame-image
+                        p.chat__text Ваша заявка на гарантию одобрена.
+                    li.chat__item.chat__item-master
+                        p.chat__text После оплаты вами счёт-оферты, гарантия будет автоматически выпушена и размещена в реестр.
+                    li.chat__item.chat__item-client
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-client-3.webp" type="image/webp")
+                            img(src="static/images/content/chat-client-3.png" width="" height="" alt="Клиент чата").chat__frame-image
+                        p.chat__text Оперативно, спасибо!
+                <!--SVG zone-->
+                .chat__svg    
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 130 94")
+                        path(class="chat__line-dash" d="M61.18,1.82c8.21,36.09,47,54.05,57.23,41.9C137.26,21.25,83,.3,57.46,45.44,33.37,88,13.74,93.55,1.69,86.73")
+                        path(class="chat__line-mask" d="M61.18,1.82c8.21,36.09,47,54.05,57.23,41.9C137.26,21.25,83,.3,57.46,45.44,33.37,88,13.74,93.55,1.69,86.73")
+                                
+                        .chat__top
+                    svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
+                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        .chat__top
+            section.about.about--warranty
+                h2.about__title.section-title ROWI — ваш 
+                    span надёжный 
+                    | финансовый партнер
+                p.about__description КИВИ банк (АО) входит в группу QIWI. QIWI PLC — одна из крупнейших компаний на российском платёжном рынке. КИВИ банк (АО) находится на первых позициях в текущем рейтинге эффективных банков по данным Коммерсант 
+                    sup
+                        a(href="https://www.kommersant.ru/doc/4997257" target="_blank") 1
+                ul.about__list.about__list--warranty
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__nr 100
+                            p.about__subtitle миллиардов рублей
+                            p.about__text Сумма обеспечения
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle Tоп-3
+                            p.about__text По количеству выданных гарантий
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle 20 000
+                            p.about__text Заявок обрабатываем в месяц
+
+            section.callback.callback--warranty
+                h2.callback__title.section-title Оставьте заявку на&nbsp;гарантии и&nbsp;получите решение 
+                    span сегодня
+                p.callback__description Укажите телефон для&nbsp;заявки или&nbsp;консультации
+                
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                            span.callback__error
+                        
+                        button(type="submit").callback__submit Отправить заявку
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+                        
+            section(class="faq " +faqClass)
+                h2.faq__title.section-title Популярные 
+                    span вопросы
+                ul.faq__list
+                    for i in faqData 
+                        li.faq__wrap
+                            details.faq__item
+                                summary.faq__name=i.title
+                                p.faq__description=i.description
+            
+            include ../modules/blocks/materials
+        
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        script(src="static/js/validate.js")
+        block script

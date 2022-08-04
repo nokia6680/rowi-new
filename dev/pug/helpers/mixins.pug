@@ -1,0 +1,44 @@
+mixin breadcrumbs-item(text,href)
+    li.breadcrumbs__item
+        if(href)
+            a.breadcrumbs__link(href=href target="_self")=text
+        else
+            span.breadcrumbs__text=text
+
+mixin materialItem(type, date, dateFull, name, link, description, tag, tag1, tag2, tag3, image)
+    li(class="materials__item " +type)
+        a(href="" +link target="_self").materials__info
+            time(datetime="" +dateFull).materials__date=date
+            span.materials__link=name
+            p.materials__description=description
+
+        .materials__tags.tagList.closed
+            a.materials__tags-item=tag
+            button(type="button").materials__tags-opener.tagOpener Ещё +3
+            a.materials__tags-item=tag1
+            a.materials__tags-item=tag2
+            a.materials__tags-item=tag3
+        a(href="" +link target="_self").materials__imagelink
+            picture.materials__frame
+                source(media="(min-width: 1200px)" srcset="static/images/content/" +image +"-1200.webp" type="image/webp")
+                source(media="(min-width: 1200px)" srcset="static/images/content/" +image +"-1200.png")
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(src="static/images/content/" +image +".png" width="" height="" alt="" +name).materials__frame-image
+
+mixin blogItem(type, date, dateFull, name, description, link, tag, tag1, tag2, tag3, image)
+    li(class="blog__item " +type)
+        a(href="" +link target="_self").blog__info
+            time(datetime="" +dateFull).blog__date=date
+            span.blog__link=name
+            p.blog__description=description
+
+        .blog__tags.tagList.closed
+            a(href="" target="_self").blog__tags-item=tag
+            button(type="button").blog__tags-opener.tagOpener Ещё +3
+            a(href="" target="_self").blog__tags-item=tag1
+            a(href="" target="_self").blog__tags-item=tag2
+            a(href="" target="_self").blog__tags-item=tag3
+        a(href="" +link target="_self").blog__imagelink    
+            picture.blog__frame
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(src="static/images/content/" +image +".png" width="" height="" alt="" +name).blog__frame-image

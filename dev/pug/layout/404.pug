@@ -1,0 +1,54 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            section.error
+                .error__info
+                    h1.error__title.section-title Страница не найдена
+                    p.error__description Возможно, она была перемещена, или адрес указан неверно
+                    <!--SVG zone-->
+                    .error__svg.error__svg--mobile
+                        svg(class="error__line error__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 166" fill="none")
+                            path(class="error__line-dash" d="M169.4,8.5C236.8,78.9,128,134.2,28.6,89.8c-98-43.8,100.7-107.8,156,69")
+                            path(class="error__line-mask" d="M169.4,8.5C236.8,78.9,128,134.2,28.6,89.8c-98-43.8,100.7-107.8,156,69")
+                            .error__top
+                    a(href="index.html" target="_self").error__link На главную
+                
+                <!--SVG zone-->
+                .error__svg.error__svg--desktop
+                    svg(class="error__line error__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 378 452" fill="none")
+                        path(class="error__line-dash" d="M144.657 1.43776C231.566 13.1129 363.387 102.549 313.681 239.44C266.601 369.101 52.1379 286.624 110.143 150.155C149.251 58.1442 364.043 78.0245 376.151 253.938C383.34 358.392 308.014 491.651 124.3 438.496C42.7082 414.888 5.30799 361.375 1.80546 359.996")
+                        path(class="error__line-mask" d="M144.657 1.43776C231.566 13.1129 363.387 102.549 313.681 239.44C266.601 369.101 52.1379 286.624 110.143 150.155C149.251 58.1442 364.043 78.0245 376.151 253.938C383.34 358.392 308.014 491.651 124.3 438.496C42.7082 414.888 5.30799 361.375 1.80546 359.996")
+                        .error__top
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/blob.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        block script

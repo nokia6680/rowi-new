@@ -1,0 +1,205 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="manifest" href="/manifest.json")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        .popup-fact
+            p.popup-fact__description Добро пожаловать на новую страницу ROWI Факторинг Плюс. Мы переехали с factoringplus.ru
+            button(type="button").popup-fact__closer
+        include ../modules/header/header
+        main.main
+            section.intro.intro--factoring
+                h1.intro__title.title
+                    | Факторинг Плюс — до 
+                    span 100% 
+                    | суммы сразу после поставки
+                .intro__info.intro__info--factoring
+                    <!--SVG zone-->
+                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
+                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+                    ul.intro__info-list
+                        li.intro__info-item
+                            span.intro__info-name Заявка одобрена
+                .intro__details
+                    ul.intro__list
+                        li.intro__item
+                            span Решение за 15 минут
+                        li.intro__item
+                            span Без залога и оценки финсостояния
+                        li.intro__item
+                            span Полностью онлайн
+                    .intro__controls
+                        a(href="#order" target="_self").intro__link Оставить&nbsp;заявку
+    
+            section.features.features--factoring
+                h2.features__title.section-title
+                    span Факторинг 
+                    | — это финансирование контрактов с отсрочкой платежа 
+                p.features__about Деньги выдаются без залога сразу после поставки. Погашение осуществляется&nbsp;из средств заказчика.  Это проще и быстрее, чем кредит.
+                .features__svg.features__svg--factoring
+                    svg(class="features__line features__line--mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 100")
+                        path(class="features__line-mask" d="M14.89,98.16C-17.78,56.94,14.78,42.72,67.05,56,125.62,70.78,216,97.07,264.55,86.24c38.29-8.53,16.09-60.49-84.07-84.4")
+                    svg(class="features__line-top mobile" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M14.6374 13.6942C10.4074 12.1125 4.67429 10.6993 0.347618 10.712L6.95045 7.036L9.6748 0C10.2677 4.27605 12.4679 9.72637 14.6374 13.6942Z" fill="#F5AABE")
+                    svg(class="features__line features__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 659.93 219.83" fill="none")
+                        path(class="features__line-mask" d="M110.34,1s-237,181.94-13.17,212.76c201.29,27.72,483.16-65.42,561.76-103")
+                
+                ul.features__list
+                    li.features__item
+                        span.features__icon.fea-2
+                        h3.features__name Для тех, кто
+                        
+                        ul.features__sublist
+                            li.features__sublist-item
+                                span Работает по отсрочке платежа
+                            li.features__sublist-item
+                                span Ценит скорость
+                            li.features__sublist-item
+                                span Является любой формой МСБ
+                    li.features__item
+                        span.features__icon.fea-4
+                        h3.features__name Что дает
+                        
+                        ul.features__sublist
+                            li.features__sublist-item
+                                span Пополнение оборотных средств для увеличения объемов продаж
+                            li.features__sublist-item
+                                span Возможность заключать больше контрактов с отсрочкой
+                            li.features__sublist-item
+                                span Снижение риска неплатежа со&nbsp;стороны покупателя
+                                
+                a(href="#order" target="_self").features__order Получить консультацию
+                
+                .features__guide
+                    a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
+                    p.features__guide-about В нем собрана полезная информация о факторинге
+                    
+            include ../modules/blocks/conditions
+            
+            section.steps.steps--factoring
+                h2.steps__title.section-title #{stepsTitle1}
+                    span #{stepsTitleBlue} 
+                    | #{stepsTitle2}
+                ul(class="steps__list " +stepsClass)
+                    for i in steps
+                        li.steps__item
+                            span(class="steps__icon " +i.img)
+                            h3.steps__name=i.name
+                            p.steps__description=i.description
+                            
+                a(href="#order" target="_self").steps__order Оставить заявку
+                
+            section.chat.chat--factoring
+                .chat__about
+                    h2.chat__title.section-title
+                        span Удобный контакт 
+                        | с&nbsp;личным&nbsp;менеджером
+                    p.chat__description Наши менеджеры отлично разбираются в&nbsp;продукте и подберут финансирование под&nbsp;вашу потребность
+                ul.chat__list
+                    li.chat__item.chat__item-master
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-master-2.webp" type="image/webp")
+                            img(src="static/images/content/chat-master-2.png" width="" height="" alt="Сотрудник чата").chat__frame-image
+                        p.chat__text Андрей, мы уже отправили вам финансирование, так как проверка происходит автоматически
+                    li.chat__item.chat__item-client
+                        picture.chat__frame
+                            source(srcset="static/images/content/chat-client-2.webp" type="image/webp")
+                            img(src="static/images/content/chat-client-2.png" width="" height="" alt="Клиент чата").chat__frame-image
+                        p.chat__text Ольга, я загрузил поставки на финансирование в личном кабинете. Проверьте
+                
+                <!--SVG zone-->
+                .chat__svg    
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 159 102")
+                        path(class="chat__line-dash" d="M74.47,2c2.14,38.83,40.64,74.41,75.65,70.16C176.59,69,127.67-12.68,1.92,100")
+                        path(class="chat__line-mask" d="M74.47,2c2.14,38.83,40.64,74.41,75.65,70.16C176.59,69,127.67-12.68,1.92,100")
+                        .chat__top
+                            
+                    svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
+                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
+                        .chat__top
+                            
+            section.about.about--factoring
+                h2.about__title.section-title ROWI — ваш 
+                    span надёжный 
+                    | финансовый партнер
+                ul.about__list
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__nr 45
+                            p.about__subtitle миллиардов рублей
+                            p.about__text Выданного финансирования
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle Tоп-2
+                            p.about__text По количеству новых клиентов факторинга
+                    li.about__item
+                        .about__shadow
+                        .about__wrap
+                            b.about__subtitle 10 лет
+                            p.about__text Экспертизы на&nbsp;рынке факторинга
+
+            section.callback.callback--factoring#order
+                h2.callback__title.section-title Оставьте заявку на&nbsp;факторинг и&nbsp;получите решение 
+                    span сегодня
+                p.callback__description Укажите телефон для&nbsp;заявки или консультации
+                
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                            span.callback__error
+                        
+                        button(type="submit").callback__submit Отправить заявку
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+                        
+            section(class="faq " +faqClass)
+                h2.faq__title.section-title Популярные 
+                    span вопросы
+                ul.faq__list
+                    for i in faqData 
+                        li.faq__wrap
+                            details.faq__item
+                                summary.faq__name=i.title
+                                p.faq__description=i.description
+            
+            include ../modules/blocks/materials
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/svg.js")
+        script(src="static/js/validate.js")
+        block script

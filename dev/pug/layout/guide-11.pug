@@ -1,0 +1,125 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.3.8/dist/simplebar.css")
+        script(src="https://cdn.jsdelivr.net/npm/simplebar@5.3.8/dist/simplebar.min.js")
+    body.body
+        include ../modules/header/header
+        main.main
+            section.guide
+                include ../modules/blocks/filter
+
+                ul.guide__breadcrumbs.breadcrumbs
+                    +breadcrumbs-item('Гайд по факторингу','#')
+                    +breadcrumbs-item('Сравнение с другими видами финансирования')
+                .guide__body
+                    // Заголовок h1
+                    h1.guide__name Сравнение факторинга с другими видами финансирования
+                    //table
+                    .guide__tablewrap
+                        .guide__table(data-simplebar data-simplebar-auto-hide="false")
+                            table.table
+                                thead
+                                    tr  
+                                        th.table__head Критерий
+                                        th.table__head Факторинг
+                                        th.table__head Кредит
+                                        th.table__head Овердрафт
+                                        th.table__head МФО
+                                tbody
+                                    tr  
+                                        td.table__cell Срок
+                                        td.table__cell Величина отсрочки
+                                        td.table__cell Фиксированный
+                                        td.table__cell Фиксированный
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Залог
+                                        td.table__cell Не нужен
+                                        td.table__cell Нужен
+                                        td.table__cell Нужен
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Сумма
+                                        td.table__cell До 95% оборота
+                                        td.table__cell Исходя  из фин. отчетности
+                                        td.table__cell До 50% оборота
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Погашение
+                                        td.table__cell Средства заказчика
+                                        td.table__cell Средства клиента
+                                        td.table__cell Средства клиента
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Условия увеличения лимита
+                                        td.table__cell Рост числа заказов
+                                        td.table__cell Рост качества баланса либо или доп. обеспечение
+                                        td.table__cell При значительном увеличении оборотов по счету
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Целевое использование
+                                        td.table__cell Не ограничено
+                                        td.table__cell Строгий контроль
+                                        td.table__cell Строгий контроль
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Цикличнось
+                                        td.table__cell Возобновляемый лимит
+                                        td.table__cell Разовая сделка
+                                        td.table__cell Возобновляемый лимит
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Отражение на балансе
+                                        td.table__cell нет
+                                        td.table__cell Кредитное обязательство
+                                        td.table__cell Кредитное обязательство
+                                        td.table__cell Кредитное обязательство
+                                    tr
+                                        td.table__cell Доп услуги
+                                        td.table__cell Страхование рисков, управление дебиторской задолженностью
+                                        td.table__cell Нет
+                                        td.table__cell Нет
+                                        td.table__cell ???
+                                    tr
+                                        td.table__cell Переход на РКО
+                                        td.table__cell не требуется
+                                        td.table__cell требуется
+                                        td.table__cell требуется
+                                        td.table__cell требуется
+                .guide__nav
+                    a(href="guide-10.html" target="_self").guide__nav-link.guide__nav-link--prev 
+                        span.guide__nav-text.guide__nav-text--desktop Предыдущий раздел
+                        span.guide__nav-text.guide__nav-text--mobile Назад
+                    a(href="dictionary.html" target="_self").guide__nav-link.guide__nav-link--next 
+                        span.guide__nav-text.guide__nav-text--desktop Следующий раздел
+                        span.guide__nav-text.guide__nav-text--mobile Вперед
+
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        script(src="static/js/observer.js")
+        script(src="static/js/guide.js")
+        block script

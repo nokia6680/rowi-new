@@ -1,0 +1,23 @@
+.popup-order.js-popup-wrap#js-popup-order
+    .popup-order__wrapper.js-popup-inner
+        button(type="button").popup-order__closer.js-popup-closer
+        
+        h3.popup-order__title Заявка на&nbsp;сотрудничество
+        p.popup-order__description Оставьте контакты. Наш менеджер свяжется с вами
+        
+        form(method="post" action="" name="orderForm").popup-order__form.order-form
+            ul.order-form__list
+                li.order-form__item
+                    input(type="text" name="order-name" id="order-name" placeholder="Имя" required).order-form__input
+                    span.order-form__error
+                li.order-form__item
+                    input(type="tel" name="order-tel" id="order-tel" placeholder="Номер телефона" onkeydown="validationOrderTel()" required).order-form__input.js-phone-input
+                    span.order-form__error.order-form__error--tel
+                li.order-form__item
+                    input(type="email" name="order-email" id="order-mail" placeholder="Email" onkeydown="validationOrderMail()" required).order-form__input
+                    span.order-form__error.order-form__error--mail
+                li.order-form__item
+                    textarea(name="comment" id="comment" placeholder="Комментарий" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"').order-form__textarea
+            button(type="submit").order-form__submit Отправить
+            span.order-form__agree Нажимая кнопку, вы соглашаетесь на 
+                a(href="" target="_blank") обработку персональных данных

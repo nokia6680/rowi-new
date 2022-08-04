@@ -1,19 +1,23 @@
-$colors: $fea1, $fea2, $fea3;
-$repeats1: 9;
-$repeats2: 12;
-$repeats3: 6;
-
 .clients {
     width: 100%;
-
+    --width: calc(100% - 343px);
     @include flex-setting(column, flex-start, center);
 
     padding-top: toRem(48);
-    padding-bottom: toRem(48);
+    padding-bottom: toRem(56);
+    margin-bottom: toRem(48);
+
+    &.loaded {
+        .clients__title {
+            animation: fadeInBottom 0.3s ease-out forwards;
+        }
+    }
 
     &__title {
-        margin-bottom: toRem(40);
-        padding-left: toRem(16);
+        margin-bottom: toRem(42);
+        padding-left: calc(var(--width) / 2);
+        padding-right: calc(var(--width) / 2);
+        opacity: 0;
 
         span {
             color: $blue;
@@ -33,46 +37,155 @@ $repeats3: 6;
 
     &__line {
         width: 100%;
-
-        &--one {
-            @for $i from 1 through $repeats1 {
-                li:nth-child(#{length($colors)}n+#{$i}) {
-                    background-color: nth($colors, random(length($colors)));
-                }
-            }
-        }
-
-        &--two {
-            @for $i from 1 through $repeats2 {
-                li:nth-child(#{length($colors)}n+#{$i}) {
-                    background-color: nth($colors, random(length($colors)));
-                }
-            }
-        }
-
-        &--three {
-            @for $i from 1 through $repeats3 {
-                li:nth-child(#{length($colors)}n+#{$i}) {
-                    background-color: nth($colors, random(length($colors)));
-                }
-            }
-        }
+        @include flex-setting(column, center, center);
 
         &-wrap {
-            width: auto;
             @include flex-setting(row, flex-start, center);
-            gap: toRem(16);
+            width: 100%;
+            position: relative;
+            white-space: nowrap;
+            -webkit-transition-timing-function:linear!important;
+            transition-timing-function:linear!important;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.wrap-1 {
+                .js-marquee-wrapper {
+                    animation-duration: 280s !important;
+                }
+            }
+
+            &.wrap-2 {
+                .js-marquee-wrapper {
+                    animation-duration: 137s !important;
+                }
+            }
+
+            &.wrap-3 {
+                .js-marquee-wrapper {
+                    animation-duration: 154s !important;
+                }
+            }
         }
 
         &-item {
             width: auto;
             @include flex-setting(column, center, center);
-            padding: toRem(11) toRem(16);
+            padding: toRem( 11) toRem(16);
             border-radius: toRem(40);
+            margin-right: 16px;
+
+            &.blue {
+                background-color: $fea2;
+            }
+
+            &.gray {
+                background-color: $fea3;
+            }
+
+            &.pink {
+                background-color: $fea1;
+            }
         }
 
         &-text {
             white-space: nowrap;
+            @include font-setting($primary-font, toRem(15), toRem(18), 400, $dark);
+            letter-spacing: 0.02em;
+        }
+
+        .js-marquee-wrapper {
+            width: 100%;
+            @include flex-setting(row, flex-start, center);
+        }
+
+        .js-marquee {
+            width: 100%;
+            @include flex-setting(row, flex-start, center);
+            margin-right: 0 !important;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .clients {
+        --width: calc(100% - 1032px);
+        padding-top: toRem(48);
+        padding-bottom: toRem(56);
+        margin-bottom: toRem(112);
+        align-items: flex-start;
+
+        &.loaded {
+            .clients__title {
+                animation: fadeInBottom 0.3s ease-out forwards;
+            }
+
+            .clients__description {
+                animation: fadeInBottom 0.3s ease-out forwards;
+            }
+        }
+
+        &__title {
+            padding-left: calc(var(--width) / 2);
+        }
+
+        &__description {
+            opacity: 0;
+            width: 100%;
+            display: block;
+            @include font-setting($primary-font, toRem(20), toRem(26), 400, $dark);
+            text-align: left;
+            max-width: calc(682px + (var(--width) / 2));
+            padding-left: calc(var(--width) / 2);
+            margin-bottom: toRem(67);
+        }
+
+        &__list {
+            gap: toRem(32);
+        }
+
+        &__line {
+            &-item {
+                margin-right: toRem(24);
+                padding-left: toRem(25);
+                padding-right: toRem(25);
+                border-radius: toRem(30);
+            }
+        }
+    }
+}
+
+@include  min-screen(1920px) {
+    .clients {
+        &__list {
+            position: relative;
+
+            &::after,
+            &::before {
+                position: absolute;
+                content: '';
+
+                width: toRem(390);
+                height: 100%;
+
+                top: 50%;
+                transform: translateY(-50%);
+
+                z-index: 20;
+            }
+
+            &::after {
+                background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 25.13%, rgba(255, 255, 255, 0) 84.72%, rgba(255, 255, 255, 0) 116.46%);
+                left: 0;
+            }
+
+            &::before {
+                background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 25.13%, rgba(255, 255, 255, 0) 84.72%, rgba(255, 255, 255, 0) 116.46%);
+                right: 0;
+            }
         }
     }
 }
