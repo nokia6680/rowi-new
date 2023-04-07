@@ -633,7 +633,8 @@
             .intro__info-item {
                 padding: toRem(68) toRem(23) toRem(20) toRem(23);
                 box-shadow: none;
-                filter: drop-shadow(0px 16px 40px rgba(114, 128, 182, 0.2));
+                box-shadow: 0 16px 40px 0 rgba(114, 128, 182, 0.2);
+                //filter: drop-shadow(0px 16px 40px rgba(114, 128, 182, 0.2));
                 border-radius: toRem(12);
                 overflow: visible;
 
@@ -694,7 +695,7 @@
                 top: toRem(76);
                 right: toRem(-150);
 
-                filter: drop-shadow(0px 16px 40px rgba(114, 128, 182, 0.2));
+                box-shadow: 0 16px 40px 0 rgba(114, 128, 182, 0.2);
                 border-radius: 12px;
             }
         }
@@ -870,7 +871,7 @@
                 content: '';
 
                 width: toRem(400);
-                height: toRem(280);
+                height: toRem(278);
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -878,8 +879,8 @@
 
                 top: toRem(76);
                 right: toRem(-132);
-
-                filter: drop-shadow(0px 16px 40px rgba(114, 128, 182, 0.2));
+                box-shadow: 0 16px 40px 0 rgba(114, 128, 182, 0.2);
+                //filter: drop-shadow(0px 16px 40px rgba(114, 128, 182, 0.2));
                 border-radius: 12px;
                 pointer-events: none;
                 opacity: 0;
@@ -1101,11 +1102,11 @@
             }
 
             .intro__info-item {
-                animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.3s;
             }
 
             .intro__info--factoring::after {
-                animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.2s;
             }
         }
 
@@ -1175,11 +1176,11 @@
             }
 
             .intro__info-item {
-                animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.3s;
             }
 
             .intro__info--credit::after {
-                animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.2s;
             }
         }
 
@@ -1491,11 +1492,11 @@
             }
 
             .intro__info-item {
-                animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.3s;
             }
 
             .intro__info-item--big {
-                animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+                animation: fadeInBottom 0.3s $cubic forwards 0.2s;
             }
         }
 
@@ -2196,11 +2197,11 @@
                 }
 
                 .intro__info-item {
-                    animation: fadeInRight 0.3s $cubic forwards 0.2s;
+                    animation: fadeInRightF 0.3s $cubic forwards 0.3s;
                 }
 
                 .intro__info--factoring::after {
-                    animation: fadeInRightV 0.3s $cubic forwards 0.3s;
+                    animation: fadeInRightV 0.3s $cubic forwards 0.2s;
                 }
             }
 
@@ -2256,11 +2257,11 @@
 
             &.loaded {
                 .intro__info-item {
-                    animation: fadeInRight 0.2s $cubic forwards 0.2s;
+                    animation: fadeInRight 0.3s $cubic forwards 0.3s;
                 }
 
                 .intro__info--credit::after {
-                    animation: fadeInRightV 0.2s $cubic forwards 0.3s;
+                    animation: fadeInRightV 0.3s $cubic forwards 0.2s;
                 }
             }
 
@@ -2441,11 +2442,11 @@
 
             &.loaded {
                 .intro__info-item {
-                    animation: fadeInRight 0.3s $cubic forwards 0.2s;
+                    animation: fadeInRight 0.3s $cubic forwards 0.3s;
                 }
 
                 .intro__info-item--big {
-                    animation: fadeInRight 0.3s $cubic forwards 0.3s;
+                    animation: fadeInRight 0.3s $cubic forwards 0.2s;
                 }
             }
 

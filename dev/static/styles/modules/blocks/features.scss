@@ -446,6 +446,10 @@
             padding: toRem(15) 0 toRem(15) toRem(60);
             margin-bottom: toRem(24);
         }
+
+        .features__order {
+            margin-bottom: 0;
+        }
     }
 
     &__sublist {
@@ -1039,7 +1043,8 @@
         }
 
         &--factoring {
-            margin-bottom: toRem(211);
+            //margin-bottom: toRem(211);
+            margin-bottom: 0;
             padding-bottom: toRem(112);
 
             &.loaded {
@@ -1082,6 +1087,10 @@
                 margin-bottom: 0;
                 bottom: toRem(266);
                 left: calc(var(--width) / 2);
+            }
+
+            .features__order {
+                margin-bottom: 0;
             }
 
             .features__line--mobile {

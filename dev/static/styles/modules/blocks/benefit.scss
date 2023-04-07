@@ -14,7 +14,7 @@
         }
 
         .benefit__visual {
-            animation: fadeInBottomV 0.3s $cubic forwards 0.1s;
+            animation: fadeInBottom 0.3s $cubic forwards 0.1s;
         }
     }
 
@@ -87,10 +87,17 @@
             border-radius: 50%;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
 
             background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
             filter: blur(54.692px);
+
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            transform: translate(-50%, -50%);
+
+            will-change: filter;
         }
 
         &::after {
@@ -119,7 +126,7 @@
         padding: toRem(112) calc(var(--width) / 2);
         margin-bottom: toRem(112);
 
-        &.loaded {    
+        &.loaded {
             .benefit__visual {
                 animation: fadeInBottomV 0.2s $cubic forwards 0.1s;
             }

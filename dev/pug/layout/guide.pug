@@ -25,27 +25,175 @@ html(lang="ru-RU")
         script(src="https://cdn.jsdelivr.net/npm/simplebar@5.3.8/dist/simplebar.min.js")
     body.body
         include ../modules/header/header
-        main.main
-            section.guide
+        main.main.main--guide
+            .guide
                 include ../modules/blocks/filter
 
                 ul.guide__breadcrumbs.breadcrumbs
                     +breadcrumbs-item('Гайд по факторингу','#')
                     +breadcrumbs-item('Что такое факторинг')
+                .guide__wrap
+                    section.guide__body#factoring0
+                        // Заголовок h1
+                        .guide__item.guide__item-32
+                            h1.guide__name Гайд по факторингу
+                            // Text simple
+                            p.guide__text Актуальная и полезная информация о факторинге в одном месте
+                            p.guide__text Выберите раздел 
+                            .guide__gallery
+                                img(src="static/images/content/guide-main.svg" width="413" height="252" alt="").guide__gallery-image
+                    section.guide__body#factoring1
+                        // Заголовок h1
+                        .guide__item.guide__item-32
+                            h1.guide__name Что такое факторинг
+                            p.guide__text 
+                                a(href="#" target="_blank").guide__text-link Факторинг 
+                                | — это финансирование поставщиков товаров и услуг, которые работают на условиях отсрочки платежа.
+                            //image
+                            .guide__gallery
+                                img(src="static/images/content/guide-image-1.png" width="" height="" alt="").guide__gallery-image
+                        .guide__item.guide__item-32
+                            p.guide__text Деньги поставщику выдаются в обмен на будущие платежи от покупателя
+                            p.guide__text Факторинг — это комплекс услуг. Помимо финансирования, в него входит управление дебиторской задолженностью. Может включать покрытие рисков просрочки и неплатежа дебитора.
+                    section.guide__body#factoring2
+                        // Заголовок h1
+                        .guide__item.guide__item-32
+                            h1.guide__name Рынок факторинга
+                            p.guide__text Факторинг — это одна из древнейших форм торгового кредитования. Его отдельные черты можно найти и в Римской Империи, и в эпоху царя Хаммурапи, 4000 лет до н.э., когда торговцы применяли его в своей деятельности.
+                            //quote
+                            span.guide__thesis Слово фактор происходит от латинского глагола facio, что в буквальном переводе означает «тот, кто делает»
+                            p.guide__text Факторинг начал активно развиваться в Англии в 14 веке во время расцвета текстильной промышленности. В то время рынки сбыта были удалены от мест производства продукции. Факторы играли роль связующего звена между производством и конечными покупателями продукции. Перед фактором, знавшим товарный рынок, платёжеспособность покупателей, законы и торговые обычаи данной страны, ставились задачи поиска надёжных покупателей, хранения и сбыта товара, а также последующего инкассирования торговой выручки.
+                            p.guide__text Основное отличие между факторингом того времени и сегодняшним заключается в том, что фактор перестал нести функцию дистрибьютора товаров.
+                    section.guide__body#factoring4
+                        // Заголовок h1
+                        h1.guide__name Кому подходит факторинг
+                        .guide__item.guide__item-16
+                            h3.guide__subtitle Вам подойдет факторинг, если
+                            //list
+                            ul.guide__list
+                                for i in listItems
+                                    li.guide__list-item
+                                        span=i.name
+                            //image
+                            .guide__gallery
+                                img(src="static/images/content/guide-image-3.png" width="" height="" alt="").guide__gallery-image
+                    section.guide__body#factoring6
+                        // Заголовок h1
+                        h1.guide__name Виды факторинга
+                        .guide__item.guide__item-24
+                            h2.guide__title Риски
 
-                .guide__body
-                    // Заголовок h1
-                    .guide__item.guide__item-32
-                        h1.guide__name Гайд по факторингу
-                        // Text simple
-                        p.guide__text Актуальная и полезная информация о факторинге в одном месте
-                        p.guide__text Выберите раздел 
-                        .guide__gallery
-                            img(src="static/images/content/guide-main.svg" width="413" height="252" alt="").guide__gallery-image
-                .guide__nav.guide__nav--main
-                    a(href="guide-1.html" target="_self").guide__nav-link.guide__nav-link--next 
-                        span.guide__nav-text.guide__nav-text--desktop Следующий раздел
-                        span.guide__nav-text.guide__nav-text--mobile Вперед
+                            p.guide__text
+                                b.guide__text-strong Регрессный (риск на поставщике): 
+                                | если дебитор не оплатит счет, Поставщик обязан возместить Фактору недостающие средства. Поставщик несет больше рисков, но комиссия гораздо ниже.
+                            p.guide__text
+                                b.guide__text-strong Безрегрессный (риск на факторе): 
+                                | фактор берет на себя все риски. Если дебитор не оплатит счет, фактор сам занимается взысканием. За это фактор берет дополнительную комиссию.
+                            .guide__gallery
+                                img(src="static/images/content/guide-image-6.png" width="" height="" alt="").guide__gallery-image
+                        .guide__item.guide__item-24
+                            h2.guide__title Уведомление дебитора
+                            p.guide__text
+                                b.guide__text-strong Открытый (с уведомлением): 
+                                |  дебитор знает, что в сделке участвует фактор. Он получает уведомление от фактора или поставщика.
+                            p.guide__text
+                                b.guide__text-strong Скрытый (без уведомления): 
+                                | поставщик получает финансирование, не уведомляя дебитора. Этот вид подходит, если дебитор не хочет работать по факторингу, имеет претензии к поставщику или вводит комиссию за привлечение фактора. 
+                            .guide__gallery
+                                img(src="static/images/content/guide-image-7.png" width="" height="" alt="").guide__gallery-image
+                        .guide__item.guide__item-24
+                            h2.guide__title Другие виды факторинга
+                            p.guide__text
+                                b.guide__text-strong Реверсивный факторинг (запрашивает дебитор): 
+                                | к фактору обращается не Поставщик, а Дебитор. Когда хочет оплатить поставку товара. При этом дебитор не получает деньги. Фактор отправляет финансирование напрямую поставщику. А Дебитор берет на себя обязательства по возмещению денег Фактору.
+                            .guide__gallery
+                                img(src="static/images/content/guide-image-8.png" width="" height="" alt="").guide__gallery-image
+                            p.guide__text
+                                b.guide__text-strong Предпоставочный (до поставки): 
+                                | к фактору обращается не Поставщик, а Дебитор. Когда хочет оплатить поставку товара. При этом дебитор не получает деньги. Фактор отправляет финансирование напрямую поставщику. А Дебитор берет на себя обязательства по возмещению денег Фактору.
+                            p.guide__text
+                                b.guide__text-strong Международный: 
+                                | когда все участники сделки находятся в разных странах.
+                    section.guide__body#factoring11
+                        // Заголовок h1
+                        h1.guide__name Сравнение факторинга с другими видами финансирования
+                        //table
+                        .guide__tablewrap
+                            .guide__table(data-simplebar data-simplebar-auto-hide="false")
+                                table.table
+                                    thead
+                                        tr  
+                                            th.table__head Критерий
+                                            th.table__head Факторинг
+                                            th.table__head Кредит
+                                            th.table__head Овердрафт
+                                            th.table__head МФО
+                                    tbody
+                                        tr  
+                                            td.table__cell Срок
+                                            td.table__cell Величина отсрочки
+                                            td.table__cell Фиксированный
+                                            td.table__cell Фиксированный
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Залог
+                                            td.table__cell Не нужен
+                                            td.table__cell Нужен
+                                            td.table__cell Нужен
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Сумма
+                                            td.table__cell До 95% оборота
+                                            td.table__cell Исходя  из фин. отчетности
+                                            td.table__cell До 50% оборота
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Погашение
+                                            td.table__cell Средства заказчика
+                                            td.table__cell Средства клиента
+                                            td.table__cell Средства клиента
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Условия увеличения лимита
+                                            td.table__cell Рост числа заказов
+                                            td.table__cell Рост качества баланса либо или доп. обеспечение
+                                            td.table__cell При значительном увеличении оборотов по счету
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Целевое использование
+                                            td.table__cell Не ограничено
+                                            td.table__cell Строгий контроль
+                                            td.table__cell Строгий контроль
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Цикличнось
+                                            td.table__cell Возобновляемый лимит
+                                            td.table__cell Разовая сделка
+                                            td.table__cell Возобновляемый лимит
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Отражение на балансе
+                                            td.table__cell нет
+                                            td.table__cell Кредитное обязательство
+                                            td.table__cell Кредитное обязательство
+                                            td.table__cell Кредитное обязательство
+                                        tr
+                                            td.table__cell Доп услуги
+                                            td.table__cell Страхование рисков, управление дебиторской задолженностью
+                                            td.table__cell Нет
+                                            td.table__cell Нет
+                                            td.table__cell ???
+                                        tr
+                                            td.table__cell Переход на РКО
+                                            td.table__cell не требуется
+                                            td.table__cell требуется
+                                            td.table__cell требуется
+                                            td.table__cell требуется
+                    section.guide__body.guide__body--dictionary#factoring12
+                        // Заголовок h1
+                        h1.guide__name Словарь терминов
+                        
+                        include ../modules/blocks/dictionary
         include ../modules/footer/footer
 
         script(src="static/js/vendor/jquery-3.3.1.min.js")
@@ -53,4 +201,5 @@ html(lang="ru-RU")
         script(src="static/js/header-drop.js")
         script(src="static/js/observer.js")
         script(src="static/js/guide.js")
+        script(src="static/js/scroll-nav.js")
         block script

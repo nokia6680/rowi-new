@@ -9,7 +9,7 @@
     @include flex-setting(row, flex-start, center);
     flex-wrap: wrap;
     margin-bottom: toRem(24);
-    z-index: -1;
+    z-index: 0;
 
     & > * {
         &:not(:last-child) {
@@ -39,6 +39,11 @@
         @include font-setting($primary-font, toRem(12), toRem(19), 400, $blue);
         text-decoration: none;
         letter-spacing: 0.01em;
+
+        &:active {
+            opacity: 0.8;
+            transition: 0.2s $cubic;
+        }
     }
 
     &__text {
@@ -52,6 +57,18 @@
         grid-area: breadcrumbs;
         padding-top: toRem(32);
         z-index: 10;
-        max-width: 100%;
+        max-width: toRem(702);
+        align-self: flex-end;
+
+        &__link {
+            &:hover {
+                opacity: 0.86;
+                transition: 0.2s $cubic;
+            }
+            &:active {
+                opacity: 0.8;
+                transition: 0.2s $cubic;
+            }
+        }
     }
 }

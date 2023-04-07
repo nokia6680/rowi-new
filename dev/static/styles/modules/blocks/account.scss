@@ -1,0 +1,182 @@
+.account {
+    position: relative;
+    @include flex-setting(column, flex-start, flex-start);
+    width: 100%;
+    max-width: toRem(343);
+    padding: toRem(87) toRem(24) toRem(16) toRem(24);
+    margin: 0 auto toRem(48) auto;
+    background-color: #D9F2F2;
+    border-radius: toRem(20);
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: toRem(84);
+        right: toRem(-36);
+        width: toRem(110);
+        height: toRem(110);
+        background-image: url("data:image/svg+xml,%3Csvg width='97' height='88' viewBox='0 0 97 88' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48.0113 87.2727C54.4618 87.2727 59.6941 82.0331 59.6941 75.5682H36.3284C36.3284 82.0331 41.5608 87.2727 48.0113 87.2727ZM87.3479 66.2569C83.8195 62.4602 77.2174 56.7488 77.2174 38.0398C77.2174 23.8297 67.2678 12.4544 53.8518 9.66357V5.85227C53.8518 2.62072 51.2365 0 48.0113 0C44.786 0 42.1708 2.62072 42.1708 5.85227V9.66357C28.7548 12.4544 18.8051 23.8297 18.8051 38.0398C18.8051 56.7488 12.203 62.4602 8.67462 66.2569C7.57884 67.4365 7.09305 68.8465 7.10218 70.2273C7.12227 73.2266 9.47271 76.0795 12.9646 76.0795H83.0579C86.5498 76.0795 88.9021 73.2266 88.9204 70.2273C88.9295 68.8465 88.4437 67.4346 87.3479 66.2569Z' fill='%2300AAAA'/%3E%3Cpath d='M16.6413 17.7484C17.3386 16.9053 17.6723 15.8197 17.5692 14.7305C17.466 13.6413 16.9344 12.6377 16.0913 11.9404C15.2482 11.2432 14.1626 10.9094 13.0734 11.0126C11.9842 11.1157 10.9806 11.6473 10.2833 12.4904C5.24314 18.5852 1.7421 25.8023 0.0753017 33.5334C-0.129914 34.5928 0.0881394 35.6904 0.682704 36.5909C1.27727 37.4913 2.201 38.123 3.25582 38.3503C4.31065 38.5777 5.41257 38.3827 6.32529 37.8071C7.23802 37.2316 7.88888 36.3213 8.1383 35.2714C9.52713 28.8333 12.4434 22.8235 16.6413 17.7484ZM86.6453 12.4904C85.948 11.6466 84.9441 11.1143 83.8544 11.0106C82.7647 10.907 81.6784 11.2404 80.8345 11.9377C79.9907 12.635 79.4584 13.6389 79.3547 14.7286C79.2511 15.8183 79.5845 16.9046 80.2818 17.7484C84.4817 22.8229 87.3998 28.8328 88.7903 35.2714C89.0397 36.3213 89.6906 37.2316 90.6033 37.8071C91.516 38.3827 92.6179 38.5777 93.6728 38.3503C94.7276 38.123 95.6513 37.4913 96.2459 36.5909C96.8405 35.6904 97.0585 34.5928 96.8533 33.5334C95.1863 25.8024 91.6853 18.5853 86.6453 12.4904Z' fill='%2300AAAA'/%3E%3C/svg%3E%0A");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: toRem(97) toRem(88);
+    }
+
+    &__sticker {
+        position: absolute;
+        top: toRem(16);
+        left: 0;
+        @include flex-setting(column, center, center);
+        width: auto;
+        padding: toRem(10) toRem(26.5) toRem(11) toRem(23.5);
+        @include font-setting($primary-font, toRem(14), toRem(17), 500, $dark);
+        background-color: $white;
+        border-top-right-radius: toRem(40);
+        border-bottom-right-radius: toRem(40);
+        box-shadow: 0px 6px 20px rgba(114, 128, 182, 0.2);
+    }
+
+    &__title {
+        margin-bottom: toRem(32);
+        padding-left: toRem(3);
+        @include font-setting($primary-font, toRem(22), toRem(30.8), 400, $dark);
+        text-align: left;
+        letter-spacing: 0.01em;
+
+        span {
+            color: #00AAAA;
+            font-weight: 500;
+        }
+    }
+
+    &__list {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        gap: toRem(24);
+        margin-bottom: toRem(40);
+    }
+
+    &__item {
+        position: relative;
+        @include flex-setting(column, flex-start, flex-start);
+        padding-left: toRem(34);
+        padding-top: toRem(2);
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: toRem(24);
+            height: toRem(24);
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='24' viewBox='0 0 17 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.2286 0.102657C13.3709 0.18776 13.4811 0.320129 13.541 0.478142C13.601 0.636154 13.6072 0.810468 13.5587 0.972607L10.9392 9.75011H15.7725C15.9145 9.75005 16.0534 9.79288 16.1722 9.87333C16.2909 9.95377 16.3841 10.0683 16.4404 10.2028C16.4967 10.3372 16.5136 10.4858 16.489 10.63C16.4644 10.7743 16.3993 10.908 16.3019 11.0145L4.66596 23.7638C4.55337 23.8873 4.40355 23.9678 4.24092 23.9922C4.07828 24.0166 3.91243 23.9835 3.77038 23.8982C3.62834 23.813 3.51848 23.6806 3.45872 23.5228C3.39895 23.3649 3.3928 23.1908 3.44127 23.0289L6.06082 14.2499H1.22754C1.0855 14.2499 0.946552 14.2071 0.827851 14.1266C0.709149 14.0462 0.615889 13.9317 0.559583 13.7972C0.503276 13.6627 0.486389 13.5142 0.511005 13.3699C0.535621 13.2257 0.600663 13.092 0.698101 12.9854L12.334 0.236149C12.4465 0.112855 12.5961 0.0324137 12.7585 0.00790499C12.9209 -0.0166037 13.0866 0.0162615 13.2286 0.101157V0.102657Z' fill='%2300AAAA'/%3E%3C/svg%3E%0A");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: toRem(17) toRem(24);
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(18), toRem(19.7), 500, $dark);
+            margin-bottom: toRem(8);
+        }
+
+        &-about {
+            @include font-setting($primary-font, toRem(14), toRem(20.3), 400, $dark);
+            letter-spacing: 0.01em;
+            text-align: left;
+            max-width: toRem(243);
+        }
+    }
+
+    &__note {
+        @include font-setting($primary-font, toRem(12), toRem(18.6), 400, $dark);
+        opacity: 0.5;
+        letter-spacing: 0.01em;
+    }
+}
+
+@include min-screen(1200px) {
+    .account {
+        max-width: toRem(1032);
+        padding: toRem(36) toRem(46) toRem(36) toRem(43);
+        margin-bottom: toRem(112);
+    
+        &::after {
+            position: absolute;
+            content: '';
+            top: toRem(110);
+            right: toRem(-62);
+            width: toRem(206);
+            height: toRem(206);
+            background-size: toRem(182) toRem(164);
+        }
+    
+        &__sticker {
+            position: absolute;
+            top: toRem(36);
+            left: auto;
+            right: 0;
+            font-size: toRem(16.45);
+            line-height: toRem(19.74);
+            letter-spacing: 0.02em;
+            font-weight: 500;
+            padding: toRem(12) toRem(22) toRem(12) toRem(16);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: toRem(40);
+            border-bottom-left-radius: toRem(40);
+        }
+    
+        &__title {
+            max-width: toRem(558);
+            padding-left: 0;
+            margin-bottom: toRem(32);
+            font-size: toRem(34);
+            line-height: toRem(47.6);
+        }
+    
+        &__list {
+            flex-direction: row;
+            gap: toRem(14);
+            padding-left: toRem(3);
+            margin-bottom: toRem(56);
+        }
+    
+        &__item {
+            padding-left: toRem(42);
+            padding-top: toRem(4);
+
+            &:first-of-type {
+                max-width: toRem(352);
+            }
+
+            &:last-of-type {
+                max-width: toRem(398);
+            }
+    
+            &::before {
+                width: toRem(32);
+                height: toRem(32);
+                background-size: toRem(22) toRem(32);
+            }
+    
+            &-name {
+                font-size: toRem(22);
+                line-height: toRem(24);
+                margin-bottom: toRem(16);
+            }
+    
+            &-about {
+                font-size: toRem(18);
+                line-height: toRem(26.1);
+                max-width: 100%;
+            }
+        }
+    
+        &__note {
+            font-size: toRem(15);
+            line-height: toRem(24);
+            letter-spacing: 0.01em;
+        }
+    }
+}

@@ -96,7 +96,26 @@ html(lang="ru-RU")
                                 
                 a(href="#order" target="_self").features__order Получить консультацию
                 
-                .features__guide
+                //- .features__guide
+                //-     a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
+                //-     p.features__guide-about В нем собрана полезная информация о факторинге
+                    
+            section.callback.callback--factoring#order
+                h2.callback__title.section-title Оставьте заявку на&nbsp;факторинг и&nbsp;получите решение 
+                    span сегодня
+                p.callback__description Укажите телефон для&nbsp;заявки или консультации
+                        
+                form(method="post" action="#" name="callback-form").callback__form
+                    .callback__nr
+                        .callback__nr-field
+                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                            span.callback__error
+                                    
+                        button(type="submit").callback__submit Отправить заявку
+                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+                        
+                .callback__guide.features__guide
                     a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
                     p.features__guide-about В нем собрана полезная информация о факторинге
                     
@@ -144,7 +163,7 @@ html(lang="ru-RU")
                         path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         .chat__top
-                            
+            include ../modules/blocks/account      
             section.about.about--factoring
                 h2.about__title.section-title ROWI — ваш 
                     span надёжный 
@@ -166,21 +185,6 @@ html(lang="ru-RU")
                         .about__wrap
                             b.about__subtitle 10 лет
                             p.about__text Экспертизы на&nbsp;рынке факторинга
-
-            section.callback.callback--factoring#order
-                h2.callback__title.section-title Оставьте заявку на&nbsp;факторинг и&nbsp;получите решение 
-                    span сегодня
-                p.callback__description Укажите телефон для&nbsp;заявки или консультации
-                
-                form(method="post" action="#" name="callback-form").callback__form
-                    .callback__nr
-                        .callback__nr-field
-                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
-                            span.callback__error
-                        
-                        button(type="submit").callback__submit Отправить заявку
-                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-                        a(href="" target="_blank") обработку персональных данных
                         
             section(class="faq " +faqClass)
                 h2.faq__title.section-title Популярные 

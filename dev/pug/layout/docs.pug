@@ -1,0 +1,81 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            section.docs
+                h1.docs__title Документы
+                
+                .docs__content
+                    .docs__content-block
+                        h2.docs__content-title Факторинг
+
+                        ul.docs__list
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Общие условия поручительства
+                                a(href="" target="_self").docs__list-link Скачать
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Правила факторингового обслуживания
+                                a(href="" target="_self").docs__list-link Скачать
+                    .docs__content-block
+                        h2.docs__content-title Кредит на исполнение контракта
+
+                        ul.docs__list
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Общие условия поручительства
+                                a(href="" target="_self").docs__list-link Скачать
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Рамочный договор об открытии кредитной линии на&nbsp;исполнение контракта
+                                a(href="" target="_self").docs__list-link Скачать
+                    .docs__content-block
+                        h2.docs__content-title КИВИ Банк (АО)
+
+                        ul.docs__list
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Договор комплексного банковского обслуживания
+                                a(href="" target="_self").docs__list-link Скачать
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Тарифы за расчетное обслуживание и другие услуги
+                                a(href="" target="_self").docs__list-link Скачать
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Условия резервирования счета в КИВИ Банк (АО)
+                                a(href="" target="_self").docs__list-link Скачать
+                    .docs__content-block
+                        h2.docs__content-title Банковкие гарантии
+
+                        ul.docs__list
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Рамочный договор о выдаче банковских гарантий
+                                a(href="" target="_self").docs__list-link Скачать
+                    .docs__content-block
+                        ul.docs__list
+                            li.docs__list-item
+                                a(href="" target="_blank").docs__list-name Политика обработки персональных данных
+                                a(href="" target="_self").docs__list-link Скачать
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        block script

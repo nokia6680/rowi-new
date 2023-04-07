@@ -168,6 +168,14 @@
         .callback__title {
             margin-bottom: toRem(40);
         }
+
+        .callback__form {
+            margin-bottom: toRem(56);
+        }
+
+        .callback__guide {
+            opacity: 1;
+        }
     }
 
     &--warranty {
@@ -328,7 +336,9 @@
             }
         }
         &--factoring {
+            margin-bottom: toRem(323);
             padding-bottom: toRem(56);
+            background-color: #fff;
 
             .callback__description {
                 margin-bottom: toRem(72);
@@ -342,6 +352,19 @@
                 left: auto;
                 right: toRem(-222);
                 top: toRem(202);
+            }
+
+            .callback__form {
+                margin-bottom: 0;
+            }
+
+            .callback__guide {
+                opacity: 1;
+                display: flex;
+                position: absolute;
+                bottom: toRem(-323);
+                --width: calc(100% - 960px);
+                right: calc(var(--width) / 2);
             }
         }
 

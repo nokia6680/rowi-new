@@ -84,6 +84,23 @@ playerComform.source = {
     ],
 };
 
+playerComform.poster = "static/images/content/comfort-poster.png";
+
+// var poster = document.querySelector('.plyr__poster');
+// // Expose player so it can be used from the console
+//
+// playerComform.on("pause", (event) => {
+// 	poster.classList.add('active');
+// });
+//
+// playerComform.on("stop", (event) => {
+// 	poster.classList.add('active');
+// });
+//
+// playerComform.on("play", (event) => {
+// 	poster.classList.remove('active');
+// });
+
 var videoComfortInfo = document.querySelector('.comfort__info');
 
 playerComform.on('playing', (event) => {
@@ -147,12 +164,12 @@ if (videoMenu) {
 
 $(function() {
     $(window).scroll(function() {
-        if (($(this).scrollTop() >= 100) && (playerComform.fullscreen.active != 'true')) {
+        if (($(this).scrollTop() > 100) && (playerComform.fullscreen.active != 'true')) {
             playerComform.pause();
         }
 
         else {
-            playerComform.play();
+            return false;
         }
     });
 });

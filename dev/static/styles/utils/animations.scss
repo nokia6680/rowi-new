@@ -350,6 +350,18 @@
     }
 }
 
+@keyframes fadeInRightF {
+    0% {
+        opacity: 0;
+        transform: translate(60px, 20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-64px, 20px);
+    }
+}
+
 
 @keyframes fadeInRightV {
     0% {

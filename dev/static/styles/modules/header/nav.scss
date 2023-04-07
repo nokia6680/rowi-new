@@ -262,7 +262,7 @@
                 cursor: pointer;
                 @include flex-setting(row, flex-start, center);
 
-                &:first-of-type {
+                &:not(:last-of-type) {
                     border-bottom: toRem(1) solid rgba(3, 15, 34, 0.1);
                 }
             }
@@ -375,7 +375,6 @@
             &-inner {
                 position: absolute;
                 border-bottom: none;
-                border-top: toRem(1) solid #e3e3e3;
 
                 width: calc(100% + 152px);
                 left: toRem(-152);

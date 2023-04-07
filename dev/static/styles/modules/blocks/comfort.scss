@@ -14,7 +14,9 @@
         }
 
         .comfort__player {
-            animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+            // animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+            opacity: 1;
+            transition: 0.3s $cubic 0.1s;
         }
 
         .comfort__item {
@@ -53,6 +55,15 @@
         border-radius: toRem(6);
 
         &-frame {
+            // -o-transition-property: none !important;
+            // -moz-transition-property: none !important; -ms-transition-property: none
+            // !important; -webkit-transition-property: none !important;
+            // transition-property: none !important; /*CSS transforms*/ -o-transform: none
+            // !important; -moz-transform: none !important; -ms-transform: none
+            // !important; -webkit-transform: none !important; transform: none !important;
+            // /*CSS animations*/ -webkit-animation: none !important; -moz-animation: none
+            // !important; -o-animation: none !important; -ms-animation: none !important;
+            // animation: none !important;
             border-radius: toRem(6);
             overflow: hidden;
             width: 100%;
@@ -98,15 +109,8 @@
         }
     }
 
-    &__play {
-        opacity: 1;
-        visibility: visible;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
+    .plyr__control--overlaid {
+        background-color: #4164EE;
         @include flex-setting(column, center, center);
 
         width: toRem(40);
@@ -120,18 +124,50 @@
         background-repeat: no-repeat;
         background-size: toRem(20) toRem(20);
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5V19L19 12L8 5Z' fill='%23fff'/%3E%3C/svg%3E");
+        opacity: 1;
+        transition: none;
 
-        &.visibleState {
-            visibility: visible;
-            opacity: 1;
-            transition: 0.35s $cubic;
-        }
-
-        &.playState {
-            visibility: hidden;
-            transition: 0.35s $cubic;
+        svg {
+            display: none;
+            transition: none;
+            transform: none;
         }
     }
+
+    // &__play {
+    //     opacity: 1;
+    //     visibility: visible;
+    //
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //
+    //     @include flex-setting(column, center, center);
+    //
+    //     width: toRem(40);
+    //     height: toRem(40);
+    //
+    //     background-color: $blue;
+    //     border-radius: toRem(20);
+    //     border: none;
+    //
+    //     background-position: 50% 50%;
+    //     background-repeat: no-repeat;
+    //     background-size: toRem(20) toRem(20);
+    //     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5V19L19 12L8 5Z' fill='%23fff'/%3E%3C/svg%3E");
+    //
+    //     &.visibleState {
+    //         visibility: visible;
+    //         opacity: 1;
+    //         transition: 0.35s $cubic;
+    //     }
+    //
+    //     &.playState {
+    //         visibility: hidden;
+    //         transition: 0.35s $cubic;
+    //     }
+    // }
 
     &__list {
         width: 100%;
@@ -198,6 +234,23 @@
     }
 
     .plyr--video {
+        .plyr__control--overlaid.plyr__control:hover {
+            background: $blue;
+            background-color: $blue;
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: toRem(20) toRem(20);
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5V19L19 12L8 5Z' fill='%23fff'/%3E%3C/svg%3E");
+
+            opacity: 0.7;
+
+            svg {
+                display: none;
+                transition: none;
+                transform: none;
+            }
+        }
         .plyr__controls {
             width: 100%;
             display: grid;
@@ -565,6 +618,14 @@
             }
         }
     }
+
+    // .plyr__poster {
+    //     background: transparent;
+    //     background-image: url('../images/content/comfort-poster.png');
+    //     background-position: 50% 50%;
+    //     background-repeat: no-repeat;
+    //     background-size: contain;
+    // }
 }
 
 @include min-screen(1200px) {
@@ -617,13 +678,18 @@
                 line-height: toRem(37);
             }
         }
-
-        &__play {
+        .plyr__control--overlaid {
             width: toRem(60);
             height: toRem(60);
             border-radius: toRem(30);
             background-size: toRem(48) toRem(48);
         }
+        // &__play {
+        //     width: toRem(60);
+        //     height: toRem(60);
+        //     border-radius: toRem(30);
+        //     background-size: toRem(48) toRem(48);
+        // }
 
         &__list {
             grid-area: list;
@@ -660,6 +726,22 @@
 
         .plyr--video {
             position: relative;
+            .plyr__control--overlaid.plyr__control:hover {
+                background: $blue;
+                background-color: $blue;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                border-radius: toRem(30);
+                background-size: toRem(48) toRem(48);
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5V19L19 12L8 5Z' fill='%23fff'/%3E%3C/svg%3E");
+
+
+                svg {
+                    display: none;
+                    transition: none;
+                    transform: none;
+                }
+            }
             .plyr__controls {
                 padding-top: 0;
                 grid-template-areas:
@@ -730,12 +812,14 @@
                             &::before {
                                 width: toRem(32);
                                 height: toRem(32);
+                                background-size: 28px 24px;
                             }
 
                             &::after {
                                 width: toRem(32);
                                 height: toRem(32);
-                                background-size: 13px 13px;                            }
+                                background-size: 20px 20px;
+                            }
 
                             &:first-of-type {
                                 margin-bottom: toRem(20);
@@ -756,7 +840,7 @@
                             &::after {
                                 width: toRem(32);
                                 height: toRem(32);
-                                background-size: 13px 13px;
+                                background-size: 20px 20px;
                             }
 
                             span {

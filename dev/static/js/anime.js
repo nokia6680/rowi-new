@@ -79,5 +79,5 @@ setTimeout(function() {
 //
 const obj2 = document.getElementById("counter2");
 setTimeout(function() {
-    animateValue(obj2, 38, 100, 1200);
+    animateValue(obj2, 58, 100, 300);
 }, 1000);

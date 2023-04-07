@@ -350,7 +350,8 @@
     &--factoring {
         background-color: #F0F3FE;
         z-index: 0;
-
+        margin-bottom: 0;
+        
         .about__title {
             margin-bottom: toRem(56);
         }
@@ -801,6 +802,8 @@
         }
 
         &--factoring {
+            margin-bottom: 0;
+
             .about__list {
                 max-width: 100%;
                 grid-template-columns: repeat(4, toRem(240));

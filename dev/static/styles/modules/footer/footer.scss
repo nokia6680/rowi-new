@@ -317,6 +317,10 @@
 
         transition: 0.35s $cubic;
     }
+
+    &__visual {
+        display: none;
+    }
 }
 
 @include min-screen(1200px) {

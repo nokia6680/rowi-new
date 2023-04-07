@@ -42,3 +42,13 @@ mixin blogItem(type, date, dateFull, name, description, link, tag, tag1, tag2, t
             picture.blog__frame
                 source(srcset="static/images/content/" +image +".webp" type="image/webp")
                 img(src="static/images/content/" +image +".png" width="" height="" alt="" +name).blog__frame-image
+
+mixin mediaItem(date, dateFull, name, link, outerLink, outerName, image)
+    li.media__item
+        a(href="" +link target="_self").media__link
+            .media__info
+                time(datetime="" +dateFull).media__date=date
+                b.media__name=name
+                span.media__outer=outerName
+            .media__visual
+                img(src="static/images/content/" +image width="" height="" alt="" +name).media__image
