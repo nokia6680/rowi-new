@@ -8,57 +8,34 @@
 
     &.loaded {
         .intro__title {
-            animation: fadeInBottom 0.3s $cubic forwards;
+            // animation: fadeInBottom 0.3s $cubic forwards;
         }
 
         .intro__info-line {
-            animation: fadeInStatic 0.3s $cubic forwards 0.1s;
+            // animation: fadeInStatic 0.3s $cubic forwards 0.1s;
         }
 
         .intro-main-mask {
-            animation: undashReverse 0.3s $cubic forwards 0.1s;
+            // animation: undashReverse 0.3s $cubic forwards 0.1s;
         }
 
         .intro__info-item--first {
-            animation: fadeInBottom 0.3s $cubic forwards 0.4s;
+            // animation: fadeInBottom 0.3s $cubic forwards 0.4s;
+            .intro__info-inner {
+                animation: fadeInStatic 0s linear forwards 0.15s;
+            }
+
+            .intro__info-nr {
+                animation: fadeInStatic 0s linear forwards 0.15s;
+            }
 
             .range-upper {
-                animation: dash 0.3s $cubic forwards 0.6s;
+                animation: fadeInStatic 0s linear forwards 0.1s, dash 0.3s $cubic forwards 0.1s;
             }
 
             .range-tumbler {
-                animation: animation-ball 0.3s $cubic forwards 0.6s;
+                animation: animation-ball 0.3s $cubic forwards 0.1s;
             }
-            //
-            // &.reseted {
-            //     .intro__info-nr {
-            //         opacity: 0;
-            //         transition: 0.1s $cubic;
-            //     }
-            //
-            //     .range-upper {
-            //         animation: undash-tech 0s $cubic forwards 0s;
-            //     }
-            //
-            //     .range-tumbler {
-            //         animation: re-animation-ball 0s $cubic forwards 0s;
-            //     }
-            // }
-            //
-            // &.hovered {
-            //     .intro__info-nr {
-            //         opacity: 1;
-            //         transition: 0.1s $cubic;
-            //     }
-            //
-            //     .range-upper {
-            //         animation: dash 1.3s $cubic forwards 0s;
-            //     }
-            //
-            //     .range-tumbler {
-            //         animation: animation-ball 1.3s $cubic forwards 0s;
-            //     }
-            // }
 
             &:hover {
                 margin-top: -8px;
@@ -67,47 +44,22 @@
         }
 
         .intro__info-item--second {
-            animation: fadeInBottom 0.3s $cubic forwards 0.5s;
+            // animation: fadeInBottom 0.3s $cubic forwards 0.5s;
 
             .intro__info-name {
-                animation: fadeInRightInner 0.3s $cubic forwards 0.7s;
+                animation: fadeInRightInner 0.3s $cubic forwards 0.2s;
+                // animation: fadeInRightInner 0s $cubic forwards 0s;
 
                 &::after {
-                    animation: fadeInStatic 0.1s $cubic forwards 0.9s;
+                    animation: fadeInStatic 0.1s $cubic forwards 0.3s;
+                    // animation: fadeInStatic 0s $cubic forwards 0s;
                 }
             }
 
             .intro__info-border {
-                animation: fadeInLeftInner 0.3s $cubic forwards 0.7s;
+                animation: fadeInLeftInner 0.3s $cubic forwards 0.2s;
+                // animation: fadeInLeftInner 0s $cubic forwards 0s;
             }
-            //
-            // &.reseted {
-            //     .intro__info-name {
-            //         animation: fadeOutRightInner 0.1s $cubic forwards 0s;
-            //
-            //         &::after {
-            //             animation: fadeOutStatic 0.1s $cubic forwards 0s;
-            //         }
-            //     }
-            //
-            //     .intro__info-border {
-            //         animation: fadeOutLeftInner 0.1s $cubic forwards 0s;
-            //     }
-            // }
-            //
-            // &.hovered {
-            //     .intro__info-name {
-            //         animation: fadeInRightInner 0.3s $cubic forwards 0s;
-            //
-            //         &::after {
-            //             animation: fadeInStatic 0.1s $cubic forwards 0.2s;
-            //         }
-            //     }
-            //
-            //     .intro__info-border {
-            //         animation: fadeInLeftInner 0.3s $cubic forwards 0s;
-            //     }
-            // }
 
             &:hover {
                 margin-top: toRem(48);
@@ -116,39 +68,23 @@
         }
 
         .intro__info-item--third {
-            animation: fadeInBottom 0.3s $cubic forwards 0.6s;
+            // animation: fadeInBottom 0.3s $cubic forwards 0.6s;
 
             .intro__info-name {
-                animation: fadeInRightInner2 0.3s $cubic forwards 0.8s;
+                animation: fadeInRightInner2 0.3s $cubic forwards 0.3s;
+                // animation: fadeInRightInner2 0s $cubic forwards 0s;
             }
 
             .intro-percent-round {
-                animation: dashReverse 0.3s $cubic forwards 0.8s;
+                animation: fadeInStatic 0s linear forwards 0.15s, dashReverse 0.3s $cubic forwards 0.3s;
+                // animation: dashReverse 0s $cubic forwards 0s;
             }
-            //
-            // &.reseted {
-            //     .intro__info-percent {
-            //         animation: fadeOutStatic 0.1s $cubic forwards 0s;
-            //     }
-            //
-            //     .intro__info-name {
-            //         animation: fadeOutRightInner2 0.1s $cubic forwards 0s;
-            //     }
-            //
-            //     .intro-percent-round {
-            //         animation: undashReverse 0.1s $cubic forwards 0s;
-            //     }
-            // }
-            //
-            // &.hovered {
-            //     .intro__info-name {
-            //         animation: fadeInRightInner2 0.3s $cubic forwards 0s;
-            //     }
-            //
-            //     .intro-percent-round {
-            //         animation: dashReverse 1.3s $cubic forwards 0s;
-            //     }
-            // }
+
+            .intro__info-percent {
+                span {
+                    animation: fadeInStatic 0s linear forwards 0.15s;
+                }
+            }
 
             &:hover {
                 margin-top: toRem(-64);
@@ -157,24 +93,13 @@
         }
 
         .intro__info-item--fourth {
-            animation: fadeInBottom 0.3s $cubic forwards 0.7s;
+            // animation: fadeInBottom 0.3s $cubic forwards 0.7s;
 
             .intro__info-ball {
-                animation: animation-ball 0.5s $cubic forwards 0.9s;
+                animation: animation-ball 0.5s $cubic forwards 0.4s;
+                // animation: animation-ball 0s $cubic forwards 0s;
             }
 
-            // &.reseted {
-            //     .intro__info-ball {
-            //         animation: re-animation-ball 0s $cubic forwards 0s;
-            //     }
-            // }
-            //
-            // &.hovered {
-            //     .intro__info-ball {
-            //         animation: animation-ball 0.6s $cubic forwards 0s;
-            //     }
-            // }
-            //
             &:hover {
                 margin-top: toRem(-8);
                 transition: 0.35s $cubic;
@@ -182,13 +107,13 @@
         }
 
         .intro__details {
-            animation: fadeInBottom 0.2s $cubic forwards 0.8s;
+            // animation: fadeInBottom 0.2s $cubic forwards 0.8s;
         }
     }
 
     &__title {
         margin-bottom: toRem(40);
-        opacity: 0;
+        // opacity: 0;
 
         z-index: 2;
 
@@ -207,7 +132,7 @@
         position: relative;
 
         &-line {
-            opacity: 0;
+            // opacity: 0;
             position: absolute;
 
             width: toRem(476);
@@ -260,7 +185,7 @@
             position: relative;
             z-index: 2;
             overflow: hidden;
-            opacity: 0;
+            // opacity: 0;
 
             transition: 0.35s $cubic;
 
@@ -280,6 +205,7 @@
                     align-self: flex-end;
                     margin-top: auto;
                     margin-bottom: 0;
+                    opacity: 0;
                 }
             }
 
@@ -301,7 +227,6 @@
                     box-shadow: none;
                     z-index: auto;
                     background-color: transparent;
-
                 }
 
                 .intro__info-border {
@@ -315,7 +240,7 @@
                     z-index: -2;
                     top: toRem(-10);
                     left: toRem(-10);
-                    //opacity: 0;
+                    opacity: 0;
                 }
 
                 .intro__info-name {
@@ -327,7 +252,7 @@
                     border-radius: toRem(8);
                     box-shadow: 0px 2.15256px 8.80593px -0.978437px rgba(85, 99, 136, 0.46);
                     transform: translateX(10px);
-                    //opacity: 0;
+                    opacity: 0;
 
                     &::after {
                         position: absolute;
@@ -408,12 +333,17 @@
                     left: 50%;
                     top: 50%;
                     transform: translate(-50%, -50%);
+
+                    span {
+                        opacity: 0;
+                    }
                 }
 
                 .intro-percent-round {
                     stroke-linecap: round;
                     stroke-width: toRem(2);
                     stroke: $pink;
+                    opacity: 0;
 
                     &.desktop {
                         display: none;
@@ -551,6 +481,7 @@
             @include font-setting($primary-font, toRem(10), toRem(15), 500, $dark);
             letter-spacing: 0.01em;
             margin-bottom: toRem(3);
+            opacity: 0;
 
             span:first-of-type {
                 margin-right: 2px;
@@ -584,6 +515,7 @@
                 fill: none;
                 stroke-linecap: round;
                 z-index: 2;
+                opacity: 0;
 
                 &--desktop {
                     display: none;
@@ -980,7 +912,7 @@
 
         @include flex-setting(column, flex-start, flex-start);
 
-        opacity: 0;
+        // opacity: 0;
     }
 
     &__description {
@@ -1093,6 +1025,10 @@
                 animation: fadeInBottom 0.3s $cubic forwards 0s;
             }
 
+            .intro__info {
+                animation: fadeInStatic 0s linear forwards 0.1s;
+            }
+
             .intro__info--factoring::before {
                 animation: fadeInStatic 0s $cubic forwards 0.1s;
             }
@@ -1111,20 +1047,50 @@
         }
 
         .intro__title {
+            opacity: 0;
             order: 1;
         }
 
         .intro__details {
+            opacity: 0;
             order: 2;
         }
 
         .intro__info {
+            opacity: 0;
             order: 3;
         }
 
         .intro__link {
             width: 100%;
             margin-right: 0;
+            margin-bottom: toRem(16);
+            background-color: #4164EB;
+        }
+    }
+
+    &__form {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        
+        &-input {
+            width: 100%;
+            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            padding: toRem(22) toRem(10) toRem(6) 0;
+            margin-bottom: toRem(54);
+            border: none; 
+            border-bottom: toRem(2) solid $dark;
+            background-color: transparent;
+        }
+
+        &-agree {
+            @include font-setting($primary-font, toRem(10), toRem(15.5), 500, $dark);
+            letter-spacing: 0.01em;
+
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
         }
     }
 
@@ -1167,6 +1133,10 @@
                 animation: fadeInBottom 0.3s $cubic forwards 0s;
             }
 
+            .intro__info {
+                animation: fadeInStatic 0s $cubic forwards 0.1s;
+            }
+
             .intro__info--credit::before {
                 animation: fadeInStatic 0s $cubic forwards 0.1s;
             }
@@ -1179,22 +1149,57 @@
                 animation: fadeInBottom 0.3s $cubic forwards 0.3s;
             }
 
+            .intro__info-list::before {
+                animation: fadeInStatic 0.3s $cubic forwards 0.3s;
+            }
+
             .intro__info--credit::after {
                 animation: fadeInBottom 0.3s $cubic forwards 0.2s;
             }
         }
 
         .intro__title {
+            opacity: 0;
             order: 1;
             margin-bottom: toRem(40);
         }
 
         .intro__details {
             order: 2;
+            opacity: 0;
         }
 
         .intro__info {
+            opacity: 0;
             order: 3;
+
+            &-item {
+                opacity: 0;
+            }
+
+            &-item:last-of-type {
+                overflow: visible;
+            }
+
+            &-list {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    bottom: toRem(-96);
+                    left: toRem(16);
+
+                    width: toRem(131);
+                    height: toRem(64);
+                    transform: rotate(-50deg);
+                    background-image: url("data:image/svg+xml,%3Csvg width='131' height='64' viewBox='0 0 131 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.756079 11.4121C71.1211 -25.9717 79.9281 47.8006 57.3049 44.1353C34.6817 40.4701 124.021 -5.84299 129.987 62.9776M0.756079 11.4121C1.37758 11.2367 4.2417 5.74898 6.31645 3.31945M0.756079 11.4121C1.5552 11.1864 11.4752 9.34097 12.9536 11.5124' stroke='%2314004B' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    opacity: 0;
+                }
+            }
         }
 
         .intro__description {
@@ -1211,12 +1216,19 @@
         padding-top: toRem(48);
 
         &.loaded {
+            .intro__title {
+                animation: fadeInBottom 0.3s $cubic forwards 0s;
+            }
             .intro__details {
                 animation: fadeInBottom 0.3s $cubic forwards 0s;
             }
 
             .intro__svg {
                 animation: fadeInStatic 0s linear forwards 0.4s;
+            }
+
+            .intro__info {
+                animation: fadeInStatic 0s linear forwards 0.1s;
             }
 
             .intro__info::before {
@@ -1295,14 +1307,17 @@
         .intro__title {
             order: 1;
             margin-bottom: toRem(40);
+            opacity: 0;
         }
 
         .intro__details {
             order: 2;
+            opacity: 0;
         }
 
         .intro__info {
             order: 3;
+            opacity: 0;
         }
 
         .intro__description {
@@ -1365,11 +1380,13 @@
         }
 
         .intro__title {
+            opacity: 0;
             margin-bottom: toRem(24);
             order: 1;
         }
 
         .intro__details {
+            opacity: 0;
             order: 2;
             margin-bottom: toRem(56);
         }
@@ -1409,7 +1426,7 @@
         @include flex-setting(column, flex-start, flex-start);
 
         gap: toRem(8);
-        margin-bottom: toRem(56);
+        margin-bottom: toRem(40);
     }
 
     &__item {
@@ -1483,6 +1500,10 @@
                 animation: fadeInBottom 0.3s $cubic forwards 0s;
             }
 
+            .intro__info {
+                animation: fadeInStatic 0s $cubic forwards 0.1s;
+            }
+
             .intro__info--warranty::before {
                 animation: fadeInStatic 0s $cubic forwards 0.1s;
             }
@@ -1502,14 +1523,21 @@
 
         .intro__title {
             order: 1;
+            opacity: 0;
         }
 
         .intro__details {
             order: 2;
+            opacity: 0;
         }
 
         .intro__info {
             order: 3;
+            opacity: 0;
+
+            &-item {
+                opacity: 0;
+            }
         }
 
         .intro__link {
@@ -1535,40 +1563,22 @@
             order: 3;
             position: relative;
 
-            width: 100%;
-            height: toRem(300);
-            max-height: toRem(300);
+            width: toRem(355);
+            height: toRem(302);
+            max-height: toRem(302);
             margin-left: toRem(-6);
 
-            .image-1 {
-                top: toRem(73);
-                left: toRem(18);
-                position: absolute;
-                width: toRem(282);
-                height: toRem(198);
-                filter: drop-shadow(9.27846px 9.27846px 39.7648px rgba(48, 69, 130, 0.3));
-                border-radius: 5.30198px;
+            &-frame {
+                @include flex-setting(column, center, center);
+                width: 100%;
+                height: 100%;
             }
 
-            .image-2 {
-                top: toRem(28);
-                right: toRem(3);
-                position: absolute;
-                width: toRem(176);
-                height: toRem(78);
-                filter: drop-shadow(9.27846px 9.27846px 39.7648px rgba(48, 69, 130, 0.3));
-                border-radius: 5.30198px;
+            &-image {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
             }
-        }
-
-        .intro__blob {
-            position: absolute;
-            opacity: 0.08;
-
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
         }
 
         .intro__details {
@@ -1606,7 +1616,7 @@
 
         &.loaded {
             .intro__details {
-                animation: fadeInBottom 0.3s $cubic forwards 0s;
+                // animation: fadeInBottom 0.3s $cubic forwards 0s;
             }
 
             .intro__info-item--first {
@@ -2177,7 +2187,7 @@
             grid-template-columns: toRem(592) toRem(524);
             grid-column-gap: toRem(62);
             padding-top: toRem(145);
-            padding-bottom: toRem(140);
+            padding-bottom: toRem(88);
 
             &.loaded {
                 .intro__title {
@@ -2246,6 +2256,19 @@
             }
         }
 
+        &__form {
+            max-width: toRem(509);
+            display: grid;
+            grid-template-columns: toRem(266) toRem(227);
+            grid-row-gap: toRem(24);
+            justify-content: space-between;
+            align-items: start;
+            
+            .callback__nr-field {
+                margin-bottom: 0;
+            }
+        }
+
         &--credit{
             grid-template-columns: toRem(592) toRem(524);
             grid-template-rows: minmax(toRem(153), toRem(153));
@@ -2304,6 +2327,16 @@
 
             .intro__info {
                 order: 3;
+
+                &-list {
+                    &::before {
+                        left: toRem(-61);
+                        bottom: toRem(-140);
+                        width: toRem(236);
+                        height: toRem(116);
+                        background-image: url("data:image/svg+xml,%3Csvg width='236' height='116' viewBox='0 0 236 116' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22108 21.0919C128.277 -46.4109 144.18 86.7975 103.329 80.1793C62.4794 73.561 223.797 -10.0651 234.568 114.202M1.22108 21.0919C2.34331 20.7751 7.51497 10.8662 11.2613 6.47927M1.22108 21.0919C2.66403 20.6843 20.5762 17.3522 23.2457 21.2731' stroke='%2314004B' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    }
+                }
             }
 
             .intro__description {
@@ -2525,7 +2558,7 @@
         }
 
         &--sell {
-            padding-top: toRem(187);
+            padding-top: toRem(155);
             grid-template-areas:
                 'title visual'
                 'info visual'
@@ -2533,44 +2566,22 @@
             align-items: start;
             grid-template-rows: toRem(204) toRem(242);
             grid-row-gap: toRem(40);
-            grid-template-columns: toRem(511) toRem(517);
-            grid-column-gap: toRem(41);
+            grid-template-columns: toRem(511) toRem(528);
+            grid-column-gap: 0;
             margin-bottom: toRem(112);
             padding-bottom: toRem(56);
 
             .intro__title {
                 margin-bottom: 0;
-                margin-top: 0;
+                margin-top: toRem(32);
             }
 
             .intro__visual {
                 grid-area: visual;
-                height: toRem(458);
-                max-height: toRem(458);
-                margin-left: 0;
-
-                .image-1 {
-                    top: toRem(102);
-                    left: toRem(26);
-                    width: toRem(426);
-                    height: toRem(299);
-                    filter: drop-shadow(14px 14px 60px rgba(48, 69, 130, 0.3));
-                    border-radius: 8px;
-                }
-
-                .image-2 {
-                    top: toRem(80);
-                    right: toRem(11);
-                    width: toRem(265);
-                    height: toRem(117);
-                    filter: drop-shadow(14px 14px 60px rgba(48, 69, 130, 0.3));
-                    border-radius: 8px;
-                }
-            }
-
-            .intro__blob {
-                width: toRem(517);
-                height: toRem(517);
+                width: toRem(528);
+                height: toRem(448);
+                max-height: toRem(448);
+                margin-left: toRem(-3);
             }
 
             .intro__details {

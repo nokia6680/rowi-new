@@ -54,8 +54,16 @@ html(lang="ru-RU")
                             span Без залога и оценки финсостояния
                         li.intro__item
                             span Полностью онлайн
-                    .intro__controls
-                        a(href="#order" target="_self").intro__link Оставить&nbsp;заявку
+                    //- form
+                    form(method="post" action="#" name="callback-form").intro__form.callback__form
+                        .callback__nr
+                            .callback__nr-field
+                                input(type="text" name="tel" id="tel-intro" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                                span.callback__error
+                                        
+                            button(type="submit").callback__submit Отправить заявку
+                        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                            a(href="" target="_blank") обработку персональных данных
     
             section.features.features--factoring
                 h2.features__title.section-title
@@ -198,7 +206,7 @@ html(lang="ru-RU")
             
             include ../modules/blocks/materials
         include ../modules/footer/footer
-
+        include ../modules/blocks/popup-thx
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
         script(src="static/js/main.js")

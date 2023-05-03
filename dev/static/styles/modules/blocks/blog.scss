@@ -273,6 +273,10 @@
         }
     }
 
+    .nav_wrap {
+        width: 100%;
+    }
+
     &__load {
         width: 100%;
         @include flex-setting(column, center, center);
@@ -435,8 +439,11 @@
             height: toRem(162);
         }
 
-        &__load {
+        .nav_wrap {
             grid-area: btn;
+        }
+
+        &__load {
             font-size: toRem(18);
             line-height: toRem(22);
             width: auto;

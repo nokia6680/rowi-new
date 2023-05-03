@@ -28,15 +28,9 @@ html(lang="ru-RU")
                 h1.intro__title.title Sellplus — финансирование 
                     span бизнеса на маркетплейсах
                 .intro__visual
-                    svg(width="338" height="338" viewBox="0 0 338 300" fill="none" xmlns="http://www.w3.org/2000/svg").intro__blob
-                        path(id="path" d="M300 150C300 192.336 282.054 229.457 253.846 256.731C226.857 282.826 190.507 300 150 300C109.493 300 63.528 298.211 36.5385 272.115C8.3307 244.842 0 192.336 0 150C0 104.844 28.0442 71.0669 59.6154 43.5675C85.9639 20.6172 112.314 0 150 0C191.235 0 238.27 9.60927 265.385 36.5385C292.745 63.7116 300 108.392 300 150Z" fill="url(#intro-blob)")
-                        defs
-                            linearGradient(id="intro-blob" x1="0" y1="0" x2="313.138" y2="14.405" gradientUnits="userSpaceOnUse")
-                                stop(stop-color="#E747AF")
-                                stop(offset="0.5625" stop-color="#985FEC")
-                                stop(offset="1" stop-color="#7489F8")
-                    img(src="static/images/content/sell-1.png" width="" height="" alt="").intro__visual-image.image-1
-                    img(src="static/images/content/sell-2.png" width="" height="" alt="").intro__visual-image.image-2
+                    picture.intro__visual-frame
+                        source(srcset="static/images/content/sell.webp 1x, static/images/content/sell_2x.webp" type="image/webp")
+                        img(srcset="static/images/content/sell.png 1x, static/images/content/sell_2x.png" width="" height="" alt="").intro__visual-image
                 .intro__details
                     p.intro__description Мы создали специальный продукт для развития бизнеса на маркетплейсах. Финансирование Sellplus — это деньги на закупку товаров и увеличение объёмов продаж на Wildberries, Ozon и Яндекс.Маркете
                     .intro__controls
@@ -44,9 +38,9 @@ html(lang="ru-RU")
         include ../modules/footer/footer
 
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js")
+
         script(src="static/js/main.js")
-        script(src="static/js/blob.js")
+
         script(src="static/js/header-drop.js")
         script(src="static/js/observer.js")
         block script

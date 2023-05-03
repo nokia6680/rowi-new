@@ -88,6 +88,25 @@ html(lang="ru-RU")
             include ../modules/blocks/steps
             include ../modules/blocks/features
             
+            //- new section
+            section.cabinet
+                h2.cabinet__title.section-title 
+                    | Все 
+                    span онлайн 
+                    | в&nbsp;личном&nbsp;кабинете
+                ul.cabinet__list
+                    li.cabinet__item Кредит, платежи и выписки в одном месте
+                    li.cabinet__item Условия и график платежей
+                    li.cabinet__item Контроль оборотов и остатков
+                    li.cabinet__item Заявка на кредит и контроль статуса
+                    li.cabinet__item Чат поддержки
+                picture.cabinet__visual
+                    source(media="(min-width: 1200px)" srcset="static/images/content/cabinet-bg-lg.webp 1x, static/images/content/cabinet-bg-lg_2x.webp 2x" type="image/webp")
+                    source(media="(min-width: 1200px)" srcset="static/images/content/cabinet-bg-lg.png 1x, static/images/content/cabinet-bg-lg_2x.png 2x")
+                    source(srcset="static/images/content/cabinet-bg.webp 1x, static/images/content/cabinet-bg_2x.webp 2x" type="image/webp")
+                    img(srcset="static/images/content/cabinet-bg.png 1x, static/images/content/cabinet-bg_2x.png" width="" height="" alt="").cabinet__visual-image
+            //- end of new section
+
             section.chat.chat--credit
                 .chat__about
                     h2.chat__title.section-title
@@ -119,6 +138,25 @@ html(lang="ru-RU")
                         path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         .chat__top
+            
+            //- new section
+            section.banner.banner--credit
+                span.banner__sticker Спецпредложение
+                h2.banner__title
+                    span Доход 5% 
+                    | на&nbsp;остаток
+                p.banner__about Кредит выдается на расчетный счет в КИВИ Банке
+                p.banner__about На остаток средств на счете начисляется доход 5% годовых
+
+                ul.banner__list
+                    li.banner__item 
+                        p.banner__about За каждый день
+                    li.banner__item 
+                        p.banner__about 
+                            span без ограничений 
+                            | на сумму остатка и процентов
+            //- end of new section
+
             section.about.about--credit
                 h2.about__title.section-title ROWI — ваш 
                     span надёжный 

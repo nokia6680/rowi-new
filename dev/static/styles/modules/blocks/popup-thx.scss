@@ -1,0 +1,143 @@
+.popup-thx {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.48);
+
+    @include flex-setting(column, center, center);
+
+    z-index: 999;
+
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
+    &__wrapper {
+        position: relative;
+
+        width: 100%;
+        max-width: toRem(343);
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        background-color: $white;
+        border-radius: toRem(10);
+
+        padding: toRem(24) toRem(16) toRem(40) toRem(16);
+    }
+
+    &__closer {
+        position: absolute;
+        top: toRem(22);
+        right: toRem(22);
+
+        @include flex-setting(column, center, center);
+        width: toRem(24);
+        height: toRem(24);
+
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.348783 0.340519C0.641677 0.0476263 1.11655 0.0476263 1.40944 0.34052L6.00561 4.93669L10.5963 0.346041C10.8892 0.0531493 11.3641 0.0531518 11.657 0.346047C11.9499 0.638941 11.9499 1.11382 11.657 1.40671L7.06627 5.99735L11.657 10.588C11.9499 10.8809 11.9499 11.3558 11.657 11.6487C11.3641 11.9416 10.8892 11.9416 10.5963 11.6487L6.00561 7.058L1.40386 11.6597C1.11097 11.9526 0.636094 11.9526 0.343202 11.6597C0.0503106 11.3668 0.0503131 10.8919 0.343208 10.599L4.94495 5.99734L0.348783 1.40118C0.0558901 1.10829 0.0558901 0.633413 0.348783 0.340519Z' fill='%2314004B'/%3E%3C/svg%3E");
+        background-color: transparent;
+        border: none;
+        z-index: 2;
+    }
+
+    &__title {
+        @include font-setting($primary-font, toRem(22), toRem(26), 400, $dark);
+        text-align: left;
+        margin-bottom: toRem(40);
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(18), 400, $dark);
+        text-align: left;
+        letter-spacing: 0.01em;
+        margin-bottom: toRem(56);
+    }
+
+    &__submit {
+        @include flex-setting(column, center, center);
+        width: 100%;
+        padding: toRem(15) 0;
+        background-color: $blue;
+        border: none;
+        border-radius: toRem(6);
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $white);
+        letter-spacing: 0.02em;
+
+        transition: 0.35s $cubic;
+
+        &:active {
+            opacity: 0.8;
+            transition: 0.35s $cubic;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .popup-thx {
+        &__wrapper {
+            box-shadow: 13px 13px 75px rgba(15, 19, 31, 0.2);
+            max-width: toRem(827);
+            padding: toRem(48) toRem(64) toRem(56) toRem(64);
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: toRem(84);
+                right: toRem(112);
+
+                width: toRem(94);
+                height: toRem(84);
+
+                background-image: url("data:image/svg+xml,%3Csvg width='94' height='84' viewBox='0 0 94 84' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='74' height='74' rx='14.8' transform='matrix(-1 0 0 1 74.6487 10)' fill='%23D1F0F0'/%3E%3Cpath d='M5.70564 42.2029C22.1754 58.636 33.9395 69.2001 33.9395 69.2001L92.76 9.33667L82.1723 1.12012C68.0554 10.5105 38.6451 49.2456 33.9395 49.2456C26.881 44.5505 20.999 38.6815 15.1169 31.6387L1 35.1601' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    
+        &__closer {
+            top: toRem(32);
+            right: toRem(32);
+            width: toRem(32);
+            height: toRem(32);
+        }
+    
+        &__title {
+            font-weight: 500;
+            font-size: toRem(24);
+            line-height: toRem(29);
+            margin-bottom: toRem(16);
+            max-width: 100%;
+        }
+    
+        &__description {
+            font-size: toRem(14);
+            line-height: toRem(22);
+            margin-bottom: toRem(48);
+        }
+    
+        &__submit {
+            width: auto;
+            padding: toRem(17) toRem(24);
+            font-size: toRem(18);
+            line-height: toRem(22);
+    
+            &:hover {
+                opacity: 0.86;
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+}

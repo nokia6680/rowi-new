@@ -14,7 +14,7 @@ function animateValue(obj, start, end, duration) {
 
 // var itemFirst = document.querySelector('.intro__info-item--first');
 // const obj = document.getElementById("counter");
-//
+
 // itemFirst.addEventListener('mouseover', (event) => {
 //     if (itemFirst.classList.contains('hovered')) {
 //         return false;
@@ -27,9 +27,9 @@ function animateValue(obj, start, end, duration) {
 //         }, 400);
 //     }
 // });
-//
+
 // var itemSecond = document.querySelector('.intro__info-item--second');
-//
+
 // itemSecond.addEventListener('mouseover', (event) => {
 //     if (itemSecond.classList.contains('hovered')) {
 //         return false;
@@ -41,10 +41,10 @@ function animateValue(obj, start, end, duration) {
 //         }, 150);
 //     }
 // });
-//
+
 // var itemThird = document.querySelector('.intro__info-item--third');
 // const objThird = document.getElementById("counter2");
-//
+
 // itemThird.addEventListener('mouseover', (event) => {
 //     if (itemThird.classList.contains('hovered')) {
 //         return false;
@@ -57,9 +57,9 @@ function animateValue(obj, start, end, duration) {
 //         }, 150);
 //     }
 // });
-//
+
 // var itemFourth = document.querySelector('.intro__info-item--fourth');
-//
+
 // itemFourth.addEventListener('mouseover', (event) => {
 //     if (itemFourth.classList.contains('hovered')) {
 //         return false;
@@ -74,10 +74,10 @@ function animateValue(obj, start, end, duration) {
 
 const obj = document.getElementById("counter");
 setTimeout(function() {
-    animateValue(obj, 4500000, 7600000, 500);
-}, 1000);
+    animateValue(obj, 4500000, 7600000, 700);
+}, 100);
 //
 const obj2 = document.getElementById("counter2");
 setTimeout(function() {
     animateValue(obj2, 58, 100, 300);
-}, 1000);
+}, 400);

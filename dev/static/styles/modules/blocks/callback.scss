@@ -100,16 +100,20 @@
         position: relative;
 
         &::-webkit-input-placeholder {
-          color: $dark;
+            color: $dark;
+            opacity: 0.4;
         }
         &::-moz-placeholder {
-          color: $dark;
+            color: $dark;
+            opacity: 0.4;
         }
         &:-ms-input-placeholder {
-          color: $dark;
+            color: $dark;
+            opacity: 0.4;
         }
         &:-moz-placeholder {
-          color: $dark;
+            color: $dark;
+            opacity: 0.4;
         }
 
         &.invalid {
