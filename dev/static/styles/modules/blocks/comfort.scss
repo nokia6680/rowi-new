@@ -53,6 +53,7 @@
 
         margin-bottom: toRem(56);
         border-radius: toRem(6);
+        
 
         &-frame {
             // -o-transition-property: none !important;
@@ -182,6 +183,8 @@
         min-height: toRem(145);
         opacity: 0;
         position: relative;
+        border-radius: toRem(22);
+        overflow: hidden;
         span {
             padding: toRem(50.5) toRem(12);
             @include flex-setting(column, center, flex-start);

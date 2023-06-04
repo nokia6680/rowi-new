@@ -84,7 +84,7 @@
         max-width: toRem(164);
         bottom: toRem(-50);
         right: 0;
-        box-shadow: 0 6px 15px 0 rgba(20, 0, 75, 0.12);
+        
         //
         // &::before {
         //     position: absolute;
@@ -112,15 +112,19 @@
         filter: blur(6px);
         transform: matrix(1, -0.08, 0.02, 0.99, 0, 0);
         z-index: -1;
+
+        display: none;
     }
 
     &__name {
         width: 100%;
+        overflow: hidden;
         @include flex-setting(column, center, center);
         @include font-setting($primary-font, toRem(22), toRem(26), 400, $dark);
         text-align: left;
         padding: toRem(46.5) toRem(12);
         background-color: $pink;
+        border-radius: toRem(22);
         z-index: 2;
     }
 

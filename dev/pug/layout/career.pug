@@ -33,12 +33,14 @@ html(lang="ru-RU")
                 h1.intro__title.title
                     | Важен личный вклад&nbsp;
                     span каждого
-                .intro__info.intro__info--career
-                    <!--SVG zone-->
-                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
-                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+                .intro__visual
+                    picture.intro__frame
+                        source(media="(min-width: 1200px)" srcset="static/images/content/career-lg.webp 1x, static/images/content/career-lg_2x.webp 2x" type="image/webp")
+                        source(media="(min-width: 1200px)" srcset="static/images/content/career-lg.png 1x, static/images/content/career-lg_2x.png 2x")
+                        source(srcset="static/images/content/career-sm.webp 1x, static/images/content/career-sm_2x.webp 2x" type="image/webp")
+                        img(srcset="static/images/content/career-sm.png 1x, static/images/content/career-lg_2x.png 2x" width="" height="" alt="").intro__frame-image
+                    .intro__arrows
+
                 .intro__details
                     p.intro__description Мы заряжаем энергией,&nbsp;вдохновляем и&nbsp;добиваемся лучших результатов, работая вместе
                     
@@ -78,16 +80,14 @@ html(lang="ru-RU")
                         p.features__description Гибкие практики совместной работы. Продуктовые команды, scrum и актуальный стек
                         
                     li.features__item
-                        span.features__icon.fea-8
+                        span.features__icon.fea-9
                         h3.features__name Особая атмосфера
                         p.features__description Дружелюбная атмосфера без&nbsp;бюрократии и сложных процессов. В командах развита взаимопомощь, можно задавать вопросы и не бояться ошибок
                 
                 .features__svg
-                    svg(class="features__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1042 640" fill="none")
-                        path(class="features__line-dash" d="M123,228C213.35,300.31-39.77,330,7.66,404.88c52.29,82.54,421-167.17,469.52-52.81,37,87.12-342.93,214.45-141.94,270.89,208.06,58.42,443.61-60.84,465.45-222.38,30.61-226.47,182.37-450.52,232.59-388,69.53,86.6-397.78,73.3-456.56,16.09")
-                        path(class="features__line-mask" d="M123,228C213.35,300.31-39.77,330,7.66,404.88c52.29,82.54,421-167.17,469.52-52.81,37,87.12-342.93,214.45-141.94,270.89,208.06,58.42,443.61-60.84,465.45-222.38,30.61-226.47,182.37-450.52,232.59-388,69.53,86.6-397.78,73.3-456.56,16.09")
-                        .features__top
-                            
+                    svg(class="features__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 501" fill="none")
+                        path(class="features__line-mask" d="M1.5 264.5C155 403 408.518 594.272 507.822 444.5C551.791 378.186 330.547 216.123 381.535 138.111C406.25 100.297 585.485 205.654 601.017 210.044C690.942 235.461 638.499 119.064 484.524 1M484.524 1C487.563 6.06568 494.451 15.3865 494.991 22.9513M484.524 1C491.84 6.06568 507.822 11.8068 507.822 11.8068")
+
             include ../modules/blocks/comfort
             include ../modules/blocks/values
             include ../modules/blocks/join

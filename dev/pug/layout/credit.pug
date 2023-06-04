@@ -35,11 +35,7 @@ html(lang="ru-RU")
                     span государственных 
                     | контрактов
                 .intro__info.intro__info--credit
-                    <!--SVG zone-->
-                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
-                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
+
                     ul.intro__info-list
                         li.intro__info-item
                             b.intro__info-title Госконтракты
@@ -50,6 +46,13 @@ html(lang="ru-RU")
                                     span 223–ФЗ
                                 li.intro__item
                                     span 615–ПП
+                    <!--SVG zone-->
+                    .intro__svg
+                        svg(class="intro__line intro__line--mobile" width="126" height="80" viewBox="0 0 126 80" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(class="intro__line-mask" d="M3.89277 78.372C18.9113 0.120993 81.8921 39.5334 64.8476 54.8544C47.8032 70.1753 67.7683 -28.4543 125.11 10.0653M3.89277 78.372C4.14599 77.778 1.6684 72.1053 1.07751 68.9655M3.89277 78.372C4.21821 77.6081 9.00298 68.7245 11.6215 68.9351")
+                        svg(class="intro__line intro__line--desktop" width="227" height="142" viewBox="0 0 227 142" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(class="intro__line-mask" d="M6.90913 140.748C34.0276 -0.547168 147.75 70.6187 116.973 98.2832C86.1968 125.948 122.247 -52.1447 225.788 17.4089M6.90913 140.748C7.36635 139.676 2.89265 129.433 1.8257 123.763M6.90913 140.748C7.49676 139.369 16.1365 123.328 20.8646 123.708")
+                     
                 .intro__details
                     p.intro__description Побеждайте в тендерах, а мы предоставим деньги на исполнение без залога и ежемесячных погашений
 
@@ -128,14 +131,10 @@ html(lang="ru-RU")
                         p.chat__text Отлично, Глеб. Спасибо
                 <!--SVG zone-->
                 .chat__svg    
-                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 120 174")
-                        path(class="chat__line-dash" d="M79.31,1.92c33.25,45.67,12.58,109.41-11.92,106.74-45.39-5,20.94-136,46.85-54.23,20.07,63.32-50.78,124.77-111.95,117")
-                        path(class="chat__line-mask" d="M79.31,1.92c33.25,45.67,12.58,109.41-11.92,106.74-45.39-5,20.94-136,46.85-54.23,20.07,63.32-50.78,124.77-111.95,117")
-                                
-                        .chat__top
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 114 119")
+                        path(class="chat__line-mask" d="M75.3172 1.18822C113.01 38.7346 81.0176 73.3986 64.1788 71.6351C24.5624 67.4862 79.0507 -13.0814 107.127 31.3887C135.53 76.3752 54.3049 119.781 1.00038 113C5.83359 111.833 12.5 112.4 14.5 108C11.6667 110.833 9.7 111.1 14.5 117.5C13.9999 116.5 10.1997 116.2 5 115")
                             
                     svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
-                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         .chat__top
             
@@ -196,7 +195,11 @@ html(lang="ru-RU")
                         button(type="submit").callback__submit Отправить заявку
                     span.callback__agree Нажимая кнопку, вы соглашаетесь на 
                         a(href="" target="_blank") обработку персональных данных
-                        
+                <!--SVG zone-->
+                .callback__svg
+                    svg(class="callback__line" width="212" height="288" viewBox="0 0 212 288" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="callback__line-mask" d="M1 1C1 1 78 9.59123 121 52.2409C207.164 137.703 107 183.08 99.5 156.26C92 129.441 211 155.265 211 211.934C211 268.602 80.0366 302.243 1 264.667M1 264.667C7.74563 265.791 23.4872 266.773 32.4883 261.717M1 264.667C7.74563 269.302 22.362 280.258 26.8626 287")
+
             section(class="faq " +faqClass)
                 h2.faq__title.section-title Популярные 
                     span вопросы

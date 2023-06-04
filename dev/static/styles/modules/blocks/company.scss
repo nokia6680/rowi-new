@@ -27,11 +27,7 @@
             animation: fadeInStatic 0s linear forwards 0.1s;
 
             .company__line-mask {
-                animation: undash 0.3s $cubic forwards 0.1s;
-            }
-
-            .company__top {
-                animation: fadeInStatic 0s $cubic forwards 0.4s;
+                animation: dash 0.3s $cubic forwards 0.1s;
             }
         }
 
@@ -55,11 +51,7 @@
             animation: fadeInStatic 0s linear forwards 0.7s;
 
             .company__line-mask {
-                animation: undashReverse 0.3s $cubic forwards 0.7s;
-            }
-
-            .company__top {
-                animation: fadeInStatic 0s $cubic forwards 1s;
+                animation: dash 0.3s $cubic forwards 0.7s;
             }
         }
     }
@@ -118,41 +110,15 @@
         &--first {
             width: toRem(272);
             height: toRem(97);
-            bottom: -78px;
+            bottom: -88px;
             right: 2px;
-
-            .company__top {
-                transform: rotate(54deg);
-                bottom: -4px;
-                left: 4px;
-                width: toRem(19);
-                height: toRem(19);
-                background-image: url("data:image/svg+xml,%3Csvg width='19' height='21' viewBox='0 0 19 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.0301 1.30908C10.3134 5.21719 13.8892 8.30059 17.6927 10.7008C13.7694 13.006 10.4278 16.1812 7.92548 19.9818' stroke='%23F5AABE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.83223 1.30908C4.11554 5.21719 6.82451 8.30059 10.628 10.7008C6.70469 13.006 4.2299 16.1812 1.7276 19.9818' stroke='%23F5AABE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            }
-
-            .company__line-dash {
-                stroke: $pink;
-            }
         }
 
         &--second {
-            width: toRem(136);
-            height: toRem(94);
+            width: toRem(158);
+            height: toRem(84);
             bottom: -78px;
             left: 2px;
-
-            .company__top {
-                transform: rotate(58deg);
-                bottom: -7px;
-                right: -8px;
-                width: toRem(19);
-                height: toRem(19);
-                background-image: url("data:image/svg+xml,%3Csvg width='19' height='21' viewBox='0 0 19 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.0301 1.30908C10.3134 5.21719 13.8892 8.30059 17.6927 10.7008C13.7694 13.006 10.4278 16.1812 7.92548 19.9818' stroke='%234164EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.83223 1.30908C4.11554 5.21719 6.82451 8.30059 10.628 10.7008C6.70469 13.006 4.2299 16.1812 1.7276 19.9818' stroke='%234164EE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            }
-
-            .company__line-dash {
-                stroke: $blue;
-            }
         }
     }
 
@@ -166,30 +132,13 @@
         }
     }
 
-    &__line-dash {
-        stroke-width: 2px;
-        stroke-linecap: round;
-        stroke-dasharray: 4.01 !important;
-        stroke-dashoffset: 4.01 !important;
-        z-index: 1;
-    }
-
     &__line-mask {
         fill: none;
-        stroke: white;
+        stroke: $dark;
         stroke-linecap: round;
-        stroke-width: 4px;
-        animation: dashReverse 0s $cubic forwards;
+        stroke-width: 2px;
+        animation: undash 0s $cubic forwards;
         z-index: 2;
-    }
-
-    &__top {
-        position: absolute;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-color: transparent;
-        opacity: 0;
     }
 
     &__details {
@@ -271,7 +220,7 @@
                 animation: fadeInStatic 0s linear forwards 0.6s;
 
                 .company__line-mask {
-                    animation: undash 0.3s $cubic forwards 0.6s;
+                    animation: dashReverse 0.3s $cubic forwards 0.6s;
                 }
 
                 .company__top {
@@ -351,18 +300,9 @@
                 bottom: -146px;
                 right: 104px;
 
-                .company__top {
-                    transform: rotate(38deg);
-                    bottom: 62px;
-                    left: -23px;
-                    width: toRem(29);
-                    height: toRem(18);
-                    background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.908686 4.43768L15.9393 11.9143L13.7743 8.12127C13.6812 7.95807 13.8418 7.7601 14.0238 7.80713C14.3743 7.89774 14.748 7.96687 15.1377 8.00998C17.3488 8.2545 19.239 7.56869 19.3596 6.47818C19.4802 5.38766 17.7855 4.3054 15.5745 4.06088C15.1847 4.01777 14.8049 4.00358 14.4431 4.01541C14.2553 4.02155 14.1418 3.79326 14.2683 3.65436L17.2098 0.426031L0.908686 4.43768Z' fill='%23F2ACC2'/%3E%3C/svg%3E");
-                }
-
                 .company__line-mask {
-                    stroke: $pink;
                     stroke-width: 2px;
+
                 }
             }
 
@@ -374,15 +314,15 @@
                 left: 187px;
 
                 .company__top {
-                    transform: rotate(25deg);
-                    bottom: 44px;
-                    right: -9px;
-                    width: toRem(26);
-                    height: toRem(24);
-                }
-
-                .company__line-dash {
-                    stroke: $blue;
+                    opacity: 0;
+                    position: absolute;
+                    transform: none;
+                    bottom: 48px;
+                    right: -2px;
+                    width: toRem(19);
+                    height: toRem(17);
+                    transform: rotate(152deg);
+                    background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M4.14062 16.0005C5.78698 11.045 1.97773 6.31506 1.15964 1.19129C7.13987 5.00064 9.63884 4.50058 17.1406 2.50049' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
                 }
             }
         }

@@ -34,11 +34,6 @@ html(lang="ru-RU")
                     | Получите&nbsp;банковскую гарантию за 
                     span 1 день
                 .intro__info.intro__info--warranty
-                    <!--SVG zone-->
-                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
-                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
                     ul.intro__info-list
                         li.intro__info-item
                             span.intro__info-name Гарантия в реестре
@@ -55,6 +50,13 @@ html(lang="ru-RU")
                                     span Срок до 2 000 дней
                                 li.intro__item
                                     span Быстрое согласование текста гарантии
+                    <!--SVG zone-->
+                    .intro__svg
+                        svg(class="intro__line intro__line--mobile" width="198" height="177" viewBox="0 0 198 177" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(class="intro__line-mask" d="M10.1486 175.542C6.14996 31.7233 132.546 76.6827 108.462 110.335C84.3771 143.987 81.1626 -37.6894 197.269 7.89219M10.1486 175.542C10.3637 174.396 3.78582 165.359 1.52105 160.053M10.1486 175.542C10.4249 174.068 15.4011 156.542 20.0999 155.893")
+                        svg(class="intro__line intro__line--desktop" width="227" height="142" viewBox="0 0 227 142" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(class="intro__line-mask" d="M6.90913 140.748C34.0276 -0.547168 147.75 70.6187 116.973 98.2832C86.1968 125.948 122.247 -52.1447 225.788 17.4089M6.90913 140.748C7.36635 139.676 2.89265 129.433 1.8257 123.763M6.90913 140.748C7.49676 139.369 16.1365 123.328 20.8646 123.708")
+                        
                 .intro__details
                     p.intro__description Выдаём банковские гарантии на любые цели&nbsp;без посещения офиса
 
@@ -113,13 +115,9 @@ html(lang="ru-RU")
                         p.chat__text Оперативно, спасибо!
                 <!--SVG zone-->
                 .chat__svg    
-                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 130 94")
-                        path(class="chat__line-dash" d="M61.18,1.82c8.21,36.09,47,54.05,57.23,41.9C137.26,21.25,83,.3,57.46,45.44,33.37,88,13.74,93.55,1.69,86.73")
-                        path(class="chat__line-mask" d="M61.18,1.82c8.21,36.09,47,54.05,57.23,41.9C137.26,21.25,83,.3,57.46,45.44,33.37,88,13.74,93.55,1.69,86.73")
-                                
-                        .chat__top
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 158 100")
+                        path(class="chat__line-mask" d="M75.6525 1.44187C75.6525 65.4421 173.498 91.4995 154.652 55.9418C135.502 19.8099 52.5876 46.9419 1.58857 98.4419M1.58857 98.4419C2.86184 95.7944 5.99847 88.4995 3.99848 84.9995M1.58857 98.4419C3.72521 96.2944 9.39849 92.1995 14.9985 92.9995")
                     svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
-                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         .chat__top
             section.about.about--warranty
@@ -161,7 +159,12 @@ html(lang="ru-RU")
                         button(type="submit").callback__submit Отправить заявку
                     span.callback__agree Нажимая кнопку, вы соглашаетесь на 
                         a(href="" target="_blank") обработку персональных данных
-                        
+                    p.features__guide-about В нем собрана полезная информация о факторинге
+                <!--SVG zone-->
+                .callback__svg
+                    svg(class="callback__line" width="212" height="288" viewBox="0 0 212 288" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="callback__line-mask" d="M1 1C1 1 78 9.59123 121 52.2409C207.164 137.703 107 183.08 99.5 156.26C92 129.441 211 155.265 211 211.934C211 268.602 80.0366 302.243 1 264.667M1 264.667C7.74563 265.791 23.4872 266.773 32.4883 261.717M1 264.667C7.74563 269.302 22.362 280.258 26.8626 287")
+
             section(class="faq " +faqClass)
                 h2.faq__title.section-title Популярные 
                     span вопросы

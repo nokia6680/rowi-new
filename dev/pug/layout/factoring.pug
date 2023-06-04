@@ -38,14 +38,12 @@ html(lang="ru-RU")
                     span 100% 
                     | суммы сразу после поставки
                 .intro__info.intro__info--factoring
-                    <!--SVG zone-->
-                    svg(class="intro__info-cover mobile" width="1640" height="502" viewBox="0 0 1640 502" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 1640 0")
-                    svg(class="intro__info-cover desktop" width="2200" height="590" viewBox="0 0 2200 590" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="intro-main-mask" d="M 0 0 L 2200 0")
                     ul.intro__info-list
                         li.intro__info-item
                             span.intro__info-name Заявка одобрена
+                    picture.intro__frame
+                        source(media="(min-width: 1200px)" srcset="static/images/content/factoring-intro-lg.svg")
+                        img(src="static/images/content/factoring-intro-mb.svg" width="155" height="112" alt="").intro__frame-img
                 .intro__details
                     ul.intro__list
                         li.intro__item
@@ -72,11 +70,7 @@ html(lang="ru-RU")
                 p.features__about Деньги выдаются без залога сразу после поставки. Погашение осуществляется&nbsp;из средств заказчика.  Это проще и быстрее, чем кредит.
                 .features__svg.features__svg--factoring
                     svg(class="features__line features__line--mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 100")
-                        path(class="features__line-mask" d="M14.89,98.16C-17.78,56.94,14.78,42.72,67.05,56,125.62,70.78,216,97.07,264.55,86.24c38.29-8.53,16.09-60.49-84.07-84.4")
-                    svg(class="features__line-top mobile" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(d="M14.6374 13.6942C10.4074 12.1125 4.67429 10.6993 0.347618 10.712L6.95045 7.036L9.6748 0C10.2677 4.27605 12.4679 9.72637 14.6374 13.6942Z" fill="#F5AABE")
-                    svg(class="features__line features__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 659.93 219.83" fill="none")
-                        path(class="features__line-mask" d="M110.34,1s-237,181.94-13.17,212.76c201.29,27.72,483.16-65.42,561.76-103")
+                        path(class="features__line-mask" d="M181.999 1.0007C220.498 10.0005 289.854 40.2323 280.998 74.3466C269.826 117.383 8.99294 19.4046 1.64341 63.9717C-1.73714 84.4711 16.9987 97.8464 16.9987 97.8464C15.9986 95.7309 10.8984 87.5 10.4984 83.5C10.1167 85.7179 9.2823 91.6229 4.99835 93.5C0.7144 95.3771 6.49835 95 6.49835 95C7.66502 95.0643 9.89835 94.6771 11.4984 96")
                 
                 ul.features__list
                     li.features__item
@@ -103,11 +97,18 @@ html(lang="ru-RU")
                                 span Снижение риска неплатежа со&nbsp;стороны покупателя
                                 
                 a(href="#order" target="_self").features__order Получить консультацию
-                
-                //- .features__guide
-                //-     a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
-                //-     p.features__guide-about В нем собрана полезная информация о факторинге
-                    
+                <!--guide-->
+                .features__guide
+                    a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
+                    p.features__guide-about В нем собрана полезная информация о факторинге
+
+                    .features__svg.features__svg-2
+                        svg(class="features__line features__line--mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343 184")
+                            path(class="features__line-mask" d="M305.723 132.444C305.723 132.444 265.665 183 171.5 183C77.3354 183 1 142.258 1 92C1 41.7421 77.3354 1 171.5 1C265.665 1 342 41.7421 342 92C342 132.444 295.5 162.246 295.5 162.246")
+                        svg(class="features__line features__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418 212")
+                            path(class="features__line-mask" d="M372.745 152.667C372.745 152.667 323.875 211 209 211C94.1248 211 1 163.99 1 106C1 48.0101 94.1248 1 209 1C323.875 1 417 48.0101 417 106C417 152.667 360.273 187.053 360.273 187.053")
+                                           
+            <!--Callback-->
             section.callback.callback--factoring#order
                 h2.callback__title.section-title Оставьте заявку на&nbsp;факторинг и&nbsp;получите решение 
                     span сегодня
@@ -123,10 +124,10 @@ html(lang="ru-RU")
                     span.callback__agree Нажимая кнопку, вы соглашаетесь на 
                         a(href="" target="_blank") обработку персональных данных
                         
-                .callback__guide.features__guide
-                    a(href="guide.html" target="_self").features__guide-link Гайд по факторингу
-                    p.features__guide-about В нем собрана полезная информация о факторинге
-                    
+                <!--SVG zone-->
+                .callback__svg
+                    svg(class="callback__line" width="212" height="288" viewBox="0 0 212 288" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="callback__line-mask" d="M1 1C1 1 78 9.59123 121 52.2409C207.164 137.703 107 183.08 99.5 156.26C92 129.441 211 155.265 211 211.934C211 268.602 80.0366 302.243 1 264.667M1 264.667C7.74563 265.791 23.4872 266.773 32.4883 261.717M1 264.667C7.74563 269.302 22.362 280.258 26.8626 287")
             include ../modules/blocks/conditions
             
             section.steps.steps--factoring
@@ -162,13 +163,9 @@ html(lang="ru-RU")
                 
                 <!--SVG zone-->
                 .chat__svg    
-                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 159 102")
-                        path(class="chat__line-dash" d="M74.47,2c2.14,38.83,40.64,74.41,75.65,70.16C176.59,69,127.67-12.68,1.92,100")
-                        path(class="chat__line-mask" d="M74.47,2c2.14,38.83,40.64,74.41,75.65,70.16C176.59,69,127.67-12.68,1.92,100")
-                        .chat__top
-                            
+                    svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 158 100")
+                        path(class="chat__line-mask" d="M75.6525 1.44187C75.6525 65.4421 173.498 91.4995 154.652 55.9418C135.502 19.8099 52.5876 46.9419 1.58857 98.4419M1.58857 98.4419C2.86184 95.7944 5.99847 88.4995 3.99848 84.9995M1.58857 98.4419C3.72521 96.2944 9.39849 92.1995 14.9985 92.9995")
                     svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
-                        path(class="chat__line-dash" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
                         .chat__top
             include ../modules/blocks/account      

@@ -33,11 +33,7 @@
         }
 
         .values__line-mask {
-            animation: dashReverse 0.5s $cubic forwards 0.2s;
-        }
-
-        .values__top {
-            animation: fadeInStatic 0s $cubic forwards 0.7s;
+            animation: dash 0.5s $cubic forwards 0.2s;
         }
 
         .values__gallery {
@@ -116,7 +112,7 @@
     }
 
     &__svg {
-        width: toRem(305);
+        width: toRem(303);
         height: toRem(407);
         position: absolute;
         opacity: 0;
@@ -130,27 +126,11 @@
 
     &__line-mask {
         fill: none;
-        stroke: $blue;
+        stroke: $dark;
         stroke-linecap: round;
         stroke-width: 2px;
         animation: fadeOutStatic 0s $cubic forwards;
         z-index: -1;
-    }
-
-    &__top {
-        position: absolute;
-        bottom: 62px;
-        right: 59px;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-color: transparent;
-        width: toRem(30);
-        height: toRem(18);
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.908686 4.43768L15.9393 11.9143L13.7743 8.12127C13.6812 7.95807 13.8418 7.7601 14.0238 7.80713C14.3743 7.89774 14.748 7.96687 15.1377 8.00998C17.3488 8.2545 19.239 7.56869 19.3596 6.47818C19.4802 5.38766 17.7855 4.3054 15.5745 4.06088C15.1847 4.01777 14.8049 4.00358 14.4431 4.01541C14.2553 4.02155 14.1418 3.79326 14.2683 3.65436L17.2098 0.426031L0.908686 4.43768Z' fill='%234164EE'/%3E%3C/svg%3E");
-
-        opacity: 0;
-        transform: rotate(124deg);
     }
 
     &__gallery {
@@ -255,11 +235,7 @@
             }
 
             .values__line-mask {
-                animation: dashReverse 0.5s $cubic forwards 0.2s;
-            }
-
-            .values__top {
-                animation: fadeInStatic 0s $cubic forwards 0.7s;
+                animation: dash 0.5s $cubic forwards 0.2s;
             }
 
             .values__gallery {
