@@ -1,0 +1,198 @@
+.result {
+    width: 100%;
+    @include flex-setting(column, flex-start, center);
+
+    &__heading {
+        position: relative;
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        max-width: toRem(343);
+
+        padding: toRem(32) toRem(24) toRem(115) toRem(24);
+        margin-bottom: toRem(56);
+        background-color: $white;
+        box-shadow: 2px 13px 35px 0px rgba(0, 0, 0, 0.08);
+        border-radius: toRem(22);
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(24), toRem(31.2), 500, $dark);
+        text-align: left;
+        margin-bottom: toRem(32);
+    }
+
+    &__info {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        margin-bottom: toRem(32);
+
+        gap: toRem(8);
+
+        &-item {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: toRem(16);
+            justify-content: start;
+            align-self: center;
+        }
+
+        &-title {
+            @include font-setting($primary-font, toRem(14), toRem(18.2), 400, rgba(20, 0, 75, 0.5));
+            letter-spacing: toRem(0.14);
+            width: 100%;
+            text-align: left;
+        }
+
+        &-data {
+            @include font-setting($primary-font, toRem(16), toRem(20.8), 400, $dark);
+            letter-spacing: toRem(0.16);
+        }
+    }
+
+    &__status {
+        position: relative;
+        @include flex-setting(column, center, center);
+        width: auto;
+        padding: toRem(7) toRem(14) toRem(7) toRem(42);
+        border: toRem(1) solid rgba(20, 0, 75, 0.50);
+        border-radius: toRem(8);
+        @include font-setting($primary-font, toRem(10), toRem(20), 400, rgba(20, 0, 75, 0.50));
+        letter-spacing: toRem(0.1);
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(20);
+            height: toRem(20);
+
+            left: toRem(14);
+            top: 50%;
+            transform: translateY(-50%);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &[data-status="active"] {
+            &::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.2098 4.87964C17.5028 5.17243 17.503 5.6473 17.2102 5.9403L8.03703 15.12C7.74433 15.4129 7.26963 15.4132 6.97659 15.1206L2.7904 10.9409C2.49727 10.6482 2.4969 10.1734 2.78957 9.88024C3.08224 9.58712 3.55711 9.58675 3.85023 9.87941L7.50591 13.5294L16.1492 4.88001C16.442 4.58702 16.9168 4.58685 17.2098 4.87964Z' fill='%2314004B' fill-opacity='0.5'/%3E%3C/svg%3E");
+            }
+        }
+
+        &[data-status="inactive"] {
+            border-color: #F5AABE;
+            &::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.20235 5.19526C5.49524 4.90236 5.97011 4.90236 6.26301 5.19526L10.0048 8.93701L13.742 5.19986C14.0348 4.90696 14.5097 4.90697 14.8026 5.19986C15.0955 5.49276 15.0955 5.96763 14.8026 6.26052L11.0654 9.99767L14.8026 13.7349C15.0955 14.0278 15.0955 14.5026 14.8026 14.7955C14.5097 15.0884 14.0348 15.0884 13.742 14.7955L10.0048 11.0583L6.25835 14.8047C5.96546 15.0976 5.49059 15.0976 5.19769 14.8047C4.9048 14.5118 4.90481 14.0369 5.1977 13.744L8.94409 9.99766L5.20235 6.25592C4.90945 5.96302 4.90945 5.48815 5.20235 5.19526Z' fill='%23ED6488'/%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    &__ability {
+        position: absolute;
+        bottom: toRem(40);
+        left: 0;
+        width: auto;
+        max-width: toRem(214);
+        @include flex-setting(column, flex-start, center);
+        padding: toRem(8) toRem(12) toRem(8) toRem(66);
+
+        @include font-setting($primary-font, toRem(14), normal, 400, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.14);
+
+        background-color: #E8ECFD;
+        border-radius: 0 toRem(12) toRem(12) 0;
+        box-shadow: 2px 13px 35px 0px rgba(0, 0, 0, 0.12);
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(20);
+            height: toRem(20);
+            left: toRem(38);
+            top: toRem(8);
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.773 4.22703C12.1369 1.59099 7.86307 1.59099 5.22703 4.22703L5.22703 4.22703C2.59099 6.86305 2.59099 11.1369 5.22703 13.773L4.6967 14.3033L5.22703 13.773C7.86305 16.409 12.1369 16.409 14.773 13.773C17.409 11.1369 17.409 6.86307 14.773 4.22703ZM4.16637 3.16637C7.3882 -0.0554557 12.6118 -0.0554581 15.8336 3.16637C19.0554 6.3882 19.0554 11.6118 15.8336 14.8336C12.6118 18.0554 7.38818 18.0554 4.16637 14.8336C0.944545 11.6118 0.944541 6.38818 4.16637 3.16637ZM7.40104 5.2565C7.40104 4.84229 7.73682 4.5065 8.15104 4.5065H11.4518C11.4617 4.5065 11.4715 4.5067 11.4814 4.50709C12.8321 4.5604 14.0638 5.63404 14.0638 7.15754C14.0638 8.01486 13.6385 8.67324 13.1284 9.09734C12.6367 9.50622 12.0059 9.74999 11.4518 9.74999H8.90104V10.5417H10.8333C11.2475 10.5417 11.5833 10.8774 11.5833 11.2917C11.5833 11.7059 11.2475 12.0417 10.8333 12.0417H8.90104V12.763C8.90104 13.1772 8.56525 13.513 8.15104 13.513C7.73682 13.513 7.40104 13.1772 7.40104 12.763V12.0417H6.67968C6.26547 12.0417 5.92968 11.7059 5.92968 11.2917C5.92968 10.8774 6.26547 10.5417 6.67968 10.5417H7.40104V9.74999H6.67968C6.26547 9.74999 5.92968 9.41421 5.92968 8.99999C5.92968 8.58578 6.26547 8.24999 6.67968 8.24999H7.40104V5.2565ZM8.90104 8.24999H11.4518C11.6074 8.24999 11.9075 8.16173 12.1694 7.94399C12.413 7.74145 12.5638 7.47862 12.5638 7.15754C12.5638 6.52402 12.0578 6.03752 11.4353 6.0065H8.90104V8.24999Z' fill='%2314004B'/%3E%3C/svg%3E%0A");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__body {
+        @include flex-setting(column, flex-start, center);
+        width: 100%;
+    }
+}
+
+@include min-screen(1200px) {
+    .result {
+        padding: toRem(48) calc((100% - 1032px) / 2) toRem(56) calc((100% - 1032px) / 2);
+    
+        &__heading {
+            max-width: 100%;
+            padding-bottom: toRem(48);
+        }
+    
+        &__name {
+            width: 100%;
+            max-width: toRem(712);
+            font-size: toRem(28);
+            line-height: toRem(33.6);
+        }
+    
+        &__info {
+            max-width: toRem(712);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: start;
+            align-items: start;
+            column-gap: toRem(24);
+            margin-bottom: 0;
+    
+            &-item {
+                @include flex-setting(column, flex-start, flex-start);
+                gap: toRem(8);
+            }
+    
+            &-data {
+                font-size: toRem(18);
+                line-height: toRem(23.4);
+                letter-spacing: toRem(0.18);
+            }
+        }
+    
+        &__status {
+            position: absolute;
+            bottom: toRem(48);
+            right: toRem(24);
+        }
+    
+        &__ability {
+            top: toRem(24);
+            right: 0;
+            bottom: auto;
+            left: auto;
+            width: auto;
+            max-width: toRem(212);
+            padding-left: toRem(40);
+            border-radius: toRem(12) 0 0 toRem(12);
+            box-shadow: 2px 13px 35px 0px rgba(0, 0, 0, 0.12);
+
+            &::before {
+                left: toRem(12);
+            }
+        }
+    
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: toRem(24);
+            row-gap: toRem(40);
+
+            justify-content: space-between;
+            align-items: stretch;
+        }
+    }
+}

@@ -80,6 +80,14 @@
 
         width: 100%;
         height: toRem(80);
+        border-radius: toRem(12);
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__date {
@@ -147,6 +155,7 @@
     
         &__visual {
             height: toRem(100);
+            border-radius: toRem(22);
         }
     
         &__date {

@@ -32,8 +32,15 @@
 
         &.form_wrap {
             &.submitted {
+                padding-left: 0;
+
                 .callback__description {
                     margin-bottom: 0;
+                    text-align: left;
+                }
+
+                .form_desc {
+                    text-align: left;
                 }
             }
         }
@@ -45,7 +52,73 @@
 
         @include flex-setting(column, flex-start, center);
 
-        margin-bottom: toRem(70);
+        margin-bottom: toRem(48);
+    }
+
+    &__steps {
+        width: 100%;
+        gap: toRem(24);
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: toRem(40);
+
+        &-item {
+            width: 100%;
+            @include flex-setting(row, flex-start, flex-start);
+            gap: toRem(10);
+        }
+
+        &-nr {
+            @include flex-setting(column, center, center);
+            width: toRem(22);
+            min-width: toRem(22);
+            height: toRem(22);
+            @include font-setting($primary-font, toRem(16), 100%, 400, $dark);
+            letter-spacing: 0.01em;
+            background-color: #F0F3FD;
+            border-radius: toRem(4);
+        }
+
+        &-data {
+            @include flex-setting(column, flex-start, flex-start);
+            width: 100%;
+            gap: toRem(8);
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(16), 100%, 400, $dark);
+            padding: toRem(4) 0;
+            letter-spacing: 0.01em;
+        }
+
+        &-about {
+            max-width: toRem(280);
+            @include font-setting($primary-font, toRem(14), 120%, 400, rgba(20, 0, 75, 0.50));
+            text-align: left;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    &__wrap {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        padding: toRem(40) toRem(16) toRem(48) toRem(16);
+        background-color: #F0F3FD;
+        border-radius: toRem(16);
+
+        &.submitted {
+            padding-left: 0;
+
+            .callback__description {
+                margin-bottom: 0;
+                text-align: left !important;
+            }
+
+            .form_desc {
+                text-align: left !important;
+            }
+        }
     }
 
     &__item {
@@ -82,6 +155,11 @@
             width: 100%;
             @include flex-setting(row, flex-start, center);
             position: relative;
+            margin-bottom: toRem(24);
+        }
+
+        &-check {
+            width: 100%;
             margin-bottom: toRem(54);
         }
     }
@@ -156,7 +234,7 @@
     }
 
     &__agree {
-        @include font-setting($primary-font, toRem(10), toRem(16), 500, $dark);
+        @include font-setting($primary-font, toRem(10), toRem(16), 400, $dark);
         text-align: left;
         letter-spacing: 0.01em;
 
@@ -194,7 +272,38 @@
         }
 
         .callback__description {
-            margin-bottom: toRem(94);
+            margin-bottom: toRem(16);
+        }
+
+        .callback__nr-field {
+            margin-bottom: toRem(22);
+        }
+
+        .callback__input {
+            width: 100%;
+            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            padding: toRem(22) toRem(10) toRem(4) 0;
+            margin-bottom: 0;
+            border: none; 
+            border-bottom: toRem(2) solid $dark;
+            background-color: transparent;
+        }
+    
+        .callback__submit {
+            background-color: $blue;
+            height: toRem(48);
+            font-size: toRem(15);
+            line-height: 120%;
+            letter-spacing: 0.3px;
+        }
+    
+        .callback__agree {
+            letter-spacing: 0.01em;
+    
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
         }
     }
 
@@ -218,6 +327,10 @@
         }
 
         .callback__nr-field {
+            // margin-bottom: toRem(56);
+        }
+
+        .callback__nr-check {
             margin-bottom: toRem(56);
         }
     }
@@ -227,7 +340,7 @@
     .callback {
         --width: calc(100% - 1032px);
         align-items: flex-start;
-
+        min-height: toRem(576);
         padding-top: toRem(48);
         padding-bottom: toRem(56);
         margin-bottom: toRem(112);
@@ -240,7 +353,11 @@
             }
     
             .callback__line-mask {
-                animation: dash 0.4s ease-out forwards 0.1s;
+                animation: dash 0.3s linear forwards 0.1s;
+            }
+
+            .callback__line-top {
+                animation: dash 0.2s ease-out forwards 0.4s;
             }
         }
 
@@ -276,6 +393,61 @@
             width: auto;
         }
 
+        &__steps {
+            gap: toRem(16);
+            flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: toRem(48);
+            
+            &-item {
+                gap: toRem(16);
+
+                width: toRem(240);
+
+                &:last-of-type {
+                    width: toRem(256);
+                }
+            }
+    
+            &-nr {
+                width: toRem(40);
+                min-width: toRem(40);
+                height: toRem(40);
+                font-size: toRem(18);
+            }
+    
+            &-data {
+                gap: toRem(12);
+            }
+    
+            &-name {
+                font-size: toRem(18);
+                line-height: 130%;
+                padding: toRem(8) 0;
+            }
+    
+            &-about {
+                max-width: toRem(200);
+            }
+        }
+    
+        &__wrap {
+            max-width: toRem(680);
+            padding: toRem(48) toRem(48) toRem(56) toRem(48);
+            border-radius: toRem(22);
+
+            &.submitted {
+    
+                .callback__description {
+                    text-align: center !important;
+                }
+    
+                .form_desc {
+                    text-align: center !important;
+                }
+            }
+        }
+
         &__label {
             font-size: toRem(18);
             line-height: toRem(23);
@@ -284,15 +456,32 @@
         &__nr {
             width: 100%;
             max-width: toRem(638);
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-wrap: nowrap;
+            // flex-direction: row;
+            // justify-content: flex-start;
+            // align-items: flex-start;
+            // flex-wrap: nowrap;
+
+            display: grid;
+            grid-template-columns: toRem(394) 1fr;
+            column-gap: toRem(16);
+            row-gap: toRem(16);
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: toRem(30);
 
             &-field {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
                 width: 100%;
-                margin-bottom: toRem(30);
+                // margin-bottom: toRem(30);
+                margin-bottom: 0;
                 margin-right: toRem(16);
+            }
+
+            &-check {
+                width: 100%;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
             }
         }
 
@@ -306,6 +495,8 @@
         }
 
         &__submit {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
             width: auto;
             white-space: nowrap;
             padding-left: toRem(24);
@@ -324,7 +515,7 @@
 
         &__agree {
             font-family: $book-font;
-            font-weight: 350;
+            font-weight: 400;
             font-size: toRem(14);
             line-height: toRem(22);
         }
@@ -335,7 +526,7 @@
             width: toRem(212);
             height: toRem(288);
             position: absolute;
-            right: toRem(109);
+            right: calc((100% - 814px) / 2);
             top: toRem(139);
         }
     
@@ -346,6 +537,15 @@
         }
     
         &__line-mask {
+            fill: none;
+            stroke: $dark;
+            stroke-linecap: round;
+            stroke-width: 2px;
+            animation: undash 0s $cubic forwards;
+            z-index: 2;
+        }
+
+        &__line-top {
             fill: none;
             stroke: $dark;
             stroke-linecap: round;
@@ -364,9 +564,10 @@
             }
         }
         &--factoring {
-            margin-bottom: toRem(323);
+            margin-bottom: toRem(112);
             padding-bottom: toRem(56);
             background-color: #fff;
+            min-height: toRem(400);
 
             .callback__description {
                 margin-bottom: toRem(72);
@@ -401,41 +602,62 @@
         }
 
         &--warranty {
-            &::after {
-                --width: calc(100% - 1032px);
-                width: toRem(1698);
-                height: toRem(460);
-                background-size: toRem(1698) toRem(460);
-                top: toRem(-80);
-                right: auto;
-                left: calc((var(--width) / 2) + 874px);
-                transform: rotate(0deg);
-            }
+            align-items: center;
+            max-width: toRem(768);
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
 
             .callback__title {
-                margin-bottom: toRem(40);
+                margin-bottom: toRem(48);
+                text-align: center;
+                align-self: center;
             }
 
             .callback__description {
-                margin-bottom: toRem(72);
-                letter-spacing: 0.01em;
+                margin-bottom: toRem(40);
             }
 
-            .callback__input {
-                font-size: toRem(18);
-                line-height: toRem(23);
-                line-height: 0.01em;
-
-                margin-bottom: toRem(0);
+            .callback__form {
+                max-width: toRem(509);
             }
 
             .callback__nr {
-                margin-bottom: 0;
+                margin-bottom: toRem(24);
+                align-items: flex-end;
             }
+    
+            .callback__nr-field {
+                margin-bottom: 0;
 
-            .callback__svg {
-                top: toRem(80);
-                right: calc((100% - 800px) / 2);
+            }
+    
+            .callback__input {
+                width: 100%;
+                font-size: toRem(18);
+                margin-bottom: toRem(0);
+                line-height: 130%;
+                padding: toRem(0) toRem(10) toRem(17) 0;
+                margin-bottom: 0;
+                border: none; 
+                border-bottom: toRem(2) solid $dark;
+                background-color: transparent;
+            }
+        
+            .callback__submit {
+                height: toRem(56);
+                font-size: toRem(18);
+                letter-spacing: 0.36px;
+            }
+        
+            .callback__agree {
+                letter-spacing: 0.01em;
+        
+                a {
+                    color: $blue;
+                    text-decoration: none;
+                }
             }
         }
         &--page {
@@ -443,6 +665,7 @@
         }
 
         &--credit {
+            min-height: toRem(400);
             .callback__title {
                 max-width: 80%;
             }
@@ -471,6 +694,7 @@
         }
 
         &--blog {
+            min-height: toRem(400);
             &.loaded {
                 .callback__svg {
                     animation: fadeInStatic 0s linear forwards 0.1s;

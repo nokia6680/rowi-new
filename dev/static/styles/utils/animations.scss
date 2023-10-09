@@ -5,6 +5,16 @@
   }
 }
 
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 16px);
+    }
+}
+
 @keyframes re-animation-ball {
   to {
       motion-offset: 0%;
@@ -21,9 +31,6 @@
 }
 
 @keyframes dashReverse {
-    //from {
-        //stroke-dashoffset: calc(var(--pathLength) * (-1));
-    //}
     to {
         stroke-dashoffset: calc(var(--pathLength) * 2);
     }
@@ -362,7 +369,7 @@
 
     100% {
         opacity: 1;
-        transform: translate(-64px, 20px);
+        transform: translate(-44px, 20px);
     }
 }
 

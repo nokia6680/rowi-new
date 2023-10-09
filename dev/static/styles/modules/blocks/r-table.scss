@@ -1,0 +1,319 @@
+.r-table {
+    width: 100%;
+    padding: 0 toRem(16);
+
+    &__head {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        &-row--year {
+            width: 100%;
+            display: grid;
+            grid-template-columns: toRem(202) toRem(92) toRem(92) toRem(92);
+            column-gap: toRem(16);
+            padding: toRem(4) 0;
+            justify-content: start;
+            align-self: center;
+
+            th {
+                @include font-setting($primary-font, toRem(14), toRem(21.7), 400, rgba(20, 0, 75, 0.3));
+                letter-spacing: toRem(0.14);
+                text-align: left;
+            }
+        }
+
+        &-row--name {
+            width: 100%;
+            display: grid;
+            grid-template-columns: toRem(192) toRem(92) toRem(92) toRem(92);
+            column-gap: toRem(16);
+            justify-content: start;
+            align-self: center;
+            padding: toRem(8) toRem(10) toRem(12) toRem(10);
+            border-bottom: toRem(1) solid rgba(20, 0, 75, 0.3);
+
+            th {
+                @include font-setting($primary-font, toRem(10), toRem(15.5), 400, $dark);
+                letter-spacing: toRem(0.1);
+                white-space: nowrap;
+                text-align: left;
+
+                &:first-of-type {
+                    font-size: toRem(14);
+                    line-height: toRem(18.2);
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        tr {
+            width: 100%;
+            padding: toRem(8) 0;
+            display: grid;
+            grid-template-columns: toRem(192) toRem(92) toRem(92) toRem(92);
+            column-gap: toRem(16);
+            justify-content: start;
+            align-self: center;
+
+            &[data-type="has-inner"] {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: toRem(6);
+                    transform: rotate(180deg);
+                    width: toRem(20);
+                    height: toRem(20);
+
+                    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6084 12.117C14.3644 12.3611 13.9686 12.3611 13.7246 12.117L9.99984 8.39227L6.27511 12.117C6.03104 12.3611 5.63531 12.3611 5.39123 12.117C5.14715 11.8729 5.14715 11.4772 5.39123 11.2331L9.5579 7.06644C9.80197 6.82236 10.1977 6.82236 10.4418 7.06644L14.6084 11.2331C14.8525 11.4772 14.8525 11.8729 14.6084 12.117Z' fill='%2314004B' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .table-inner {
+                    display: none;
+                }
+
+                &.is-active {  
+                    .table-inner {
+                        display: table;
+                        margin-top: toRem(4);
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            right: 0;
+                            width: 100%;
+                            height: toRem(1);
+                            background-color: rgba(227, 227, 227, 1);
+                        }
+                    }
+                }
+            }
+
+            &[data-type="has-inner-double"] {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: toRem(28);
+                    top: toRem(6);
+                    transform: rotate(180deg);
+                    width: toRem(20);
+                    height: toRem(20);
+
+                    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6084 12.117C14.3644 12.3611 13.9686 12.3611 13.7246 12.117L9.99984 8.39227L6.27511 12.117C6.03104 12.3611 5.63531 12.3611 5.39123 12.117C5.14715 11.8729 5.14715 11.4772 5.39123 11.2331L9.5579 7.06644C9.80197 6.82236 10.1977 6.82236 10.4418 7.06644L14.6084 11.2331C14.8525 11.4772 14.8525 11.8729 14.6084 12.117Z' fill='%2314004B' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .table-subinner {
+                    display: none;
+                }
+
+                &.is-active {  
+                    .table-subinner {
+                        display: table;
+                        margin-top: toRem(4);
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            right: 0;
+                            width: calc(100% - 28px);
+                            height: toRem(1);
+                            background-color: rgba(227, 227, 227, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        td {
+            @include font-setting($primary-font, toRem(10), toRem(17), 400, $dark);
+            letter-spacing: toRem(0.1);
+            white-space: nowrap;
+
+            &:first-of-type {
+                padding: 0 toRem(8) 0 toRem(28);
+                color: rgba(20, 0, 75, 0.5);
+                white-space: wrap;
+            }
+        }
+
+        &--review {
+            td {
+                &:first-of-type {
+                    padding: 0 toRem(8) 0 0;
+                    color: $dark;
+                    white-space: wrap;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        width: 100%;
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+
+            tr {
+                td:first-of-type {
+                    padding-left: toRem(56);
+                }
+            }
+        }
+    }
+
+    &__sub {
+        width: 100%;
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+
+            tr {
+                td:first-of-type {
+                    padding-left: toRem(84);
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .r-table {
+        padding: 0 toRem(24);
+    
+        &__head {
+            &-row--year {
+                grid-template-columns: toRem(394) toRem(160) toRem(160) toRem(160);
+                column-gap: toRem(30);
+            }
+    
+            &-row--name {
+                grid-template-columns: toRem(384) toRem(160) toRem(160) toRem(160);
+                column-gap: toRem(30);
+                padding: toRem(15) toRem(10);
+    
+                th {
+                    font-size: toRem(14);
+                    line-height: toRem(18.2);
+                    letter-spacing: 0;
+                }
+            }
+        }
+    
+        &__body {
+            tr {
+                padding: toRem(15) toRem(10);
+                grid-template-columns: toRem(384) toRem(160) toRem(160) toRem(160);
+                column-gap: toRem(30);
+
+                &[data-type="has-inner"] {
+                    &::before {
+                        top: toRem(11);
+                        left: toRem(10);
+                        width: toRem(24);
+                        height: toRem(24);
+                    }
+
+                    &.is-active {
+                        padding-bottom: 0;
+                        .table-inner {
+                            margin-top: toRem(15);
+                        }
+                    }
+                }
+    
+                &[data-type="has-inner-double"] {
+                    position: relative;
+    
+                    &::before {
+                        left: toRem(28);
+                        top: toRem(11);
+                        width: toRem(24);
+                        height: toRem(24);
+                    }
+
+                    &.is-active {
+                        padding-bottom: 0;
+
+                        .table-subinner {
+                            margin-top: toRem(15);
+                        }
+                    }
+                }
+            }
+    
+            td {
+                font-size: toRem(14);
+                line-height: toRem(22);
+                letter-spacing: 0;
+    
+                &:first-of-type {
+                    padding: 0 toRem(30) 0 toRem(32);
+                }
+            }
+
+            &--review {
+                td {
+                    &:first-of-type {
+                        padding: 0 toRem(30) 0 0;
+                        color: $dark;
+                        white-space: wrap;
+                    }
+                }
+            }
+        }
+    
+        &__inner {
+            width: 100%;
+    
+            table {
+                border-spacing: 0;
+                width: 100%;
+    
+                tr {
+                    padding-left: 0;
+                    
+                    td:first-of-type {
+                        padding-left: toRem(64);
+                    }
+                }
+            }
+        }
+    
+        &__sub {
+            width: 100%;
+    
+            table {
+                border-spacing: 0;
+                width: 100%;
+    
+                tr {
+                    padding-left: 0;
+                    td:first-of-type {
+                        padding-left: toRem(92);
+                    }
+                }
+            }
+        }
+    }
+    
+}

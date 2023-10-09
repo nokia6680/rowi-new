@@ -7,17 +7,17 @@
     margin-bottom: toRem(48);
 
     &.loaded {
-        .blog__head {
-            animation: fadeInBottom 0.3s $cubic forwards 0s;
-        }
+        // .blog__head {
+        //     animation: fadeInBottom 0.3s $cubic forwards 0s;
+        // }
 
-        .blog__filter {
-            animation: fadeInBottom 0.3s $cubic forwards 0.1s;
-        }
+        // .blog__filter {
+        //     animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+        // }
 
-        .blog__list {
-            animation: fadeInBottom 0.3s $cubic forwards 0.2s;
-        }
+        // .blog__list {
+        //     animation: fadeInBottom 0.3s $cubic forwards 0.2s;
+        // }
     }
 
     &--media {
@@ -29,7 +29,7 @@
     &__head {
         @include flex-setting(row, center, center);
         margin-bottom: toRem(40);
-        opacity: 0;
+        // opacity: 0;
     }
 
     &__title {
@@ -48,7 +48,7 @@
     }
 
     &__filter {
-        opacity: 0;
+        // opacity: 0;
         width: 100%;
         @include flex-setting(column, flex-start, flex-start);
 
@@ -138,7 +138,7 @@
     }
 
     &__list {
-        opacity: 0;
+        // opacity: 0;
         width: 100%;
         @include flex-setting(column, flex-start, center);
 
@@ -313,19 +313,19 @@
         padding-top: toRem(115);
         margin-bottom: toRem(112);
 
-        &.loaded {
-            .blog__head {
-                animation: fadeInBottom 0.3s $cubic forwards 0s;
-            }
+        // &.loaded {
+        //     .blog__head {
+        //         animation: fadeInBottom 0.3s $cubic forwards 0s;
+        //     }
 
-            .blog__filter {
-                animation: fadeInBottom 0.3s $cubic forwards 0.2s;
-            }
+        //     .blog__filter {
+        //         animation: fadeInBottom 0.3s $cubic forwards 0.2s;
+        //     }
 
-            .blog__list {
-                animation: fadeInBottom 0.3s $cubic forwards 0.1s;
-            }
-        }
+        //     .blog__list {
+        //         animation: fadeInBottom 0.3s $cubic forwards 0.1s;
+        //     }
+        // }
 
         &__head {
             grid-area: title;

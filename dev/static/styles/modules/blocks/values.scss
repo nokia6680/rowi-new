@@ -36,6 +36,10 @@
             animation: dash 0.5s $cubic forwards 0.2s;
         }
 
+        .values__line-top {
+            animation: dash 0.2s $cubic forwards 0.7s;
+        }
+
         .values__gallery {
             animation: fadeInBottom 0.3s $cubic forwards 0.5s;
         }
@@ -132,6 +136,16 @@
         animation: fadeOutStatic 0s $cubic forwards;
         z-index: -1;
     }
+
+    &__line-top {
+        fill: none;
+        stroke: $dark;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        animation: fadeOutStatic 0s $cubic forwards;
+        z-index: -1;
+    }
+
 
     &__gallery {
         opacity: 0;

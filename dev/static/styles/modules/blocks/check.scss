@@ -1,0 +1,15 @@
+.check {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, flex-start);
+    padding: toRem(40) 0 toRem(56) 0;
+    margin-bottom: toRem(40);
+}
+
+@include min-screen(1200px) {
+    .check {
+        width: 100%;
+        padding: toRem(112) calc((100% - 1032px) / 2) 0 calc((100% - 1032px) / 2);
+        margin-bottom: toRem(112);
+    }
+}

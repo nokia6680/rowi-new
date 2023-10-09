@@ -1,0 +1,131 @@
+.r-facts {
+    position: relative;
+    @include flex-setting(column, flex-start, flex-start);
+    width: 100%;
+    max-width: toRem(343);
+
+    padding: toRem(23) toRem(23) toRem(31) toRem(23);
+    margin-bottom: toRem(56);
+    border: toRem(1) solid #E3E3E3;
+    border-radius: toRem(22);
+
+    &__title {
+        @extend .r-ability__title;
+        max-width: toRem(128);
+        margin-bottom: toRem(52);
+    }
+
+    &__stats {
+        position: absolute;
+        top: toRem(24);
+        right: toRem(24);
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        max-width: toRem(148);
+        gap: toRem(8);
+
+        &-item {
+            @include flex-setting(row, space-between, center);
+            width: 100%;
+            padding: toRem(8) toRem(14);
+            border-radius: toRem(8);
+
+            &[data-type="positive"] {
+                background-color: rgba(209, 240, 240, 0.50);
+            }
+
+            &[data-type="attention"] {
+                background-color: #FFF2E6;
+            }
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(10), toRem(20), 400, rgba(20, 0, 75, 0.5));
+            text-align: left;
+            letter-spacing: toRem(0.1);
+        }
+
+        &-nr {
+            @include font-setting($primary-font, toRem(15), toRem(18), 400, $dark);
+            letter-spacing: toRem(0.3);
+        }
+    }
+
+    &__list {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        gap: toRem(24);
+        margin-bottom: toRem(32);
+
+        &-item {
+            position: relative;
+            @include flex-setting(column, flex-start, flex-start);
+            width: 100%;
+            gap: toRem(8);
+            padding-left: toRem(36);
+
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: toRem(20);
+                height: toRem(20);
+                border-radius: toRem(6);
+            }
+
+            &[data-type="positive"] {
+                &::before {
+                    background-color: #D1F0F0;
+                }
+            }
+
+            &[data-type="attention"] {
+                &::before {
+                    background-color: #FFF2E6;
+                }
+            }
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(14), toRem(18.2), 400, rgba(20, 0, 75, 0.5));
+            text-align: left;
+            letter-spacing: toRem(0.14);
+        }
+
+        &-data {
+            @include font-setting($primary-font, toRem(15), toRem(18), 400, $dark);
+            text-align: left;
+            letter-spacing: toRem(0.3);
+        }
+    }
+
+    &__expand {
+        @extend .r-report__expand;
+    }
+}
+
+@include min-screen(1200px) {
+    .r-facts {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        max-width: 100%;
+        margin-bottom: 0;
+    
+        &__title {
+            max-width: 100%;
+            margin-bottom: toRem(32);
+        }
+
+        &__list {
+            &-item {
+                padding-left: toRem(44);
+    
+                &::before {
+                    width: toRem(24);
+                    height: toRem(24);
+                }
+            }
+        }
+    }
+}

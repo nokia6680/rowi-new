@@ -1,0 +1,152 @@
+.r-report {
+    @include flex-setting(column, flex-start, flex-start);
+    width: 100%;
+    max-width: toRem(343);
+
+    padding: toRem(24) 0 toRem(32) 0;
+    margin-bottom: toRem(56);
+
+    &.is-active {
+        margin-bottom: 0;
+
+        & + .r-balance {
+            display: flex;
+            animation: fadeInStatic 0.4s $cubic;
+        }
+    }
+
+    &__title {
+        margin-bottom: toRem(32);
+    }
+
+    &__date {
+        display: none;
+    }
+
+    &__list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: toRem(24);
+        row-gap: toRem(24);
+
+        margin-bottom: toRem(32);
+    }
+
+    &__item {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+            .r-report__name {
+                line-height: toRem(17);
+            }
+        }
+    }
+
+    &__name {
+        margin-bottom: toRem(8);
+        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, rgba(20, 0, 75, 0.5));
+        letter-spacing: toRem(0.14);
+        text-align: left;
+        max-width: 88%;
+    }
+
+    &__nr {
+        margin-bottom: toRem(4);
+        @include font-setting($primary-font, toRem(18), toRem(23.4), 400, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.18);
+    }
+
+    &__change {
+        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.14);
+
+        &[data-type="grow"] {
+            color: $green;
+        }
+
+        &[data-type="loss"] {
+            color: $red;
+        }
+    }
+
+    &__expand {
+        position: relative;
+        padding: 0;
+        padding-right: toRem(32);
+        background-color: transparent;
+        border: none;
+
+        @include font-setting($primary-font, toRem(14), toRem(24), 400, $blue);
+        letter-spacing: toRem(0.14);
+        transition: opacity 0.2s $cubic;
+
+        &::after {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            width: toRem(24);
+            height: toRem(24);
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.4697 9.46967C11.7626 9.17678 12.2374 9.17678 12.5303 9.46967L16.5303 13.4697C16.8232 13.7626 16.8232 14.2374 16.5303 14.5303C16.2374 14.8232 15.7626 14.8232 15.4697 14.5303L12 11.0607L8.53033 14.5303C8.23744 14.8232 7.76256 14.8232 7.46967 14.5303C7.17678 14.2374 7.17678 13.7626 7.46967 13.4697L11.4697 9.46967Z' fill='%234164EE'/%3E%3C/svg%3E%0A");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: 0.2s $cubic;
+        }
+
+        &:active {
+            opacity: 0.8;
+            transition: opacity 0.2s $cubic;
+        }
+
+        &.is-active {
+            &::after {
+                transform: translateY(-50%) rotate(0deg);
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .r-report {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        position: relative;
+        max-width: 100%;
+        padding-right: toRem(24);
+        padding-left: toRem(24);
+        margin-bottom: 0;
+    
+        &__date {
+            position: absolute;
+            top: toRem(24);
+            right: toRem(42);
+            @include flex-setting(column, center, center);
+
+            padding: toRem(7) toRem(9);
+            border: toRem(1) solid rgba(20, 0, 75, 0.5);
+            border-radius: toRem(6);
+
+            @include font-setting($primary-font, toRem(10), toRem(15.5), 400, rgba(20, 0, 75, 0.5));
+            letter-spacing: toRem(0.1);
+        }
+    
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__expand {
+            &:hover {
+                opacity: 0.86;
+                transition: opacity 0.2s $cubic;
+            }
+        }
+    }
+}

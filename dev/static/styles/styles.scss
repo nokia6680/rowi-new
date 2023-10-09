@@ -220,6 +220,31 @@ textarea {
     &--guide {
         overflow: visible;
     }
+
+    @include min-screen(1200px) {
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: 100vw;
+            height: calc(100vh - 99px);
+            top: 0;
+            left: 0;
+
+            background-color: rgba(30, 33, 37, 0.5);
+
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9;
+            transition: 0.3s $cubic;
+        }
+        &.menu-opened {
+            &::before {
+                opacity: 1;
+                transition: 0.3s $cubic;
+            }
+        }
+    }
 }
 //Модули
 @import "modules/modules";

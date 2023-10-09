@@ -135,6 +135,10 @@
             .join__line-mask {
                 animation: dash 0.4s ease-out forwards 0.1s;
             }
+
+            .join__line-top {
+                animation: dash 0.2s ease-out forwards 0.5s;
+            }
         }
 
         &__info {
@@ -195,6 +199,15 @@
         }
     
         &__line-mask {
+            fill: none;
+            stroke: $dark;
+            stroke-linecap: round;
+            stroke-width: 2px;
+            animation: undash 0s $cubic forwards;
+            z-index: 2;
+        }
+
+        &__line-top {
             fill: none;
             stroke: $dark;
             stroke-linecap: round;

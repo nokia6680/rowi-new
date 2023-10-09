@@ -1,0 +1,279 @@
+article.result
+    <!--Верхняя часть с данными-->
+    header.result__heading
+        h2.result__name #{resultName}
+        ul.result__info
+            for i in companyInfo
+                li.result__info-item
+                    span.result__info-title=i.title
+                    span.result__info-data=i.data
+        span(data-status="active").result__status Действующая компания
+        span(data-status="able").result__ability Возможно финансирование
+    .result__body
+        
+        //- Бухгалтерская отчетность
+        .result__report.r-report
+            h3.r-report__title.section-subtitle Бухгалтерская отчетность
+            span.r-report__date за 2022 год
+
+            ul.r-report__list
+                for i in reportList
+                    li.r-report__item
+                        span.r-report__name=i.name
+                        b.r-report__nr=i.nr
+                        if i.change
+                            span(data-type="" +i.type).r-report__change=i.change
+            button(type="button").r-report__expand Подробнее
+        
+        //- Таблица бух отчетности
+        .report__balance.r-balance
+            .r-balance__block
+                h3.r-balance__title.section-subtitle Бухгалтерский баланс
+
+                .r-balance__wrap
+                    table.r-balance__table.r-table
+                        //- Верхняя часть
+                        thead.r-table__head
+                            tr.r-table__head-row.r-table__head-row--year
+                                th.r-table__year
+                                each year in ['2020', '2021', '2022']
+                                    th.r-table__year= year
+                            tr.r-table__head-row.r-table__head-row--name
+                                each name in ['Актив', '99 000', '392 316 000 000', '144 478 987 884']
+                                    th.r-table__name= name
+                        
+                        tbody.r-table__body
+                            tr
+                                each data in ['Денежные средства и денежные эквиваленты', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr
+                                each data in ['Финансовые и другие оборотные активы', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr(data-type="has-inner")
+                                each data in ['Внеоборотные активы', '10 987 346', '10 987 346', '10 987 346']
+                                    td.r-table__data= data
+                                td(colspan="4").r-table__inner
+                                    table.table-inner
+                                        tbody.r-table__body
+                                            tr
+                                                each data in ['Нематериальные активы', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr(data-type="has-inner-double")
+                                                each data in ['Основные средства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                                td(colspan="4").r-table__sub
+                                                    table.table-subinner
+                                                        tbody.r-table__body
+                                                            tr
+                                                                each data in ['Право пользования арендованными активами', '10 987 346', '10 987 346', '10 987 346']
+                                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Финансовые вложения', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Прочие внеоборотные активы', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                            tr(data-type="has-inner")
+                                each data in ['Оборотные активы', '10 987 346', '10 987 346', '10 987 346']
+                                    td.r-table__data= data
+                                td(colspan="4").r-table__inner
+                                    table.table-inner
+                                        tbody.r-table__body
+                                            tr
+                                                each data in ['Запасы', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Дебиторская задолженность', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Денежные средства и денежные эквиваленты', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Прочие оборотные активы', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Финансовые и другие оборотные активы', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                //- Блок таблицы про пассив
+                .r-balance__wrap
+                    table.r-balance__table.r-table
+                        //- Верхняя часть
+                        thead.r-table__head
+                            tr.r-table__head-row.r-table__head-row--name
+                                each name in ['Пассив', '99 000', '392 316 000 000', '144 478 987 884']
+                                    th.r-table__name= name
+                        tbody.r-table__body
+                            tr(data-type="has-inner")
+                                each data in ['Капитал и резервы', '10 987 346', '10 987 346', '10 987 346']
+                                    td.r-table__data= data
+                                td(colspan="4").r-table__inner
+                                    table.table-inner
+                                        tbody.r-table__body
+                                            tr
+                                                each data in ['Уставный капитал (складочный капитал, уставной фонд, вклады товарищей)', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Нераспределенная прибыль (непокрытый убыток)', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                            
+                            tr(data-type="has-inner")
+                                each data in ['Долгосрочные обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                    td.r-table__data= data
+                                td(colspan="4").r-table__inner
+                                    table.table-inner
+                                        tbody.r-table__body
+                                            tr
+                                                each data in ['Долгосрочные заемные средства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Отложенные налоговые обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr(data-type="has-inner-double")
+                                                each data in ['Прочие обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                                td(colspan="4").r-table__sub
+                                                    table.table-subinner
+                                                        tbody.r-table__body
+                                                            tr
+                                                                each data in ['Обязательства по оплате аренды долгосрочные', '10 987 346', '10 987 346', '10 987 346']
+                                                                    td.r-table__data= data
+                            tr(data-type="has-inner")
+                                each data in ['Краткосрочные обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                    td.r-table__data= data
+                                td(colspan="4").r-table__inner
+                                    table.table-inner
+                                        tbody.r-table__body
+                                            tr
+                                                each data in ['Кредиторская задолженность', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Оценочные обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr
+                                                each data in ['Краткосрочные заемные обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                            tr(data-type="has-inner-double")
+                                                each data in ['Прочие обязательства', '10 987 346', '10 987 346', '10 987 346']
+                                                    td.r-table__data= data
+                                                td(colspan="4").r-table__sub
+                                                    table.table-subinner
+                                                        tbody.r-table__body
+                                                            tr
+                                                                each data in ['Обязательства по оплате аренды краткосрочные', '10 987 346', '10 987 346', '10 987 346']
+                                                                    td.r-table__data= data
+            //- Блок таблицы про отчет
+            .r-balance__block.r-balance__block--review
+                h3.r-balance__title.section-subtitle Отчет о финансовых результатах
+                .r-balance__wrap
+                    table.r-balance__table.r-table
+                        //- Верхняя часть
+                        thead.r-table__head
+                            tr.r-table__head-row.r-table__head-row--year
+                                th.r-table__year
+                                each year in ['2020', '2021', '2022']
+                                    th.r-table__year= year
+                        tbody.r-table__body.r-table__body--review
+                            tr.r-table__review-item
+                                each data in ['Прочие расходы', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Чистая прибыль (убыток)', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Выручка', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Валовая прибыль (убыток)', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Управленческие расходы', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Прибыль (убыток) от продаж', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Проценты к получению', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Проценты к уплате', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Прочие доходы', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Прибыль (убыток) до налогообложения', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Налог на прибыль', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Текущий налог на прибыль', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Отложенный налог на прибыль', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Совокупный финансовый результат периода', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+                            tr.r-table__review-item
+                                each data in ['Себестоимость продаж', '93 000 761', '392 316 000 000', '392 316 000 000']
+                                    td.r-table__data= data
+            //- кнопка закрытия 
+            button(type="button").r-balance__close Скрыть
+        //- Доступность финансирования
+        .report__order.r-ability 
+            h3.r-ability__title Доступно факторинговое финансирование контрактов с ООО «Ромашка»
+            ul.r-ability__list
+                each i in abilityList
+                    li.r-ability__list-item=i
+            button(type="button").r-ability__submit Оставить заявку
+       
+        //- Общая информация
+        .result__general.r-general
+            h3.r-general__title Общая информация
+            ul.r-general__list
+                for i in generalList
+                    li.r-general__list-item
+                        span.r-general__list-name=i.name 
+                        b.r-general__list-data=i.data
+                        if i.begin
+                            span.r-general__list-start=i.begin
+        
+        //- Факты о компании
+        .result__facts.r-facts
+            h3.r-facts__title Факты о&nbsp;компании
+            ul.r-facts__stats
+                li(data-type="positive").r-facts__stats-item
+                    span.r-facts__stats-name Положительные
+                    b.r-facts__stats-nr 6
+                li(data-type="attention").r-facts__stats-item
+                    span.r-facts__stats-name Требуют внимания
+                    b.r-facts__stats-nr 1
+            ul.r-facts__list
+                for i in reportFacts
+                    li(data-type="" +i.status).r-facts__list-item
+                        span.r-facts__list-name=i.name
+                        b.r-facts__list-data=i.data
+            button(type="button").r-facts__expand Подробнее
+        
+        //- Виды деятельности
+        .result__activities.r-activities
+            h3.r-activities__title.section-subtitle Виды деятельности
+
+            .r-activities__wrap
+                .r-activities__item
+                    b.r-activities__subtitle Основной ОКВЭД
+
+                    ul.r-activities__list 
+                        li.r-activities__list-item 
+                            b 62.01 
+                            span — Разработка компьютерного программного обеспечения
+                .r-activities__item
+                    b.r-activities__subtitle Дополнительные
+                    
+                    ul.r-activities__list
+                        for i in actList
+                            li.r-activities__list-item
+                                b=i.nr + " "
+                                span="— " +i.data
+                    button(type="button").r-activities__expand Подробнее

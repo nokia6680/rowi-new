@@ -1,0 +1,194 @@
+.c-options {
+    @include flex-setting(column, flex-start, flex-start);
+    width: 100%;
+    padding: toRem(52) calc((100% - 343px) / 2) 0 calc((100% - 343px) / 2);
+
+    &__title {
+        margin-bottom: toRem(40);
+
+        span {
+            color: $blue;
+        }
+    }
+
+    &__description {
+        margin-bottom: toRem(40);
+        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.14);
+    }
+
+    &__list {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        padding: toRem(24) 0 toRem(24) toRem(40);
+    }
+
+    &__icon {
+        position: absolute;
+        top: toRem(24);
+        left: 0;
+
+        width: toRem(32);
+        height: toRem(32);
+
+        svg {
+            top: 0;
+            right: 0;
+            position: absolute;
+            z-index: 2;
+        }
+
+        &[data-icon="check-1"] {
+            svg {
+                width: toRem(20);
+                height: toRem(27);
+
+                fill: transparent;
+                stroke: $dark;
+            }
+        }
+
+        &[data-icon="check-2"] {
+            svg {
+                width: toRem(21);
+                height: toRem(27);
+                fill: transparent;
+                stroke: $dark;
+            }
+        }
+
+        &[data-icon="check-3"] {
+            svg {
+                width: toRem(27);
+                height: toRem(26);
+                fill: transparent;
+                stroke: $dark;
+            }
+        }
+
+        &[data-icon="check-4"] {
+            svg {
+                width: toRem(20);
+                height: toRem(27);
+
+                fill: $dark;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            width: toRem(27);
+            height: toRem(27);
+
+            background-color: #E3E8FD;
+            border-radius: toRem(3);
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(18), toRem(21.6), 500, $dark);
+        margin-bottom: toRem(8);
+        letter-spacing: toRem(0.36);
+    }
+
+    &__text {
+        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.14);
+    }
+}
+
+@include min-screen(1200px) {
+    .c-options {
+        padding: toRem(48) 0 toRem(56) 0;
+
+        &__title {
+            margin-bottom: toRem(18);
+        }
+    
+        &__description {
+            max-width: toRem(621);
+            margin-bottom: toRem(72);
+            font-size: toRem(20);
+            line-height: toRem(26);
+            letter-spacing: 0;
+        }
+    
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: toRem(24);
+            justify-content: space-between;
+            align-self: start;
+        }
+    
+        &__item {
+            padding: 0;
+        }
+    
+        &__icon {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin-bottom: toRem(40);
+            width: toRem(72);
+            height: toRem(72);
+    
+            &[data-icon="check-1"] {
+                svg {
+                    top: toRem(3);
+                    right: toRem(7);
+                    width: toRem(36);
+                    height: toRem(50);
+                }
+            }
+    
+            &[data-icon="check-2"] {
+                svg {
+                    top: toRem(2);
+                    right: toRem(2);
+                    width: toRem(45);
+                    height: toRem(55);
+                }
+            }
+    
+            &[data-icon="check-3"] {
+                svg {
+                    top: toRem(2);
+                    width: toRem(53);
+                    height: toRem(51);
+                }
+            }
+    
+            &[data-icon="check-4"] {
+                svg {
+                    right: toRem(4);
+                    width: toRem(42);
+                    height: toRem(60);
+                }
+            }
+    
+            &::before {
+                width: toRem(61);
+                height: toRem(61);
+                border-radius: toRem(8);
+            }
+        }
+    
+        &__name {
+            margin-bottom: toRem(16);
+        }
+    }
+}

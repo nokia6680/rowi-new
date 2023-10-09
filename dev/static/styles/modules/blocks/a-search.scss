@@ -1,0 +1,178 @@
+.a-search {
+    width: 100%;
+    @include flex-setting(column, flex-start, flex-start);
+
+    &__wrap {
+        position: relative;
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+
+        &.is-active {
+            .a-search__input {
+                border-color: $blue;
+                transition: border-color 0.2s $cubic;
+            }
+
+            .a-search__reset {
+                opacity: 1;
+                pointer-events: all;
+                transition: opacity 0.2s $cubic;
+            }
+
+            .a-search__list {
+                display: flex;
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: toRem(16);
+        @include font-setting($primary-font, toRem(18), toRem(21.6), 500, $dark);
+        text-align: left;
+        letter-spacing: toRem(0.36);
+    }
+
+    &__input {
+        width: 100%;
+
+        padding: toRem(16) toRem(24) toRem(16) toRem(56);
+        margin-bottom: toRem(16);
+        background-color: rgba(240, 243, 253, 1);
+        border-radius: toRem(8);
+        border: 2px solid rgba(240, 243, 253, 1);
+
+        @include font-setting($primary-font, toRem(14), toRem(18.2), 400, $dark);
+        letter-spacing: toRem(0.14);
+
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.1483 7.40383C13.0098 5.26532 9.54259 5.26532 7.40408 7.40383C5.26557 9.54235 5.26557 13.0096 7.40408 15.1481C9.52201 17.266 12.9432 17.2864 15.0862 15.2092C15.1042 15.1868 15.1237 15.1651 15.1445 15.1443C15.1653 15.1234 15.187 15.104 15.2095 15.086C17.2866 12.9429 17.2662 9.52176 15.1483 7.40383ZM16.8137 15.6821C19.0298 12.9041 18.8518 8.84455 16.2797 6.27246C13.5163 3.50911 9.03606 3.50911 6.27271 6.27246C3.50936 9.03581 3.50936 13.5161 6.27271 16.2794C8.8448 18.8515 12.9044 19.0295 15.6824 16.8135L18.4345 19.5656C18.7469 19.8781 19.2535 19.8781 19.5659 19.5656C19.8783 19.2532 19.8783 18.7467 19.5659 18.4343L16.8137 15.6821Z' fill='%2314004B' fill-opacity='0.3'/%3E%3C/svg%3E");
+        background-size: toRem(24) toRem(24);
+        background-repeat: no-repeat;
+        background-position: left 1.5rem center;
+    }
+
+    &__reset {
+        position: absolute;
+        top: toRem(16);
+        right: toRem(24);
+        width: toRem(24);
+        height: toRem(24);
+        border: none;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.24281 6.23431C6.59429 5.88284 7.16414 5.88284 7.51561 6.23431L12.0057 10.7244L16.4903 6.23983C16.8418 5.88836 17.4117 5.88836 17.7631 6.23983C18.1146 6.59131 18.1146 7.16116 17.7631 7.51263L13.2785 11.9972L17.7631 16.4818C18.1146 16.8333 18.1146 17.4032 17.7631 17.7546C17.4117 18.1061 16.8418 18.1061 16.4903 17.7546L12.0057 13.27L7.51003 17.7656C7.15855 18.1171 6.5887 18.1171 6.23723 17.7656C5.88576 17.4141 5.88577 16.8443 6.23724 16.4928L10.7329 11.9972L6.24281 7.5071C5.89134 7.15563 5.89134 6.58578 6.24281 6.23431Z' fill='%2314004B' fill-opacity='0.3'/%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s $cubic;
+    }
+
+    &__list {
+        position: absolute;
+        top: toRem(64);
+        left: 0;
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        box-shadow: 0px 16px 40px 0px rgba(114, 128, 182, 0.20);
+        border-radius: toRem(8);
+        overflow: hidden;
+
+        display: none;
+    }
+
+    &__item {
+        width: 100%;
+        padding: toRem(12) toRem(24);
+        background-color: $white;
+
+        @include flex-setting(column, flex-start, flex-start);
+        transition: background-color 0.2s $cubic;
+
+        &:active {
+            background-color: rgba(240, 243, 253, 1);
+            transition: background-color 0.2s $cubic;
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
+        letter-spacing: toRem(0.14);
+        margin-bottom: toRem(2);
+    }
+
+    &__bottom {
+        width: auto;
+        @include flex-setting(row, flex-start, center);
+        gap: toRem(16);
+    }
+
+    &__data {
+        @include font-setting($primary-font, toRem(10), toRem(15.5), 400, rgba(20, 0, 75, 0.5));
+    }
+
+    &__submit {
+        @include flex-setting(column, center, center);
+        width: 100%;
+        height: toRem(48);
+        background-color: $blue;
+        border: none;
+        border-radius: toRem(6);
+        @include font-setting($primary-font, toRem(15), toRem(18), 500, $white);
+        letter-spacing: toRem(0.3);
+        opacity: 1;
+        transition: opacity 0.2s $cubic;
+
+        &:active {
+            opacity: 0.8;
+            transition: opacity 0.2s $cubic;
+        }
+    }
+}
+
+@include min-screen(1200px) {
+    .a-search {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+        &__wrap {
+            display: grid;
+            grid-template-columns: toRem(780) 1fr;
+            column-gap: toRem(24);
+        }
+    
+        &__label {
+            display: none;
+        }
+    
+        &__input {
+            height: toRem(56);
+            margin: 0;
+            font-size: toRem(18);
+            line-height: toRem(23.4);
+            letter-spacing: toRem(0.18);
+        }
+    
+        &__name {
+            font-size: toRem(18);
+            line-height: toRem(23.4);
+            letter-spacing: toRem(0.18);
+            margin-bottom: toRem(4);
+        }
+
+        &__submit {
+            height: toRem(56);
+            font-size: toRem(18);
+            line-height: toRem(21.6);
+            letter-spacing: toRem(0.36);
+    
+            &:hover {
+                opacity: 0.86;
+                transition: opacity 0.2s $cubic;
+            }
+        }
+    }
+}

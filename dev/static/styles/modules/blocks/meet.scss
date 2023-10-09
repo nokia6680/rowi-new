@@ -69,7 +69,7 @@
         }
 
         &:last-of-type {
-            background-color: #FFF8C2;
+            background-color: #F6E8FD;
         }
     }
 
@@ -111,22 +111,6 @@
         &__item {
             border-radius: toRem(22);
             padding: toRem(24) toRem(24);
-
-            &:first-of-type {
-                background-color: #E8ECFD;
-            }
-
-            &:nth-of-type(2) {
-                background-color: #E0F5F5
-            }
-
-            &:nth-of-type(3) {
-                background-color: #FDF1F4;
-            }
-
-            &:last-of-type {
-                background-color: #FFF8C2;
-            }
         }
 
         &__name {

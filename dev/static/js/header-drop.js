@@ -13,43 +13,43 @@ details.forEach((targetDetail) => {
     });
 });
 
-window.onload = function() {
-    var headDetails = document.getElementsByClassName('detHead');
-    var elNodes = document.querySelectorAll(".detHead");
-    var innerW = window.innerWidth;
+// window.onload = function() {
+//     var headDetails = document.getElementsByClassName('detHead');
+//     var elNodes = document.querySelectorAll(".detHead");
+//     var innerW = window.innerWidth;
 
-    for (var i = 0; i < headDetails.length; i++) {
-        var elem = headDetails[i];
+//     for (var i = 0; i < headDetails.length; i++) {
+//         var elem = headDetails[i];
 
-        if (innerW < 1200) {
-            elem.setAttribute("open", '');
+//         if (innerW < 1200) {
+//             elem.setAttribute("open", '');
 
-        } else if ($(elem).hasClass('open')) {
+//         } else if ($(elem).hasClass('open')) {
 
-        } else {
-            elem.removeAttribute("open");
-        }
-    }
-}
+//         } else {
+//             elem.removeAttribute("open");
+//         }
+//     }
+// }
 
 
-window.addEventListener("resize", function() {
-    var headDetails = document.getElementsByClassName('detHead');
-    var elNodes = document.querySelectorAll(".detHead");
-    var innerW = window.innerWidth;
+// window.addEventListener("resize", function() {
+//     var headDetails = document.getElementsByClassName('detHead');
+//     var elNodes = document.querySelectorAll(".detHead");
+//     var innerW = window.innerWidth;
 
-    for (var i = 0; i < headDetails.length; i++) {
-        var elem = headDetails[i];
+//     for (var i = 0; i < headDetails.length; i++) {
+//         var elem = headDetails[i];
 
-        if (innerW < 768) {
-            elem.setAttribute("open", '');
-        } else if ((innerW >= 768) || (innerW < 1000)) {
-            elem.removeAttribute("open");
-        }
-    };
-});
+//         if (innerW < 768) {
+//             elem.setAttribute("open", '');
+//         } else if ((innerW >= 768) || (innerW < 1000)) {
+//             elem.removeAttribute("open");
+//         }
+//     };
+// });
 
-var detailsBtn = document.querySelector('.nav__contacts-btn');
+var detailsBtn = document.querySelector('.nav__cabinet-btn');
 document.addEventListener('click', function(e) {
     if (!detailsBtn.contains(e.target)) {
         detailsBtn.removeAttribute('open')

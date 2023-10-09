@@ -4,53 +4,12 @@ header.header
             img(src="static/images/content/logo-header.svg" width="" height="" alt="ROWI").header__logo-img
                 
     nav.header__nav.nav
-        .nav__list.nav__list--mobile
-            .nav__list-item
-                .nav__list-name Продукты
-                .nav__list-inner
-                    a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
-                    a(href="warranty.html" target="_self").nav__list-link Гарантии
-                    a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
-                    a(href="sellers.html" target="_self").nav__list-link Для селлеров
-            .nav__list-item
-                .nav__list-name О нас
-                .nav__list-inner
-                    a(href="about.html" target="_self").nav__list-link О компании
-                    a(href="career.html" target="_self").nav__list-link Карьера
-                    a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
-                    a(href="blog.html" target="_self").nav__list-link Блог
-                    
-                    
-        .nav__list.nav__list--desktop
-            details.nav__list-item.details.detHead
-                summary.nav__list-name 
-                    span Продукты
-                    span.nav__list-arr
-                .nav__list-inner
-                    a(href="factoring.html" target="_self").nav__list-link Факторинг Плюс
-                    a(href="warranty.html" target="_self").nav__list-link Гарантии
-                    a(href="credit.html" target="_self").nav__list-link Кредит на госконтракты
-                    a(href="sellers.html" target="_self").nav__list-link Для селлеров
-            details.nav__list-item.details.detHead
-                summary.nav__list-name 
-                    span О нас
-                    span.nav__list-arr
-                .nav__list-inner
-                    a(href="about.html" target="_self").nav__list-link О компании
-                    a(href="career.html" target="_self").nav__list-link Карьера
-                    a(href="https://www.rowi.tech" target="_self").nav__list-link rowi.tech
-            .nav__list-item.nav__list-item--desktop
-                a(href="blog.html" target="_self").nav__list-name Блог
-        .nav__contacts
-            .nav__contacts-wrap
-                a(href="tel:74953748477" target="_blank").nav__contacts-link +7 (495) 374 84 77
-                button(type="button" data-modal="#js-popup-callback").nav__contacts-link.js-popup-opener Заказать звонок
-                
-            details.nav__contacts-btn 
-                summary.nav__contacts-name 
+        .nav__cabinet
+            details.nav__cabinet-btn 
+                summary.nav__cabinet-name 
                     span Личный кабинет
-                    span.nav__contacts-arr
-                ul.nav__contacts-inner
+                    span.nav__cabinet-arr
+                ul.nav__cabinet-inner
                     li
                         a(href="https://login.factoringplus.ru/Account/LoginFactoring?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DMy%2520Factoring%26redirect_uri%3Dhttps%253A%252F%252Fmy.factoringplus.ru%252Fcallback%252F%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520email%2520roles%26nonce%3D637345591262459094.OGM1NDY5MmYtkODJk" target="_blank") Факторинг
                     li
@@ -59,4 +18,152 @@ header.header
                         a(href="#" target="_self") Кредиты
                     li
                         a(href="#" target="_self") Счета
+
+        .nav__list.nav__list--mobile
+            details.nav__list-item
+                summary.nav__list-summary
+                    span.nav__list-name Продукты
+                    span.nav__list-arr
+                        svg
+                            use(xlink:href="static/images/sprite/symbol/sprite.svg#chevron") 
+                .nav__list-content
+                    .nav__list-inner
+                        a(href="factoring.html" target="_self").nav__list-link 
+                            span.nav__list-icon
+                                svg.nav__list-image
+                                    use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-1") 
+                            span.nav__list-text Факторинг
+                        a(href="warranty.html" target="_self").nav__list-link
+                            span.nav__list-icon
+                                svg.nav__list-image
+                                    use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-2") 
+                            span.nav__list-text Гарантии
+                        a(href="credit.html" target="_self").nav__list-link
+                            span.nav__list-icon
+                                svg.nav__list-image
+                                    use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-3") 
+                            span.nav__list-text Кредиты
+                        a(href="sellers.html" target="_self").nav__list-link
+                            span.nav__list-icon
+                                svg.nav__list-image
+                                    use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-4") 
+                            span.nav__list-text Селлерам
+                    
+                    .nav__list-inner
+                        b.nav__list-title Отрасли
+                        
+                        a(href="" target="_self").nav__list-link 
+                            span.nav__list-text Химикам
+                        a(href="" target="_self").nav__list-link
+                            span.nav__list-text Металлургам
+                        a(href="" target="_self").nav__list-link
+                            span.nav__list-text Логистам
+                    
+                    .nav__list-inner
+                        b.nav__list-title Дополнительно
+                        
+                        a(href="check.html" target="_self").nav__list-link 
+                            span.nav__list-text Проверка контрагента
+            details.nav__list-item
+                summary.nav__list-summary
+                    span.nav__list-name О нас
+                    span.nav__list-arr
+                        svg
+                            use(xlink:href="static/images/sprite/symbol/sprite.svg#chevron")
+                .nav__list-content
+                    .nav__list-inner
+                        a(href="about.html" target="_self").nav__list-link 
+                            span.nav__list-text О компании
+                        a(href="career.html" target="_self").nav__list-link
+                            span.nav__list-text Карьера
+                        a(href="https://www.rowi.tech" target="_self").nav__list-link 
+                            span.nav__list-text rowi.tech        
+            a(href="blog.html" target="_self").nav__list-name Блог
+            <!--Upload image area-->
+            a(href="" target="_self").nav__list-frame
+                picture
+                    source(srcset="static/images/content/banner-1.webp 1x, static/images/content/banner-1.webp 2x" type="image/webp")
+                    img(srcset="static/images/content/banner-1.png 1x, static/images/content/banner-1.png 2x" width="" height="" alt="").nav__list-banner
+        
+        <!--desktop nav-->
+        .nav__list.nav__list--desktop
+            details.nav__list-item.nav__list-item--desktop
+                summary.nav__list-summary
+                    span.nav__list-name Продукты
+                    span.nav__list-arr
+                        svg
+                            use(xlink:href="static/images/sprite/symbol/sprite.svg#chevron") 
+                .nav__list-content
+                    .nav__list-wrap
+                        .nav__list-inner
+                            a(href="factoring.html" target="_self").nav__list-link 
+                                span.nav__list-icon
+                                    svg.nav__list-image
+                                        use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-1") 
+                                span.nav__list-text Факторинг
+                            a(href="warranty.html" target="_self").nav__list-link
+                                span.nav__list-icon
+                                    svg.nav__list-image
+                                        use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-2") 
+                                span.nav__list-text Гарантии
+                            a(href="credit.html" target="_self").nav__list-link
+                                span.nav__list-icon
+                                    svg.nav__list-image
+                                        use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-3") 
+                                span.nav__list-text Кредиты
+                            a(href="sellers.html" target="_self").nav__list-link
+                                span.nav__list-icon
+                                    svg.nav__list-image
+                                        use(xlink:href="static/images/sprite/symbol/sprite.svg#prod-4") 
+                                span.nav__list-text Селлерам
+                        
+                        .nav__list-inner
+                            b.nav__list-title Отрасли
+                            
+                            a(href="" target="_self").nav__list-link 
+                                span.nav__list-text Химикам
+                            a(href="" target="_self").nav__list-link
+                                span.nav__list-text Металлургам
+                            a(href="" target="_self").nav__list-link
+                                span.nav__list-text Логистам
+                        
+                        .nav__list-inner
+                            b.nav__list-title Дополнительно
+                            
+                            a(href="" target="_self").nav__list-link 
+                                span.nav__list-text Проверка контрагента
+                        <!--Upload image area-->
+                        a(href="" target="_self").nav__list-frame
+                            picture
+                                source(srcset="static/images/content/banner-1.webp 1x, static/images/content/banner-1.webp 2x" type="image/webp")
+                                img(srcset="static/images/content/banner-1.png 1x, static/images/content/banner-1.png 2x" width="" height="" alt="").nav__list-banner
+                    
+            details.nav__list-item.nav__list-item--desktop
+                summary.nav__list-summary
+                    span.nav__list-name О нас
+                    span.nav__list-arr
+                        svg
+                            use(xlink:href="static/images/sprite/symbol/sprite.svg#chevron")
+                .nav__list-content
+                    .nav__list-wrap
+                        .nav__list-inner
+                            a(href="about.html" target="_self").nav__list-link 
+                                span.nav__list-text О компании
+                            a(href="career.html" target="_self").nav__list-link
+                                span.nav__list-text Карьера
+                            a(href="https://www.rowi.tech" target="_self").nav__list-link 
+                                span.nav__list-text rowi.tech
+                        <!--Upload image area-->
+                        a(href="" target="_self").nav__list-frame
+                            picture
+                                source(srcset="static/images/content/banner-2.webp 1x, static/images/content/banner-2.webp 2x" type="image/webp")
+                                img(srcset="static/images/content/banner-2.png 1x, static/images/content/banner-2.png 2x" width="" height="" alt="").nav__list-banner
+                        
+            a(href="blog.html" target="_self").nav__list-name Блог
+
+        <!--contacts-->
+        .nav__contacts
+            .nav__contacts-wrap
+                a(href="tel:74953748477" target="_blank").nav__contacts-link +7 (495) 374 84 77
+                button(type="button" data-modal="#js-popup-callback").nav__contacts-link.js-popup-opener Заказать звонок
     button(type="button").header__toggle

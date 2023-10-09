@@ -29,3 +29,8 @@
         max-width: 70%;
     }
 }
+
+.section-subtitle {
+    @include font-setting($primary-font, toRem(22), toRem(28.6), 500, $dark);
+    text-align: left;
+}

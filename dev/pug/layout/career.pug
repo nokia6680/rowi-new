@@ -38,8 +38,16 @@ html(lang="ru-RU")
                         source(media="(min-width: 1200px)" srcset="static/images/content/career-lg.webp 1x, static/images/content/career-lg_2x.webp 2x" type="image/webp")
                         source(media="(min-width: 1200px)" srcset="static/images/content/career-lg.png 1x, static/images/content/career-lg_2x.png 2x")
                         source(srcset="static/images/content/career-sm.webp 1x, static/images/content/career-sm_2x.webp 2x" type="image/webp")
-                        img(srcset="static/images/content/career-sm.png 1x, static/images/content/career-lg_2x.png 2x" width="" height="" alt="").intro__frame-image
-                    .intro__arrows
+                        img(srcset="static/images/content/career-sm.png 1x, static/images/content/career-sm_2x.png 2x" width="" height="" alt="").intro__frame-image
+                <!--SVG zone-->
+                .intro__svg
+                    svg(class="intro__line intro__line--mobile" viewBox="0 0 156 99" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro__line-mask" d="M93.9,96C39.5,83.2,15.2,58.6,44.4,51.4c38.4-9.5,99.2,5.2,107.9,12.7C180.7,88.6-51.9,78.4,12.6,0.9")
+                        path(class="intro__line-top" d="M84,88.6c3.4,3.8,9,6.2,10.3,7.6c-2.5-0.6-12-0.3-16.9,0.6")
+                    
+                    svg(class="intro__line intro__line--desktop" viewBox="0 0 168 198" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(class="intro__line-mask" d="M43.5,195C-13,119.6-18.9,46.1,61,53c64.3,5.5,103.5,98.5,106,122.5c8.1,78.1-231.5-85.5-87.5-174")
+                        path(class="intro__line-top" d="M39.8,171.2c0,11.2,4.5,21.4,4.5,25.5c-2.7-3.5-15.4-11.1-23-13.5")
 
                 .intro__details
                     p.intro__description Мы заряжаем энергией,&nbsp;вдохновляем и&nbsp;добиваемся лучших результатов, работая вместе
@@ -85,8 +93,9 @@ html(lang="ru-RU")
                         p.features__description Дружелюбная атмосфера без&nbsp;бюрократии и сложных процессов. В командах развита взаимопомощь, можно задавать вопросы и не бояться ошибок
                 
                 .features__svg
-                    svg(class="features__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 501" fill="none")
-                        path(class="features__line-mask" d="M1.5 264.5C155 403 408.518 594.272 507.822 444.5C551.791 378.186 330.547 216.123 381.535 138.111C406.25 100.297 585.485 205.654 601.017 210.044C690.942 235.461 638.499 119.064 484.524 1M484.524 1C487.563 6.06568 494.451 15.3865 494.991 22.9513M484.524 1C491.84 6.06568 507.822 11.8068 507.822 11.8068")
+                    svg(class="features__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 505" fill="none")
+                        path(class="features__line-mask" d="M1,268.9c153.5,138.5,407,329.8,506.3,180c44-66.3-177.3-228.4-126.3-306.4c24.7-37.8,203.9,67.5,219.5,71.9  c89.9,25.4,37.5-91-116.5-209")
+                        path(class="features__line-top" d="M492.2,25.1c-0.5-7.6-7.4-16.9-10.5-22c7.3,5.1,23.3,10.8,23.3,10.8")
 
             include ../modules/blocks/comfort
             include ../modules/blocks/values

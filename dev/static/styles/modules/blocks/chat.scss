@@ -25,8 +25,8 @@
             animation: dash 0.4s ease-out forwards 0.1s;
         }
 
-        .chat__top {
-            animation: fadeInStatic 0s ease-out forwards 0.5s;
+        .chat__line-top {
+            animation: dash 0.2s ease-out forwards 0.5s;
         }
 
         .chat__item:first-of-type {
@@ -149,17 +149,21 @@
     &__svg {
         opacity: 0;
         width: toRem(130);
-        height: toRem(111);
+        height: toRem(113);
         position: absolute;
         --width: calc(100% - 149px);
         right: calc(var(--width) / 2);
         top: toRem(228);
+        pointer-events: none;
+
     }
 
     &__line {
         position: absolute;
         top: 0;
         left: 0;
+
+        pointer-events: none;
 
         &--desktop {
             display: none;
@@ -175,19 +179,28 @@
         z-index: 2;
     }
 
-    &__top {
-        position: absolute;
-        bottom: 1px;
-        left: -3.5px;
-        width: toRem(12);
-        height: toRem(12);
-        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M6.25 11.2197C6.0484 8.19456 2.96325 6.487 1.39982 3.91179C5.45025 4.64833 6.68407 3.83148 10.2785 1.11111' stroke='%2314004B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-color: transparent;
-        opacity: 0;
+    &__line-top {
+        fill: none;
+        stroke: $dark;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        animation: undash 0s $cubic forwards;
+        z-index: 2;
     }
+
+    // &__top {
+    //     position: absolute;
+    //     bottom: 1px;
+    //     left: -3.5px;
+    //     width: toRem(12);
+    //     height: toRem(12);
+    //     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M6.25 11.2197C6.0484 8.19456 2.96325 6.487 1.39982 3.91179C5.45025 4.64833 6.68407 3.83148 10.2785 1.11111' stroke='%2314004B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    //     background-position: 50% 50%;
+    //     background-repeat: no-repeat;
+    //     background-size: contain;
+    //     background-color: transparent;
+    //     opacity: 0;
+    // }
 
     &--factoring {
         &.loaded {
@@ -286,6 +299,10 @@
             margin-bottom: toRem(40);
         }
 
+        .chat__description {
+            margin-bottom: toRem(56);
+        }
+
         .chat__item-master:first-of-type {
             .chat__frame {
                 left: toRem(11);
@@ -299,11 +316,34 @@
         .chat__svg {
             width: toRem(114);
             height: toRem(119);
-            top: 225px;
+            top: auto;
+            bottom: toRem(140);
+            left: toRem(40);
+            transform: scaleX(-1) rotate(-20deg);
         }
 
         .chat__top {
             display: none;
+        }
+
+        .chat__list {
+            margin-bottom: toRem(72);
+        }
+
+        .chat__link {
+            @include flex-setting(column, center, center);
+            width: 100%;
+            height: toRem(48);
+            @include font-setting($primary-font, toRem(15), 120%, 500, $dark);
+            text-decoration: none;
+            background-color: transparent;
+            border: toRem(2) solid $dark;
+            border-radius: toRem(6);
+
+            &:active {
+                background-color: #F0F3FE;
+                transition: 0.35s $cubic;
+            }
         }
     }
 }
@@ -340,8 +380,8 @@
                 animation: dash 0.4s $cubic forwards 0.1s;
             }
 
-            .chat__top {
-                animation: fadeInStatic 0s linear forwards 0.5s;
+            .chat__line-top {
+                animation: dash 0.2s linear forwards 0.5s;
             }
 
             .chat__item:first-of-type {
@@ -429,8 +469,8 @@
         &__svg {
             grid-area: svg;
             position: relative;
-            width: toRem(275);
-            height: toRem(182);
+            width: toRem(308);
+            height: toRem(195);
             --width: calc(100% - 456px);
             top: auto;
             right: auto;
@@ -447,16 +487,6 @@
             &--mobile {
                 display: none;
             }
-        }
-
-        &__top {
-            position: absolute;
-            bottom: 12px;
-            left: 1px;
-            width: toRem(19);
-            height: toRem(17);
-            background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M4.14062 16.0005C5.78698 11.045 1.97773 6.31506 1.15964 1.19129C7.13987 5.00064 9.63884 4.50058 17.1406 2.50049' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-
         }
 
         &--factoring {
@@ -478,11 +508,11 @@
                 .chat__line-mask {
                     animation: dash 0.4s ease-out forwards 0.1s;
                 }
-    
-                .chat__top {
-                    display: block;
+
+                .chat__line-top {
+                    animation: dash 0.2s linear forwards 0.5s;
                 }
-    
+
                 .chat__item:first-of-type {
                     animation: fadeInBottom 0.2s $cubic forwards 0.2s;
                 }
@@ -526,13 +556,6 @@
         &--warranty {
             padding-bottom: toRem(56);
 
-
-            &.loaded {
-                .chat__top {
-                    display: block;
-                }
-            }
-
             .chat__title {
                 margin-bottom: toRem(40);
             }
@@ -548,8 +571,8 @@
             }
 
             .chat__svg {
-                width: toRem(275);
-                height: toRem(182);
+                width: toRem(308);
+                height: toRem(192);
                 top: auto;
                 right: auto;
                 bottom: auto;
@@ -559,23 +582,60 @@
             .chat__line--desktop {
                 display: block;
             }
-
-            .chat__top {
-                position: absolute;
-                transform: none;
-                bottom: 12px;
-                left: 1px;
-                width: toRem(19);
-                height: toRem(17);
-                background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M4.14062 16.0005C5.78698 11.045 1.97773 6.31506 1.15964 1.19129C7.13987 5.00064 9.63884 4.50058 17.1406 2.50049' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-            }
         }
 
         &--credit {
+            grid-template-areas:
+                'list info'
+                'list link'
+                'list ...'
+            ;
             padding-bottom: toRem(56);
+
+            &.loaded {
+                .chat__title {
+                    animation: fadeInBottom 0.3s $cubic forwards;
+                }
+    
+                .chat__description {
+                    animation: fadeInBottom 0.3s $cubic forwards;
+                }
+    
+                .chat__svg {
+                    animation: fadeInStatic 0s linear forwards 0.1s;
+                }
+    
+                .chat__line-mask {
+                    animation: dash 0.4s $cubic forwards 0.4s;
+                }
+    
+                .chat__line-top {
+                    animation: dash 0.2s linear forwards 0.8s;
+                }
+    
+                .chat__item:first-of-type {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.2s;
+                }
+    
+                .chat__item:nth-of-type(2) {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.3s;
+                }
+    
+                .chat__item:last-of-type {
+                    animation: fadeInBottom 0.2s $cubic forwards 0.4s;
+                }
+
+                .chat__link {
+                    animation: fadeInStatic 0.2s $cubic forwards 0.9s;
+                }
+            }
 
             .chat__title {
                 margin-bottom: toRem(40);
+            }
+
+            .chat__list {
+                margin-bottom: 0;
             }
 
             .chat__item-master {
@@ -589,12 +649,15 @@
             }
 
             .chat__svg {
-                width: toRem(275);
-                height: toRem(182);
+                grid-area: none;
+                position: absolute;
+                width: toRem(204);
+                height: toRem(202);
                 top: auto;
-                right: auto;
-                bottom: auto;
-                transform: translateX(-90px);
+                left: auto;
+                right: calc((100% - 256px) / 2);
+                bottom: toRem(32);
+                transform: none;
             }
 
             .chat__top {
@@ -606,6 +669,25 @@
                 width: toRem(19);
                 height: toRem(17);
                 background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M4.14062 16.0005C5.78698 11.045 1.97773 6.31506 1.15964 1.19129C7.13987 5.00064 9.63884 4.50058 17.1406 2.50049' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            }
+
+            .chat__description {
+                
+            }
+
+            .chat__link {
+                grid-area: link;
+                width: auto;
+                max-width: toRem(306);
+                padding: toRem(14) toRem(22);
+                opacity: 0;
+                font-size: toRem(18);
+                line-height: 120%;
+
+                &:hover {
+                    background-color: #F0F3FE;
+                    transition: 0.35s $cubic;
+                }
             }
         }
     }

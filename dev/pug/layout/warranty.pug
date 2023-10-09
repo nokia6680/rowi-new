@@ -60,9 +60,17 @@ html(lang="ru-RU")
                 .intro__details
                     p.intro__description Выдаём банковские гарантии на любые цели&nbsp;без посещения офиса
 
-                    .intro__controls
-                        a(href="#order" target="_self").intro__link Оставить&nbsp;заявку
-                    
+                    //- form
+                    form(method="post" action="#" name="callback-form").intro__form.callback__form
+                        .callback__nr
+                            .callback__nr-field
+                                input(type="text" name="tel" id="tel-intro" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                                span.callback__error
+                                        
+                            button(type="submit").callback__submit Отправить заявку
+                        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                            a(href="" target="_blank") обработку персональных данных
+    
             section.conditions.conditions--warranty
                 h2.conditions__title.section-title Все виды гарантий  
                     span в одном месте
@@ -113,13 +121,15 @@ html(lang="ru-RU")
                             source(srcset="static/images/content/chat-client-3.webp" type="image/webp")
                             img(src="static/images/content/chat-client-3.png" width="" height="" alt="Клиент чата").chat__frame-image
                         p.chat__text Оперативно, спасибо!
-                <!--SVG zone-->
+                                <!--SVG zone-->
                 .chat__svg    
                     svg(class="chat__line chat__line--mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 158 100")
-                        path(class="chat__line-mask" d="M75.6525 1.44187C75.6525 65.4421 173.498 91.4995 154.652 55.9418C135.502 19.8099 52.5876 46.9419 1.58857 98.4419M1.58857 98.4419C2.86184 95.7944 5.99847 88.4995 3.99848 84.9995M1.58857 98.4419C3.72521 96.2944 9.39849 92.1995 14.9985 92.9995")
-                    svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 182" fill="none")
-                        path(class="chat__line-mask" d="M231.57,6.65C169.53,93.1,251,179.91,268.31,152.9c25.93-40.5-53.59-76.29-155.23,6.42-41.7,33.93-85.71,21.54-108.66-2.45")
-                        .chat__top
+                        path(class="chat__line-mask" d="M75.1,0.9c0,64,97.8,90.1,79,54.5C134.9,19.3,52,46.4,1,97.9")
+                        path(class="chat__line-top" d="M3.3,84.6c2,3.5-1.1,10.8-2.4,13.4c2.1-2.1,7.8-6.2,13.4-5.4")
+                    svg(class="chat__line chat__line--desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308 192" fill="none")
+                        path(class="chat__line-mask" d="M267.8,0.8c-68.7,88,15.5,178.6,33.1,151.1c25.9-40.5-53.6-76.3-155.2,6.4  c-43.4,35.3-89.3,20.5-111.3-5.4")
+                        path(class="chat__line-top" d="M37.7,167.9c1.6-5-2.2-9.7-3-14.8c6,3.8,8.5,3.3,16,1.3")
+
             section.about.about--warranty
                 h2.about__title.section-title ROWI — ваш 
                     span надёжный 
@@ -146,25 +156,46 @@ html(lang="ru-RU")
                             p.about__text Заявок обрабатываем в месяц
 
             section.callback.callback--warranty
-                h2.callback__title.section-title Оставьте заявку на&nbsp;гарантии и&nbsp;получите решение 
-                    span сегодня
-                p.callback__description Укажите телефон для&nbsp;заявки или&nbsp;консультации
-                
-                form(method="post" action="#" name="callback-form").callback__form
-                    .callback__nr
-                        .callback__nr-field
-                            input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
-                            span.callback__error
-                        
-                        button(type="submit").callback__submit Отправить заявку
-                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-                        a(href="" target="_blank") обработку персональных данных
-                    p.features__guide-about В нем собрана полезная информация о факторинге
-                <!--SVG zone-->
-                .callback__svg
-                    svg(class="callback__line" width="212" height="288" viewBox="0 0 212 288" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(class="callback__line-mask" d="M1 1C1 1 78 9.59123 121 52.2409C207.164 137.703 107 183.08 99.5 156.26C92 129.441 211 155.265 211 211.934C211 268.602 80.0366 302.243 1 264.667M1 264.667C7.74563 265.791 23.4872 266.773 32.4883 261.717M1 264.667C7.74563 269.302 22.362 280.258 26.8626 287")
+                h2.callback__title.section-title 
+                    span Оставьте 
+                    | заявку на&nbsp;гарантии и&nbsp;получите решение сегодня
 
+                <!--New form list-->
+                ul.callback__steps
+                    li.callback__steps-item
+                        b.callback__steps-nr 1
+                        .callback__steps-data
+                            b.callback__steps-name Заявка
+                            span.callback__steps-about Менеджер свяжется в течение 15 мин
+                    li.callback__steps-item
+                        b.callback__steps-nr 2
+                        .callback__steps-data
+                            b.callback__steps-name Решение
+                            span.callback__steps-about Получите одобрение за 1 день
+                    li.callback__steps-item
+                        b.callback__steps-nr 3
+                        .callback__steps-data
+                            b.callback__steps-name Гарантия
+                            span.callback__steps-about В реестре в день выдачи
+                <!--New form wtap-->
+                .callback__wrap
+                    p.callback__description Укажите телефон для&nbsp;заявки или&nbsp;консультации
+                    
+                    form(method="post" action="#" name="callback-form").callback__form
+                        .callback__nr
+                            .callback__nr-field
+                                input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
+                                span.callback__error
+                            
+                            button(type="submit").callback__submit Отправить заявку
+                        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
+                            a(href="" target="_blank") обработку персональных данных
+                //- <!--SVG zone-->
+                //- .callback__svg
+                //-     svg(class="callback__line" width="216" height="293" viewBox="0 0 216 293" fill="none" xmlns="http://www.w3.org/2000/svg")
+                //-         path(class="callback__line-mask" d="M5.9,1c0,0,77,8.6,120,51.5c86.2,85.9-14,131.5-21.5,104.5s111.5-1,111.5,56s-131,90.8-210,53")
+                //-         path(class="callback__line-top" d="M37.5,263.1c-9,5.1-24.7,4.1-31.5,3c6.7,4.7,21.4,15.7,25.9,22.4")            include ../modules/blocks/conditions
+            
             section(class="faq " +faqClass)
                 h2.faq__title.section-title Популярные 
                     span вопросы
@@ -180,7 +211,7 @@ html(lang="ru-RU")
         include ../modules/footer/footer
 
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        script(src="https://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js")
+
         script(src="static/js/main.js")
         script(src="static/js/header-drop.js")
         script(src="static/js/observer.js")
