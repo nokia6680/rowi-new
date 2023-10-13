@@ -4,6 +4,35 @@
     @include flex-setting(column, flex-start, flex-start);
     padding: toRem(40) 0 toRem(56) 0;
     margin-bottom: toRem(40);
+
+    &.is-active {
+        margin-bottom: 0;
+
+        .c-intro {
+            margin-bottom: 0;
+        }
+
+        .c-intro__title,
+        .c-intro__description,
+        .c-intro__list,
+        .c-intro__visual {
+            display: none;
+        }
+
+        .a-search {
+            &__submit {
+                display: none;
+            }
+
+            &__input {
+                margin-bottom: 0;
+            }
+        }
+
+        .check__options {
+            display: none;
+        }
+    }
 }
 
 @include min-screen(1200px) {
@@ -11,5 +40,14 @@
         width: 100%;
         padding: toRem(112) calc((100% - 1032px) / 2) 0 calc((100% - 1032px) / 2);
         margin-bottom: toRem(112);
+
+        &.is-active {
+            .c-intro {
+                padding-bottom: toRem(40);
+            }
+            .a-search__wrap {
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }
