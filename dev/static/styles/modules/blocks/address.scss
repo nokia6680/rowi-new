@@ -1,0 +1,112 @@
+.address {
+    position: relative;
+    @include flex-setting(column, flex-start, center);
+    width: 100%;
+    max-width: toRem(343);
+    margin-left: auto;
+    margin-right: auto;
+    padding: toRem(48) 0 toRem(56) 0;
+    margin-bottom: toRem(48);
+
+    &__title {
+        margin-bottom: toRem(40);
+        @include font-setting($primary-font, toRem(28), 115%, 500, $dark);
+    }
+
+    &__list {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        gap: toRem(32);
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+        padding-left: toRem(32);
+
+        &:first-of-type {
+            .address__icon {
+                background-color: #D1F0F0;
+            }
+        }
+
+        &:last-of-type {
+            .address__icon {
+                background-color: #E3E8FD;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        width: toRem(24);
+        height: toRem(24);
+        left: 0;
+        top: 0;
+        border-radius: toRem(5);
+
+        svg {
+            position: absolute;
+            top: toRem(-8);
+            right: 0;
+            width: toRem(16);
+            height: toRem(30);
+            fill: transparent;
+            stroke: $dark;
+        }
+    }
+
+    &__name {
+        margin-bottom: toRem(8);
+        @include font-setting($primary-font, toRem(18), 130%, 500, $dark);
+        text-align: left;
+    }
+
+    &__text {
+        text-align: left;
+        @include font-setting($primary-font, toRem(14), 130%, 400, $dark);
+        letter-spacing: toRem(0.14);
+    }
+}
+
+@include min-screen(1200px) {
+    .address {
+        max-width: toRem(1032);
+        margin-bottom: toRem(112);
+    
+        &__title {
+            margin-bottom: toRem(40);
+            font-size: toRem(32);
+            line-height: 109%;
+        }
+    
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: toRem(24);
+            justify-content: start;
+            align-items: start;
+        }
+    
+        &__item {
+            padding-left: toRem(56);
+            padding-right: toRem(24);
+        }
+
+        &__icon {
+            left: toRem(24);
+        }
+    
+        &__name {
+            font-size: toRem(22);
+            line-height: 130%;
+        }
+    
+        &__text {
+            font-size: toRem(18);
+            line-height: 130%;
+            letter-spacing: toRem(0.18);
+        }
+    }
+}

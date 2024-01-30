@@ -21,10 +21,12 @@ section.callback#order.section
             .callback__nr-field
                 input(type="tel" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
                 span.callback__error
-            .callback__nr-check
+            //- .callback__nr-check
             button(type="submit").callback__submit Отправить заявку
-        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-            a(href="" target="_blank") обработку персональных данных
+        span.callback__agree Нажимая кнопку, вы даете  
+            a(href="https://rowi.com/pravila/ROWI_Soglasie_OPD.pdf" target="_blank") согласие 
+            | на обработку персональных данных. 
+            a(href="https://rowi.com/pravila/ROWI_Politika_Konfidencialnosti.pdf" target="_blank") Политика конфиденциальности
     <!--SVG zone-->
     .callback__svg
         svg(class="callback__line" width="217" height="293" viewBox="0 0 217 293" fill="none" xmlns="http://www.w3.org/2000/svg")

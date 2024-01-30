@@ -1,0 +1,77 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png")
+        link(rel="mask-icon" href="/favicon_32x32.svg" color="#5bbad5")
+        link(rel="icon" href="/favicon_32x32.svg" sizes="any" type="image/svg+xml") 
+        meta(name="theme-color" content="#ffffff")
+        //test ver only
+        meta(name="robots" content="noindex")
+        //end of test ver only
+    body.body
+        include ../modules/header/header
+        main.main
+            section.contacts
+                h1.contacts__title Контакты
+
+                ul.contacts__list
+                    li.contacts__item
+                        h3.contacts__subtitle Самая быстрая поддержка — в чате
+                        p.contacts__description Предоставляем клиенту самое удобное и&nbsp;качественное финансирование
+                        button(type="button").contacts__chat.js-chat Написать в чат
+                            svg
+                                use(xlink:href="static/images/sprite/symbol/sprite.svg#chat-btn") 
+                    li.contacts__item
+                        b.contacts__subtitle По вопросам финансирования и&nbsp;банковских гарантий
+                        .contacts__data
+                            b.contacts__name Горячая линия
+                            a(href="tel:88005002283" target="_self").contacts__link 8 800 500-22-83
+                            a(href="tel:+74994032283" target="_self").contacts__link +7 499 403-22-83
+                    li.contacts__item
+                        b.contacts__subtitle Карьера
+                        .contacts__data
+                            b.contacts__name Email
+                            a(href="mailto:hr@rowi.com" target="_self").contacts__link hr@rowi.com
+                            a(href="career.html" target="_self").contacts__career
+                                svg
+                                    use(xlink:href="static/images/sprite/symbol/sprite.svg#link-arrow") 
+                    li.contacts__item
+                        b.contacts__subtitle Контакты для СМИ
+                        .contacts__data
+                            b.contacts__name Email
+                            a(href="mailto:pr@rowi.com" target="_self").contacts__link pr@rowi.com
+            section.address 
+                h2.address__title Адреса
+                ul.address__list
+                    li.address__item
+                        span.address__icon
+                            svg
+                                use(xlink:href="static/images/sprite/symbol/sprite.svg#address-pin")
+                        h3.address__name Офис в Москве
+                        p.address__text Серебряническая наб., 29, БЦ Silver City
+                    li.address__item
+                        span.address__icon
+                            svg
+                                use(xlink:href="static/images/sprite/symbol/sprite.svg#address-pin")
+                        h3.address__name Офисы в Саратове
+                        p.address__text ул. Вавилова 38, БЦ Ковчег
+                        p.address__text ул. Танкистов, д. 37, БЦ Дикомп
+        include ../modules/footer/footer
+
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/header-drop.js")
+        block script

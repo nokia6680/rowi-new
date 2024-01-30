@@ -30,24 +30,15 @@ section(class="check " +checkType)
     //- 
     else
         .check__intro.c-intro
-            h1.c-intro__title Удобная 
-                span экспресс оценка 
+            h1.c-intro__title 
+                span Экспресс оценка 
                 | контрагента
-            p.c-intro__description Проверьте контрагента и узнайте, доступно ли финансирование по вашим контрактам
-            //- only desktop
-            ul.c-intro__list
-                li.c-intro__list-item Только самое важное в простом и понятном отчёте
-                li.c-intro__list-item Мгновенно и бесплатно
+            p.c-intro__description Проверьте контрагента бесплатно и узнайте, доступно ли финансирование по вашим контрактам
             //- visual part
             .c-intro__visual
                 img(src="static/images/content/check-intro.svg" width="" height="" alt="").c-intro__visual-img
-                .c-intro__visual-text
-                    svg
-                        use(xlink:href="static/images/sprite/symbol/sprite.svg#check-tick")
-                    span доступно финансирование
             //- Part with inputs for agent search
             .c-intro__search.a-search
-                label(for="agent-search").a-search__label Проверка контрагента
                 .a-search__wrap
                     input(type="text" name="agent-search" id="agent-search" placeholder="ИНН или название компании").a-search__input
                     button(type="reset").a-search__reset
@@ -70,12 +61,8 @@ section(class="check " +checkType)
                                 span(data-type="itn").a-search__data ИНН 9709064843
                                 span(data-type="ogrn").a-search__data ОГРН 9709064843
                                 span(data-type="city").a-search__data г.Москва
-                button(type="submit").a-search__submit Посмотреть отчет
 
         .check__options.c-options
-            h2.c-options__title.section-title Помогаем оценить 
-                span надежность
-            p.c-options__description Отобрали самую полезную информацию о компаниях, чтобы вы могли легко принять решение о сотрудничестве.
             ul.c-options__list
                 for i in optList
                     li.c-options__item

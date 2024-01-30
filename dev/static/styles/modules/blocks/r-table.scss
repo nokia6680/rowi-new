@@ -16,9 +16,13 @@
             align-self: center;
 
             th {
-                @include font-setting($primary-font, toRem(14), toRem(21.7), 400, rgba(20, 0, 75, 0.3));
+                @include font-setting($book-font, toRem(14), toRem(21.7), 350, rgba(20, 0, 75, 0.3));
                 letter-spacing: toRem(0.14);
-                text-align: left;
+                text-align: right;
+
+                .table__head--first {
+                    display: flex;
+                }
             }
         }
 
@@ -30,17 +34,20 @@
             justify-content: start;
             align-self: center;
             padding: toRem(8) toRem(10) toRem(12) toRem(10);
-            border-bottom: toRem(1) solid rgba(20, 0, 75, 0.3);
+            border-bottom: toRem(1) solid rgba(20, 0, 75, 0.08);
 
             th {
-                @include font-setting($primary-font, toRem(10), toRem(15.5), 400, $dark);
+                @include font-setting($book-font, toRem(10), toRem(15.5), 350, $dark);
                 letter-spacing: toRem(0.1);
                 white-space: nowrap;
-                text-align: left;
+                text-align: right;
 
                 &:first-of-type {
                     font-size: toRem(14);
+                    font-family: $primary-font;
+                    font-weight: 400;
                     line-height: toRem(18.2);
+                    text-align: left;
                 }
             }
         }
@@ -77,11 +84,24 @@
                     background-size: contain;
                 }
 
+                .r-table__inner {
+                    display: none;
+                }
+
                 .table-inner {
                     display: none;
                 }
 
-                &.is-active {  
+                &.is-active {
+                    padding-bottom: 0;
+
+                    &::before {
+                        transform: rotate(0);
+                    }
+                    .r-table__inner {
+                        display: flex;
+                    }
+
                     .table-inner {
                         display: table;
                         margin-top: toRem(4);
@@ -118,11 +138,25 @@
                     background-size: contain;
                 }
 
+                .r-table__inner {
+                    display: none;
+                }
+
                 .table-subinner {
                     display: none;
                 }
 
-                &.is-active {  
+                &.is-active {
+                    padding-bottom: 0;
+
+                    &::before {
+                        transform: rotate(0);
+                    }
+
+                    .r-table__inner {
+                        display: flex;
+                    }
+                    
                     .table-subinner {
                         display: table;
                         margin-top: toRem(4);
@@ -143,14 +177,20 @@
         }
 
         td {
-            @include font-setting($primary-font, toRem(10), toRem(17), 400, $dark);
+            width: 100%;
+            @include font-setting($book-font, toRem(10), toRem(16), 350, $dark);
             letter-spacing: toRem(0.1);
             white-space: nowrap;
+            text-decoration: none;
 
             &:first-of-type {
                 padding: 0 toRem(8) 0 toRem(28);
                 color: rgba(20, 0, 75, 0.5);
-                white-space: wrap;
+                white-space: pre-wrap;
+            }
+
+            &:not(:first-of-type) {
+                text-align: right;
             }
         }
 
@@ -159,9 +199,19 @@
                 &:first-of-type {
                     padding: 0 toRem(8) 0 0;
                     color: $dark;
-                    white-space: wrap;
+                    white-space: pre-wrap;
+                    font-family: $primary-font;
+                    font-weight: 400;
                 }
             }
+        }
+    }
+
+    &__first-row {
+        .r-table__data:first-of-type {
+            font-size: toRem(12);
+            line-height: toRem(18.2);
+            letter-spacing: toRem(0.12);
         }
     }
 
@@ -312,6 +362,14 @@
                         padding-left: toRem(92);
                     }
                 }
+            }
+        }
+
+        &__first-row {
+            .r-table__data:first-of-type {
+                font-size: toRem(14);
+                line-height: toRem(18);
+                letter-spacing: 0;
             }
         }
     }

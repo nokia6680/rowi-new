@@ -239,8 +239,8 @@
         letter-spacing: 0.01em;
 
         a {
-            color: $blue;
-            text-decoration: none;
+            color: $dark;
+            text-decoration: underline;
         }
     }
 
@@ -301,8 +301,8 @@
             letter-spacing: 0.01em;
     
             a {
-                color: $blue;
-                text-decoration: none;
+                color: $dark;
+                text-decoration: underline;
             }
         }
     }
@@ -518,6 +518,12 @@
             font-weight: 400;
             font-size: toRem(14);
             line-height: toRem(22);
+            max-width: toRem(564);
+
+            a {
+                color: $dark;
+                text-decoration: underline;
+            }
         }
 
         &__svg {
@@ -621,6 +627,10 @@
 
             .callback__form {
                 max-width: toRem(509);
+
+                .callback__nr {
+                    grid-template-columns: toRem(266) toRem(227);
+                }
             }
 
             .callback__nr {
@@ -653,11 +663,6 @@
         
             .callback__agree {
                 letter-spacing: 0.01em;
-        
-                a {
-                    color: $blue;
-                    text-decoration: none;
-                }
             }
         }
         &--page {
@@ -681,10 +686,6 @@
                 line-height: 0.01em;
 
                 margin-bottom: toRem(0);
-            }
-
-            .callback__nr {
-                margin-bottom: 0;
             }
 
             .callback__svg {

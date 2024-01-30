@@ -27,27 +27,28 @@
 
     &__label {
         margin-bottom: toRem(16);
-        @include font-setting($primary-font, toRem(18), toRem(21.6), 500, $dark);
+        @include font-setting($primary-font, toRem(14), 150%, 500, $dark);
         text-align: left;
-        letter-spacing: toRem(0.36);
     }
 
     &__input {
         width: 100%;
-
         padding: toRem(16) toRem(24) toRem(16) toRem(56);
-        margin-bottom: toRem(16);
-        background-color: rgba(240, 243, 253, 1);
+        background-color: #F0F3FD;
         border-radius: toRem(8);
-        border: 2px solid rgba(240, 243, 253, 1);
+        border: 2px solid #F0F3FD;
 
-        @include font-setting($primary-font, toRem(14), toRem(18.2), 400, $dark);
+        @include font-setting($primary-font, toRem(14), 130%, 400, $dark);
         letter-spacing: toRem(0.14);
 
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.1483 7.40383C13.0098 5.26532 9.54259 5.26532 7.40408 7.40383C5.26557 9.54235 5.26557 13.0096 7.40408 15.1481C9.52201 17.266 12.9432 17.2864 15.0862 15.2092C15.1042 15.1868 15.1237 15.1651 15.1445 15.1443C15.1653 15.1234 15.187 15.104 15.2095 15.086C17.2866 12.9429 17.2662 9.52176 15.1483 7.40383ZM16.8137 15.6821C19.0298 12.9041 18.8518 8.84455 16.2797 6.27246C13.5163 3.50911 9.03606 3.50911 6.27271 6.27246C3.50936 9.03581 3.50936 13.5161 6.27271 16.2794C8.8448 18.8515 12.9044 19.0295 15.6824 16.8135L18.4345 19.5656C18.7469 19.8781 19.2535 19.8781 19.5659 19.5656C19.8783 19.2532 19.8783 18.7467 19.5659 18.4343L16.8137 15.6821Z' fill='%2314004B' fill-opacity='0.3'/%3E%3C/svg%3E");
         background-size: toRem(24) toRem(24);
         background-repeat: no-repeat;
         background-position: left 1.5rem center;
+
+        &::placeholder {
+            color: rgba(20, 0, 75, 0.3);
+        }
     }
 
     &__reset {
@@ -79,7 +80,7 @@
         box-shadow: 0px 16px 40px 0px rgba(114, 128, 182, 0.20);
         border-radius: toRem(8);
         overflow: hidden;
-
+        z-index: 8;
         display: none;
     }
 
@@ -138,14 +139,12 @@
         justify-content: space-between;
         align-items: center;
     
-        &__wrap {
-            display: grid;
-            grid-template-columns: toRem(780) 1fr;
-            column-gap: toRem(24);
-        }
-    
         &__label {
             display: none;
+        }
+
+        &__reset {
+            right: toRem(40);
         }
     
         &__input {
@@ -154,6 +153,13 @@
             font-size: toRem(18);
             line-height: toRem(23.4);
             letter-spacing: toRem(0.18);
+        }
+
+        &__item {
+            &:hover {
+                background-color: rgba(240, 243, 253, 1);
+                transition: background-color 0.2s $cubic;
+            }
         }
     
         &__name {

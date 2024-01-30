@@ -10,6 +10,7 @@ html(lang="ru-RU")
         meta(http-equiv='X-UA-Compatible', content="IE = edge")
         <![endif]-->
         meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="format-detection" content="telephone=no")
         meta(name="keywords" content="")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
         link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png")
@@ -27,7 +28,23 @@ html(lang="ru-RU")
             include ../modules/blocks/check
             include ../modules/blocks/result
         include ../modules/footer/footer
-
+        <!--New FORM result-callback-->
+        .popup-callback.js-popup-wrap#js-result-callback
+            .popup-callback__wrapper.js-popup-inner
+                button(type="button").popup-callback__closer.js-popup-closer
+                
+                h3.popup-callback__title Перезвоним и все расскажем, оставьте номер телефона
+                p.popup-callback__description
+                
+                form(method="post" action="" name="callbackForm_result").popup-callback__form.callback-form
+                    .callback-form__item
+                        input(type="tel" name="callback-form-result" id="callback-form-result" placeholder="Ваш номер телефона" onkeydown="validationCallbackTel()" required).callback-form__input.js-phone-input
+                        span.callback-form__error
+                    button(type="sumit").callback-form__submit Отправить
+                    span.callback-form__agree Нажимая кнопку, вы соглашаетесь на 
+                        a(href="" target="_blank") обработку персональных данных
+        <!--Old form for callback-->
+        include ../modules/blocks/popup-callback
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="static/js/main.js")
         script(src="static/js/header-drop.js")

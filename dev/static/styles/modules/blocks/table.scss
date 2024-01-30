@@ -43,10 +43,6 @@
         @include font-setting($primary-font, toRem(14), toRem(32), 400, $dark);
         min-width: toRem(130);
         width: 100%;
-
-        &--first {
-            display: none;
-        }
     }
 
     &__cell {
@@ -60,10 +56,6 @@
             font-size: toRem(12);
             line-height: toRem(16);
             font-weight: 500;
-        }
-
-        &--first {
-            display: none;
         }
     }
 }
@@ -85,10 +77,6 @@
         &__head {
             line-height: toRem(20);
             min-width: toRem(114);
-
-            &--first {
-                display: flex;
-            }
         }
 
         &__cell {
@@ -96,10 +84,6 @@
 
             &--title {
                 display: none;
-            }
-
-            &--first {
-                display: flex;
             }
         }
 
