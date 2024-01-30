@@ -46,13 +46,6 @@ html(lang="ru-RU")
                                     span 223–ФЗ
                                 li.intro__item
                                     span 615–ПП
-                    //- <!--SVG zone-->
-                    //- .intro__svg
-                    //-     svg(class="intro__line intro__line--mobile" width="126" height="80" viewBox="0 0 126 80" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    //-         path(class="intro__line-mask" d="M3.89277 78.372C18.9113 0.120993 81.8921 39.5334 64.8476 54.8544C47.8032 70.1753 67.7683 -28.4543 125.11 10.0653M3.89277 78.372C4.14599 77.778 1.6684 72.1053 1.07751 68.9655M3.89277 78.372C4.21821 77.6081 9.00298 68.7245 11.6215 68.9351")
-                    //-     svg(class="intro__line intro__line--desktop" width="227" height="142" viewBox="0 0 227 142" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    //-         path(class="intro__line-mask" d="M6.90913 140.748C34.0276 -0.547168 147.75 70.6187 116.973 98.2832C86.1968 125.948 122.247 -52.1447 225.788 17.4089M6.90913 140.748C7.36635 139.676 2.89265 129.433 1.8257 123.763M6.90913 140.748C7.49676 139.369 16.1365 123.328 20.8646 123.708")
-                     
                 .intro__details
                     ul.intro__list
                         li.intro__item
@@ -69,42 +62,44 @@ html(lang="ru-RU")
                                 span.callback__error
                                         
                             button(type="submit").callback__submit Отправить заявку
-                        span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-                            a(href="" target="_blank") обработку персональных данных
+                        span.callback__agree Нажимая кнопку, вы даете  
+                            a(href="https://rowi.com/pravila/ROWI_Soglasie_OPD.pdf" target="_blank") согласие 
+                            | на обработку персональных данных. 
+                            a(href="https://rowi.com/pravila/ROWI_Politika_Konfidencialnosti.pdf" target="_blank") Политика конфиденциальности
 
                 <!--btn link-->
                 a(href="#conditions" target="_self").intro__scroll
                     span.intro__scroll-body
                         svg
                             use(xlink:href="static/images/sprite/symbol/sprite.svg#chevron")
-            
-            section.conditions.conditions--credit#conditions
-                h2.conditions__title.section-title Прозрачные и&nbsp;
-                    span выгодные&nbsp;условия 
-                    | для&nbsp;вас
-                                
-                .conditions__info
-                    .conditions__visual
-                        picture.conditions__frame
-                            source(media="(min-screen: 1200px)" srcset="static/images/content/cond-3.jpg")
-                            source(media="(min-screen: 1200px)" srcset="static/images/content/cond-3.webp" type="image/webp")
-                            source(srcset="static/images/content/cond-3-mob.webp" type="image/webp")
-                            img(src="static/images/content/cond-3-mob.jpg" width="" height="" alt="КИК").conditions__frame-image
-                        .conditions__block
-                            .conditions__shadow
-                            span.conditions__name Кредит без&nbsp;залога
-                    .conditions__details
-                        ul.conditions__list.conditions__list--warranty
-                            li.conditions__item
-                                span Госзаказчиков по 44-ФЗ
-                            li.conditions__item
-                                span Объем до 70% от суммы контракта
-                            li.conditions__item
-                                span Срок до 15 месяцев
-                            li.conditions__item
-                                span Упрощенное рассмотрение до 10 млн рублей
-                        a(href="#form" target="_self").conditions__link Оставить заявку
-                        
+            //- Start new block
+            section.options
+                h2.options__title.section-title 
+                    span Выгодные&nbsp;условия 
+                    | для&nbsp;участников госконтрактов
+
+                picture.options__frame
+                    source(media="(min-width: 1200px)" srcset="static/images/content/opt-cre.jpg")
+                    source(media="(min-width: 1200px)" srcset="static/images/content/opt-cre.webp 1x, static/images/content/opt-cre_2x.webp 2x" type="image/webp")
+                    source(srcset="static/images/content/opt-cre-mob.webp 1x, static/images/content/opt-cre-mob_2x.webp 2x" type="image/webp")
+                    img(src="static/images/content/opt-cre-mob.jpg" width="" height="" alt="КИК").options__frame-image
+                
+                .options__block
+                    h3.options__subtitle Оборотный кредит
+                    ul.options__list
+                        each i in optList1
+                            li.options__item=i
+                .options__block
+                    h3.options__subtitle Кредит на исполнение
+                    ul.options__list
+                        each i in optList2
+                            li.options__item=i
+
+                a(href="#form" target="_self").options__link Получить консультацию
+                    svg
+                        use(xlink:href="static/images/sprite/symbol/sprite.svg#white-arrow")
+            //- End new block
+
             include ../modules/blocks/steps
             include ../modules/blocks/features
             
@@ -215,8 +210,10 @@ html(lang="ru-RU")
                             span.callback__error
                             
                         button(type="submit").callback__submit Отправить заявку
-                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-                        a(href="" target="_blank") обработку персональных данных
+                    span.callback__agree Нажимая кнопку, вы даете  
+                        a(href="https://rowi.com/pravila/ROWI_Soglasie_OPD.pdf" target="_blank") согласие 
+                        | на обработку персональных данных. 
+                        a(href="https://rowi.com/pravila/ROWI_Politika_Konfidencialnosti.pdf" target="_blank") Политика конфиденциальности
                 <!--SVG zone-->
                 .callback__svg
                     svg(class="callback__line" width="216" height="293" viewBox="0 0 216 293" fill="none" xmlns="http://www.w3.org/2000/svg")

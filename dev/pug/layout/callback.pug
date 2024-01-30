@@ -40,10 +40,11 @@ html(lang="ru-RU")
                         .callback__nr-field
                             input(type="text" name="tel" id="tel" placeholder="Ваш номер телефона" onkeydown="validationTel()" required).callback__input.js-phone-input
                             span.callback__error
-                        .callback__nr-check
                         button(type="submit").callback__submit Отправить заявку
-                    span.callback__agree Нажимая кнопку, вы соглашаетесь на 
-                        a(href="" target="_blank") обработку персональных данных
+                    span.callback__agree Нажимая кнопку, вы даете  
+                        a(href="https://rowi.com/pravila/ROWI_Soglasie_OPD.pdf" target="_blank") согласие 
+                        | на обработку персональных данных. 
+                        a(href="https://rowi.com/pravila/ROWI_Politika_Konfidencialnosti.pdf" target="_blank") Политика конфиденциальности
         include ../modules/footer/footer
 
         script(src="static/js/vendor/jquery-3.3.1.min.js")

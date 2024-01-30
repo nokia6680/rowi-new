@@ -3,21 +3,6 @@
     width: 100%;
     padding: toRem(52) calc((100% - 343px) / 2) 0 calc((100% - 343px) / 2);
 
-    &__title {
-        margin-bottom: toRem(40);
-
-        span {
-            color: $blue;
-        }
-    }
-
-    &__description {
-        margin-bottom: toRem(40);
-        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
-        text-align: left;
-        letter-spacing: toRem(0.14);
-    }
-
     &__list {
         @include flex-setting(column, flex-start, flex-start);
         width: 100%;
@@ -104,7 +89,7 @@
     }
 
     &__text {
-        @include font-setting($primary-font, toRem(14), toRem(21.7), 400, $dark);
+        @include font-setting('Stolzl Book', toRem(14), toRem(21.7), 350, $dark);
         text-align: left;
         letter-spacing: toRem(0.14);
     }
@@ -128,8 +113,8 @@
     
         &__list {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            column-gap: toRem(24);
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: toRem(72);
             justify-content: space-between;
             align-self: start;
         }

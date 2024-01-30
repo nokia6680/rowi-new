@@ -4,25 +4,22 @@
     width: 100%;
     max-width: toRem(343);
 
-    padding: toRem(23) toRem(23) toRem(31) toRem(23);
+    padding: toRem(15) toRem(15) toRem(23) toRem(15);
     margin-bottom: toRem(56);
     border: toRem(1) solid #E3E3E3;
     border-radius: toRem(22);
 
     &__title {
         @extend .r-ability__title;
-        max-width: toRem(128);
-        margin-bottom: toRem(52);
+        margin-bottom: toRem(16);
     }
 
     &__stats {
-        position: absolute;
-        top: toRem(24);
-        right: toRem(24);
         @include flex-setting(column, flex-start, flex-start);
         width: 100%;
         max-width: toRem(148);
         gap: toRem(8);
+        margin-bottom: toRem(32);
 
         &-item {
             @include flex-setting(row, space-between, center);
@@ -36,6 +33,10 @@
 
             &[data-type="attention"] {
                 background-color: #FFF2E6;
+            }
+
+            &[data-type="negative"] {
+                background-color: #FCE9ED;
             }
         }
 
@@ -85,39 +86,115 @@
                     background-color: #FFF2E6;
                 }
             }
+
+            &[data-type="negative"] {
+                &::before {
+                    background-color: #FCE9ED;
+                }
+            }
         }
 
         &-name {
-            @include font-setting($primary-font, toRem(14), toRem(18.2), 400, rgba(20, 0, 75, 0.5));
+            @include font-setting($book-font, toRem(14), toRem(18.2), 350, rgba(20, 0, 75, 0.5));
             text-align: left;
             letter-spacing: toRem(0.14);
         }
 
         &-data {
-            @include font-setting($primary-font, toRem(15), toRem(18), 400, $dark);
+            @include font-setting($book-font, toRem(15), toRem(18), 350, $dark);
             text-align: left;
             letter-spacing: toRem(0.3);
         }
     }
 
     &__expand {
-        @extend .r-report__expand;
+        position: relative;
+        padding: 0;
+        padding-right: toRem(32);
+        background-color: transparent;
+        border: none;
+
+        @include font-setting($book-font, toRem(14), toRem(24), 350, $blue);
+        letter-spacing: toRem(0.14);
+        transition: opacity 0.2s $cubic;
+
+        &::after {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            width: toRem(24);
+            height: toRem(24);
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.4697 9.46967C11.7626 9.17678 12.2374 9.17678 12.5303 9.46967L16.5303 13.4697C16.8232 13.7626 16.8232 14.2374 16.5303 14.5303C16.2374 14.8232 15.7626 14.8232 15.4697 14.5303L12 11.0607L8.53033 14.5303C8.23744 14.8232 7.76256 14.8232 7.46967 14.5303C7.17678 14.2374 7.17678 13.7626 7.46967 13.4697L11.4697 9.46967Z' fill='%234164EE'/%3E%3C/svg%3E%0A");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: 0.2s $cubic;
+        }
+
+        &:active {
+            opacity: 0.8;
+            transition: opacity 0.2s $cubic;
+        }
+
+        &.is-active {
+            &::after {
+                transform: translateY(-50%) rotate(0deg);
+                transition: 0.4s $cubic;
+            }
+        }
     }
 }
 
 @include min-screen(1200px) {
     .r-facts {
         grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        grid-row: 2 / 3;
         max-width: 100%;
         margin-bottom: 0;
+        padding: toRem(31) toRem(23);
+        gap: toRem(32);
+        align-self: start;
     
         &__title {
             max-width: 100%;
-            margin-bottom: toRem(32);
+            line-height: toRem(29);
+            margin-bottom: 0;
+        }
+
+        &__stats {
+            position: absolute;
+            top: toRem(24);
+            right: toRem(24);
+
+            &-item {
+                display: grid;
+                grid-template-columns: toRem(10) 1fr;
+            }
+
+            &-nr {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                text-align: left;
+            }
+
+            &-name {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+
+            &-nr,
+            &-name {
+                text-align: left;
+                font-size: toRem(10);
+                font-weight: 400;
+                color: #14004B;
+            }
         }
 
         &__list {
+            margin-bottom: 0;
             &-item {
                 padding-left: toRem(44);
     
@@ -125,6 +202,13 @@
                     width: toRem(24);
                     height: toRem(24);
                 }
+            }
+        }
+
+        &__expand {
+            &:hover {
+                opacity: 0.86;
+                transition: opacity 0.2s $cubic;
             }
         }
     }

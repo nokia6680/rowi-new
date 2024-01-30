@@ -3,10 +3,11 @@
 
     @include flex-setting(column, flex-start, flex-start);
     padding: toRem(40) 0 toRem(56) 0;
-    margin-bottom: toRem(40);
+    margin-bottom: toRem(48);
 
     &.is-active {
         margin-bottom: 0;
+        padding-top: toRem(48);
 
         .c-intro {
             margin-bottom: 0;
@@ -42,11 +43,28 @@
         margin-bottom: toRem(112);
 
         &.is-active {
+            padding-top: toRem(112);
             .c-intro {
                 padding-bottom: toRem(40);
             }
+            .a-search {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
             .a-search__wrap {
                 grid-template-columns: 1fr;
+            }
+
+            .a-search__label {
+                align-self: flex-start;
+                text-align: left;
+                display: block;
+                margin-bottom: toRem(26);
+                font-size: toRem(15);
+                line-height: toRem(18);
+                font-weight: 400;
+                letter-spacing: toRem(0.3);
             }
         }
     }

@@ -158,8 +158,8 @@
             letter-spacing: 0.01em;
 
             a {
-                color: $blue;
-                text-decoration: none;
+                color: $dark;
+                text-decoration: underline;
             }
         }
     }
@@ -205,7 +205,7 @@
         }
 
         .callback-form {
-            max-width: toRem(394);
+            max-width: toRem(432);
 
             &__item {
                 order: 1;
@@ -218,6 +218,7 @@
                 letter-spacing: 0.01em;
                 padding-bottom: toRem(18);
                 border-width: toRem(2);
+                max-width: toRem(394);
             }
 
             &__submit {
@@ -243,6 +244,8 @@
                 line-height: toRem(22);
 
                 margin-bottom: toRem(48);
+
+                max-width: toRem(502);
             }
         }
     }

@@ -1,6 +1,7 @@
 let tableOpener = document.querySelectorAll('.r-report__expand');
 let tableCloser = document.querySelectorAll('.r-balance__close');
 let tableBody = document.querySelector('.r-report');
+let resBody = document.querySelector('.result__body');
 
 tableOpener.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -9,15 +10,16 @@ tableOpener.forEach(item => {
         });
         tableBody.classList.toggle('is-active');
         item.classList.toggle('is-active');
+        resBody.classList.toggle('table-active');
     });
 
     tableCloser.forEach(closer => {
         closer.addEventListener('click', (e) => {
             tableBody.classList.remove('is-active');
             item.classList.remove('is-active');
+            resBody.classList.remove('table-active');
         });
     });
-    
 });
 
 const tables = document.querySelectorAll(".r-table");

@@ -1,6 +1,7 @@
 .result {
     width: 100%;
     @include flex-setting(column, flex-start, center);
+    margin-bottom: toRem(48);
 
     &__heading {
         position: relative;
@@ -8,7 +9,7 @@
         width: 100%;
         max-width: toRem(343);
 
-        padding: toRem(32) toRem(24) toRem(115) toRem(24);
+        padding: toRem(32) toRem(16) toRem(115) toRem(16);
         margin-bottom: toRem(56);
         background-color: $white;
         box-shadow: 2px 13px 35px 0px rgba(0, 0, 0, 0.08);
@@ -38,14 +39,14 @@
         }
 
         &-title {
-            @include font-setting($primary-font, toRem(14), toRem(18.2), 400, rgba(20, 0, 75, 0.5));
+            @include font-setting($book-font, toRem(14), toRem(18.2), 350, rgba(20, 0, 75, 0.5));
             letter-spacing: toRem(0.14);
             width: 100%;
             text-align: left;
         }
 
         &-data {
-            @include font-setting($primary-font, toRem(16), toRem(20.8), 400, $dark);
+            @include font-setting($book-font, toRem(16), toRem(20.8), 350, $dark);
             letter-spacing: toRem(0.16);
         }
     }
@@ -97,11 +98,11 @@
         @include flex-setting(column, flex-start, center);
         padding: toRem(8) toRem(12) toRem(8) toRem(66);
 
-        @include font-setting($primary-font, toRem(14), normal, 400, $dark);
+        @include font-setting($primary-font, toRem(14), toRem(17), 400, $dark);
         text-align: left;
         letter-spacing: toRem(0.14);
 
-        background-color: #E8ECFD;
+        background-color: rgba(209, 240, 240, 0.50);
         border-radius: 0 toRem(12) toRem(12) 0;
         box-shadow: 2px 13px 35px 0px rgba(0, 0, 0, 0.12);
 
@@ -128,11 +129,14 @@
 
 @include min-screen(1200px) {
     .result {
-        padding: toRem(48) calc((100% - 1032px) / 2) toRem(56) calc((100% - 1032px) / 2);
+        padding: 0 calc((100% - 1032px) / 2) toRem(56) calc((100% - 1032px) / 2);
+        margin-bottom: toRem(112);
     
         &__heading {
             max-width: 100%;
             padding-bottom: toRem(48);
+            padding-left: toRem(24);
+            padding-right: toRem(24);
         }
     
         &__name {
@@ -193,6 +197,24 @@
 
             justify-content: space-between;
             align-items: stretch;
+
+            &.table-active {
+                .r-general {
+                    grid-row: 3 / 4;
+                }
+
+                .r-facts {
+                    grid-row: 3 / 4;
+                }
+
+                .r-activities {
+                    grid-row: 4 / 5;
+                }
+
+                .r-ability {
+                    grid-row: 4 / 5;
+                }
+            }
         }
     }
 }

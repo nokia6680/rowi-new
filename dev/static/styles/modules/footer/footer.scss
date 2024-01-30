@@ -312,6 +312,17 @@
         text-decoration: none;
     }
 
+    &__info a {
+        color: rgba(255, 255, 255, 0.35);
+        text-underline-offset: toRem(2);
+
+        &:focus {
+            text-decoration: underline;
+            color: $white;
+            transition: 0.35s $cubic;
+        }
+    }
+
     &__policy {
         cursor: pointer;
 
@@ -475,7 +486,7 @@
         &__bottom {
             display: grid;
             grid-template-areas:
-                'policy ...'
+                'policy info2'
                 'info copyright'
             ;
             justify-content: space-between;
@@ -490,7 +501,11 @@
             grid-area: policy;
         }
 
-        &__info {
+        &__info:first-of-type {
+            grid-area: info2;
+        }
+
+        &__info:last-of-type {
             grid-area: info;
         }
 
